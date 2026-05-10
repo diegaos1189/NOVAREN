@@ -89,7 +89,7 @@
   .novaren-hero-{{ section.id }} {
     position: relative;
     width: 100%;
-    min-height: {{ section.settings.desktop_height }}px;
+    min-height: min({{ section.settings.desktop_height }}px, calc(100svh - var(--header-height, 0px)));
     overflow: hidden;
     background: #f7f3ea;
   }
@@ -118,11 +118,12 @@
   .novaren-hero-{{ section.id }} .novaren-hero__content {
     position: relative;
     z-index: 3;
-    min-height: {{ section.settings.desktop_height }}px;
+    min-height: min({{ section.settings.desktop_height }}px, calc(100svh - var(--header-height, 0px)));
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding-bottom: 120px;
+    padding-top: 56px;
+    padding-bottom: 132px;
   }
 
   .novaren-hero-{{ section.id }} .novaren-hero__box {
@@ -143,9 +144,10 @@
     margin: 0 0 22px;
     font-size: {{ section.settings.title_size }}px;
     line-height: .98;
-    letter-spacing: -0.05em;
+    letter-spacing: 0;
     color: {{ section.settings.title_color }};
     font-weight: 500;
+    overflow-wrap: anywhere;
   }
 
   .novaren-hero-{{ section.id }} .novaren-hero__subtitle {
@@ -154,6 +156,7 @@
     font-size: {{ section.settings.subtitle_size }}px;
     line-height: 1.55;
     color: {{ section.settings.subtitle_color }};
+    overflow-wrap: anywhere;
   }
 
   .novaren-hero-{{ section.id }} .novaren-hero__button {
@@ -203,6 +206,7 @@
     font-weight: 800;
     text-transform: uppercase;
     border-right: 1px solid rgba(16, 35, 63, 0.18);
+    min-width: 0;
   }
 
   .novaren-hero-{{ section.id }} .novaren-hero__bottom-item:last-child {
@@ -221,11 +225,104 @@
     text-transform: none;
     margin-top: 4px;
     color: {{ section.settings.bottom_text_color }};
+    overflow-wrap: anywhere;
+  }
+
+  @media screen and (min-width: 1200px) and (max-height: 820px) {
+    .novaren-hero-{{ section.id }} .novaren-hero__content {
+      padding-top: 40px;
+      padding-bottom: 116px;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__title {
+      font-size: min({{ section.settings.title_size }}px, 72px);
+      line-height: 1;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__subtitle {
+      font-size: min({{ section.settings.subtitle_size }}px, 18px);
+      margin-bottom: 26px;
+    }
+  }
+
+  @media screen and (min-width: 990px) and (max-width: 1199px) {
+    .novaren-hero-{{ section.id }} {
+      min-height: min(680px, calc(100svh - var(--header-height, 0px)));
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__content {
+      min-height: min(680px, calc(100svh - var(--header-height, 0px)));
+      padding-top: 42px;
+      padding-bottom: 118px;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__box {
+      max-width: min({{ section.settings.text_width }}px, 620px);
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__title {
+      font-size: min({{ section.settings.title_size }}px, 64px);
+      line-height: 1.02;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__subtitle {
+      font-size: min({{ section.settings.subtitle_size }}px, 18px);
+      max-width: 560px;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__bottom-inner {
+      gap: 18px;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__bottom-item {
+      gap: 10px;
+      font-size: min({{ section.settings.bottom_title_size }}px, 12px);
+    }
+  }
+
+  @media screen and (min-width: 750px) and (max-width: 989px) {
+    .novaren-hero-{{ section.id }} {
+      min-height: min(720px, calc(100svh - var(--header-height, 0px)));
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__content {
+      min-height: min(720px, calc(100svh - var(--header-height, 0px)));
+      align-items: center;
+      padding: 48px 32px 180px;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__box {
+      max-width: min({{ section.settings.text_width }}px, 600px);
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__title {
+      font-size: min({{ section.settings.title_size }}px, 58px);
+      line-height: 1.04;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__subtitle {
+      font-size: min({{ section.settings.subtitle_size }}px, 18px);
+      max-width: 540px;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__bottom-bar {
+      padding: 18px 0;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__bottom-inner {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px 24px;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__bottom-item {
+      border-right: none;
+      font-size: min({{ section.settings.bottom_title_size }}px, 12px);
+    }
   }
 
   @media screen and (max-width: 749px) {
     .novaren-hero-{{ section.id }} {
-      min-height: {{ section.settings.mobile_height }}px;
+      min-height: min({{ section.settings.mobile_height }}px, calc(100svh - var(--header-height, 0px)));
     }
 
     .novaren-hero-{{ section.id }} .novaren-hero__media img {
@@ -233,7 +330,7 @@
     }
 
     .novaren-hero-{{ section.id }} .novaren-hero__content {
-      min-height: {{ section.settings.mobile_height }}px;
+      min-height: min({{ section.settings.mobile_height }}px, calc(100svh - var(--header-height, 0px)));
       align-items: {{ section.settings.mobile_vertical_position }};
       text-align: {{ section.settings.mobile_text_alignment }};
       justify-content: center;
@@ -251,7 +348,7 @@
     }
 
     .novaren-hero-{{ section.id }} .novaren-hero__title {
-      font-size: {{ section.settings.mobile_title_size }}px;
+      font-size: min({{ section.settings.mobile_title_size }}px, 42px);
       line-height: 1.05;
     }
 
@@ -264,6 +361,8 @@
       width: 100%;
       justify-content: center;
       font-size: {{ section.settings.mobile_button_size }}px;
+      padding-left: 18px;
+      padding-right: 18px;
     }
 
     .novaren-hero-{{ section.id }} .novaren-hero__bottom-bar {
@@ -289,6 +388,27 @@
 
     .novaren-hero-{{ section.id }} .novaren-hero__bottom-item small {
       font-size: {{ section.settings.mobile_bottom_text_size }}px;
+    }
+  }
+
+  @media screen and (max-width: 389px) {
+    .novaren-hero-{{ section.id }} .novaren-hero__content {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__title {
+      font-size: min({{ section.settings.mobile_title_size }}px, 34px);
+      line-height: 1.08;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__subtitle {
+      font-size: min({{ section.settings.mobile_subtitle_size }}px, 15px);
+      line-height: 1.45;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__bottom-inner {
+      grid-template-columns: 1fr;
     }
   }
 </style>
