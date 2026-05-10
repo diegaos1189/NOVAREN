@@ -39,6 +39,8 @@
 /* TARJETA */
 
 #coleccion-premium-{{ section.id }} .producto-card{
+  display:flex;
+  flex-direction:column;
   background:#fff;
   border-radius:{{ section.settings.card_radius }}px;
   overflow:hidden;
@@ -69,6 +71,9 @@
 /* INFO */
 
 #coleccion-premium-{{ section.id }} .producto-info{
+  display:flex;
+  flex:1;
+  flex-direction:column;
   padding:{{ section.settings.card_padding }}px;
 }
 
@@ -105,6 +110,7 @@
   font-weight:900;
   color:{{ section.settings.price_color }};
   letter-spacing:-0.05em;
+  margin-bottom:20px;
 }
 
 /* BOTON */
@@ -115,7 +121,7 @@
   justify-content:center;
   align-items:center;
   text-decoration:none;
-  margin-top:20px;
+  margin-top:auto;
   min-height:56px;
   border-radius:999px;
   background:{{ section.settings.button_bg }};
