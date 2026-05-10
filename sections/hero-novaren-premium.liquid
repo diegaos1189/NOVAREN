@@ -345,16 +345,19 @@
 
     .novaren-hero-{{ section.id }} .novaren-hero__eyebrow {
       font-size: {{ section.settings.mobile_eyebrow_size }}px;
+      color: {{ section.settings.mobile_eyebrow_color }};
     }
 
     .novaren-hero-{{ section.id }} .novaren-hero__title {
       font-size: min({{ section.settings.mobile_title_size }}px, 42px);
       line-height: 1.05;
+      color: {{ section.settings.mobile_title_color }};
     }
 
     .novaren-hero-{{ section.id }} .novaren-hero__subtitle {
       font-size: {{ section.settings.mobile_subtitle_size }}px;
       margin-bottom: 24px;
+      color: {{ section.settings.mobile_subtitle_color }};
     }
 
     .novaren-hero-{{ section.id }} .novaren-hero__button {
@@ -363,6 +366,7 @@
       font-size: {{ section.settings.mobile_button_size }}px;
       padding-left: 18px;
       padding-right: 18px;
+      color: {{ section.settings.mobile_button_color }};
     }
 
     .novaren-hero-{{ section.id }} .novaren-hero__bottom-bar {
@@ -380,6 +384,7 @@
     .novaren-hero-{{ section.id }} .novaren-hero__bottom-item {
       border-right: none;
       font-size: {{ section.settings.mobile_bottom_title_size }}px;
+      color: {{ section.settings.mobile_bottom_title_color }};
     }
 
     .novaren-hero-{{ section.id }} .novaren-hero__bottom-icon {
@@ -388,6 +393,7 @@
 
     .novaren-hero-{{ section.id }} .novaren-hero__bottom-item small {
       font-size: {{ section.settings.mobile_bottom_text_size }}px;
+      color: {{ section.settings.mobile_bottom_text_color }};
     }
   }
 
@@ -792,6 +798,46 @@
       "type": "color",
       "id": "bottom_text_color",
       "label": "Color textos barra",
+      "default": "#4b5563"
+    },
+    {
+      "type": "header",
+      "content": "Colores móvil"
+    },
+    {
+      "type": "color",
+      "id": "mobile_title_color",
+      "label": "Color título móvil",
+      "default": "#07351f"
+    },
+    {
+      "type": "color",
+      "id": "mobile_subtitle_color",
+      "label": "Color subtítulo móvil",
+      "default": "#2f2f2f"
+    },
+    {
+      "type": "color",
+      "id": "mobile_eyebrow_color",
+      "label": "Color texto superior móvil",
+      "default": "#4c8f46"
+    },
+    {
+      "type": "color",
+      "id": "mobile_button_color",
+      "label": "Color texto botón móvil",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "mobile_bottom_title_color",
+      "label": "Color títulos barra móvil",
+      "default": "#10233f"
+    },
+    {
+      "type": "color",
+      "id": "mobile_bottom_text_color",
+      "label": "Color textos barra móvil",
       "default": "#4b5563"
     },
     {
