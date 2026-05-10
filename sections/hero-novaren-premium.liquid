@@ -329,6 +329,10 @@
       object-position: {{ section.settings.mobile_image_position }};
     }
 
+    .novaren-hero-{{ section.id }} .novaren-hero__overlay {
+      background: rgba(255,255,255, {{ section.settings.mobile_overlay_opacity | divided_by: 100.0 }});
+    }
+
     .novaren-hero-{{ section.id }} .novaren-hero__content {
       min-height: min({{ section.settings.mobile_height }}px, calc(100svh - var(--header-height, 0px)));
       align-items: {{ section.settings.mobile_vertical_position }};
@@ -542,6 +546,16 @@
       "type": "range",
       "id": "overlay_opacity",
       "label": "Claridad overlay",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_overlay_opacity",
+      "label": "Claridad overlay móvil",
       "min": 0,
       "max": 80,
       "step": 5,
