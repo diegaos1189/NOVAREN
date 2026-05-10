@@ -32,7 +32,7 @@
       {%- elsif template.name == 'collection' -%}
         {{ collection.title }} | Ícaro Libros
       {%- elsif template.name == 'index' -%}
-        Ícaro Libros | Librería independiente en Medellín
+        {{ settings.home_page_title | default: 'Ícaro Libros | Librería independiente en Medellín' | escape }}
       {%- else -%}
         {{ page_title }} | Ícaro Libros
       {%- endif -%}

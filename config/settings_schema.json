@@ -11,6 +11,17 @@
     "name": "t:settings_schema.logo.name",
     "settings": [
       {
+        "type": "header",
+        "content": "SEO de la página de inicio"
+      },
+      {
+        "type": "text",
+        "id": "home_page_title",
+        "default": "Ícaro Libros | Librería independiente en Medellín",
+        "label": "Título del sitio web",
+        "info": "Este texto aparece en la pestaña del navegador y en el título SEO de la página de inicio."
+      },
+      {
         "type": "image_picker",
         "id": "logo",
         "label": "t:settings_schema.logo.settings.logo_image.label"
