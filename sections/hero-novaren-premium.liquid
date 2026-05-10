@@ -1,0 +1,694 @@
+<section class="novaren-hero-{{ section.id }}">
+  <div class="novaren-hero__media">
+    {% if section.settings.desktop_image != blank %}
+      <picture>
+        {% if section.settings.mobile_image != blank %}
+          <source media="(max-width: 749px)" srcset="{{ section.settings.mobile_image | image_url: width: 1080 }}">
+        {% endif %}
+        <img
+          src="{{ section.settings.desktop_image | image_url: width: 2200 }}"
+          alt="{{ section.settings.desktop_image.alt | escape }}"
+          loading="eager"
+          fetchpriority="high"
+        >
+      </picture>
+    {% endif %}
+  </div>
+
+  <div class="novaren-hero__overlay"></div>
+
+  <div class="novaren-hero__content page-width">
+    <div class="novaren-hero__box">
+      {% if section.settings.eyebrow != blank %}
+        <p class="novaren-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+      {% endif %}
+
+      {% if section.settings.title != blank %}
+        <h1 class="novaren-hero__title">{{ section.settings.title }}</h1>
+      {% endif %}
+
+      {% if section.settings.subtitle != blank %}
+        <p class="novaren-hero__subtitle">{{ section.settings.subtitle }}</p>
+      {% endif %}
+
+      {% if section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_link }}" class="novaren-hero__button">
+          {{ section.settings.button_text }}
+          <span>→</span>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="novaren-hero__bottom-bar">
+    <div class="novaren-hero__bottom-inner page-width">
+      {% if section.settings.bottom_title_1 != blank %}
+        <div class="novaren-hero__bottom-item">
+          <span class="novaren-hero__bottom-icon">🌿</span>
+          <span>
+            {{ section.settings.bottom_title_1 }}
+            <small>{{ section.settings.bottom_text_1 }}</small>
+          </span>
+        </div>
+      {% endif %}
+
+      {% if section.settings.bottom_title_2 != blank %}
+        <div class="novaren-hero__bottom-item">
+          <span class="novaren-hero__bottom-icon">🛡️</span>
+          <span>
+            {{ section.settings.bottom_title_2 }}
+            <small>{{ section.settings.bottom_text_2 }}</small>
+          </span>
+        </div>
+      {% endif %}
+
+      {% if section.settings.bottom_title_3 != blank %}
+        <div class="novaren-hero__bottom-item">
+          <span class="novaren-hero__bottom-icon">🎯</span>
+          <span>
+            {{ section.settings.bottom_title_3 }}
+            <small>{{ section.settings.bottom_text_3 }}</small>
+          </span>
+        </div>
+      {% endif %}
+
+      {% if section.settings.bottom_title_4 != blank %}
+        <div class="novaren-hero__bottom-item">
+          <span class="novaren-hero__bottom-icon">⭐</span>
+          <span>
+            {{ section.settings.bottom_title_4 }}
+            <small>{{ section.settings.bottom_text_4 }}</small>
+          </span>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .novaren-hero-{{ section.id }} {
+    position: relative;
+    width: 100%;
+    min-height: {{ section.settings.desktop_height }}px;
+    overflow: hidden;
+    background: #f7f3ea;
+  }
+
+  .novaren-hero-{{ section.id }} .novaren-hero__media {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .novaren-hero-{{ section.id }} .novaren-hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: {{ section.settings.desktop_image_position }};
+    display: block;
+  }
+
+  .novaren-hero-{{ section.id }} .novaren-hero__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: rgba(255,255,255, {{ section.settings.overlay_opacity | divided_by: 100.0 }});
+  }
+
+  .novaren-hero-{{ section.id }} .novaren-hero__content {
+    position: relative;
+    z-index: 3;
+    min-height: {{ section.settings.desktop_height }}px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 120px;
+  }
+
+  .novaren-hero-{{ section.id }} .novaren-hero__box {
+    max-width: {{ section.settings.text_width }}px;
+    padding: 40px 0;
+  }
+
+  .novaren-hero-{{ section.id }} .novaren-hero__eyebrow {
+    margin: 0 0 18px;
+    font-size: {{ section.settings.eyebrow_size }}px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: {{ section.settings.eyebrow_color }};
+    font-weight: 700;
+  }
+
+  .novaren-hero-{{ section.id }} .novaren-hero__title {
+    margin: 0 0 22px;
+    font-size: {{ section.settings.title_size }}px;
+    line-height: .98;
+    letter-spacing: -0.05em;
+    color: {{ section.settings.title_color }};
+    font-weight: 500;
+  }
+
+  .novaren-hero-{{ section.id }} .novaren-hero__subtitle {
+    margin: 0 0 34px;
+    max-width: 620px;
+    font-size: {{ section.settings.subtitle_size }}px;
+    line-height: 1.55;
+    color: {{ section.settings.subtitle_color }};
+  }
+
+  .novaren-hero-{{ section.id }} .novaren-hero__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    background: {{ section.settings.button_bg }};
+    color: {{ section.settings.button_color }};
+    padding: 17px 34px;
+    border-radius: {{ section.settings.button_radius }}px;
+    text-decoration: none;
+    font-size: {{ section.settings.button_size }}px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    transition: all .3s ease;
+  }
+
+  .novaren-hero-{{ section.id }} .novaren-hero__button:hover {
+    background: {{ section.settings.button_hover }};
+    transform: translateY(-2px);
+  }
+
+  .novaren-hero-{{ section.id }} .novaren-hero__bottom-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+    background: rgba(255, 250, 240, 0.92);
+    backdrop-filter: blur(10px);
+    padding: 22px 0;
+  }
+
+  .novaren-hero-{{ section.id }} .novaren-hero__bottom-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .novaren-hero-{{ section.id }} .novaren-hero__bottom-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: {{ section.settings.bottom_title_color }};
+    font-size: {{ section.settings.bottom_title_size }}px;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-right: 1px solid rgba(16, 35, 63, 0.18);
+  }
+
+  .novaren-hero-{{ section.id }} .novaren-hero__bottom-item:last-child {
+    border-right: none;
+  }
+
+  .novaren-hero-{{ section.id }} .novaren-hero__bottom-icon {
+    font-size: {{ section.settings.bottom_icon_size }}px;
+    line-height: 1;
+  }
+
+  .novaren-hero-{{ section.id }} .novaren-hero__bottom-item small {
+    display: block;
+    font-size: {{ section.settings.bottom_text_size }}px;
+    font-weight: 400;
+    text-transform: none;
+    margin-top: 4px;
+    color: {{ section.settings.bottom_text_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .novaren-hero-{{ section.id }} {
+      min-height: {{ section.settings.mobile_height }}px;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__media img {
+      object-position: {{ section.settings.mobile_image_position }};
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__content {
+      min-height: {{ section.settings.mobile_height }}px;
+      align-items: {{ section.settings.mobile_vertical_position }};
+      text-align: {{ section.settings.mobile_text_alignment }};
+      justify-content: center;
+      padding: 30px 20px;
+      padding-bottom: 40px;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__box {
+      max-width: 100%;
+      padding: 20px 0;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__eyebrow {
+      font-size: {{ section.settings.mobile_eyebrow_size }}px;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__title {
+      font-size: {{ section.settings.mobile_title_size }}px;
+      line-height: 1.05;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__subtitle {
+      font-size: {{ section.settings.mobile_subtitle_size }}px;
+      margin-bottom: 24px;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__button {
+      width: 100%;
+      justify-content: center;
+      font-size: {{ section.settings.mobile_button_size }}px;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__bottom-bar {
+      position: relative;
+      padding: 18px 20px;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__bottom-inner {
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__bottom-item {
+      border-right: none;
+      font-size: {{ section.settings.mobile_bottom_title_size }}px;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__bottom-icon {
+      font-size: {{ section.settings.mobile_bottom_icon_size }}px;
+    }
+
+    .novaren-hero-{{ section.id }} .novaren-hero__bottom-item small {
+      font-size: {{ section.settings.mobile_bottom_text_size }}px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Hero Novaren Premium",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Imagen desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Imagen móvil"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Texto superior",
+      "default": "Bienestar que se siente"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Título principal",
+      "default": "Cuida tu cuerpo. Potencia tu vida."
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtítulo",
+      "default": "Suplementos, skincare y cuidado personal seleccionados para ayudarte a sentirte mejor cada día."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Texto botón",
+      "default": "Comprar ahora"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Enlace botón"
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "label": "Alto desktop",
+      "min": 500,
+      "max": 1000,
+      "step": 20,
+      "unit": "px",
+      "default": 820
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "label": "Alto móvil",
+      "min": 500,
+      "max": 1000,
+      "step": 20,
+      "unit": "px",
+      "default": 720
+    },
+    {
+      "type": "range",
+      "id": "text_width",
+      "label": "Ancho máximo del texto",
+      "min": 400,
+      "max": 900,
+      "step": 20,
+      "unit": "px",
+      "default": 720
+    },
+    {
+      "type": "select",
+      "id": "desktop_image_position",
+      "label": "Posición imagen desktop",
+      "options": [
+        { "value": "center", "label": "Centro" },
+        { "value": "left center", "label": "Izquierda" },
+        { "value": "right center", "label": "Derecha" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_position",
+      "label": "Posición imagen móvil",
+      "options": [
+        { "value": "center", "label": "Centro" },
+        { "value": "left center", "label": "Izquierda" },
+        { "value": "right center", "label": "Derecha" },
+        { "value": "center top", "label": "Arriba" },
+        { "value": "center bottom", "label": "Abajo" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "mobile_vertical_position",
+      "label": "Posición del texto en móvil",
+      "options": [
+        { "value": "flex-start", "label": "Arriba" },
+        { "value": "center", "label": "Centro" },
+        { "value": "flex-end", "label": "Abajo" }
+      ],
+      "default": "flex-end"
+    },
+    {
+      "type": "select",
+      "id": "mobile_text_alignment",
+      "label": "Alineación texto móvil",
+      "options": [
+        { "value": "left", "label": "Izquierda" },
+        { "value": "center", "label": "Centro" },
+        { "value": "right", "label": "Derecha" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Claridad overlay",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Barra inferior"
+    },
+    {
+      "type": "text",
+      "id": "bottom_title_1",
+      "label": "Título beneficio 1",
+      "default": "Bienestar integral"
+    },
+    {
+      "type": "text",
+      "id": "bottom_text_1",
+      "label": "Texto beneficio 1",
+      "default": "Cuerpo, mente y piel"
+    },
+    {
+      "type": "text",
+      "id": "bottom_title_2",
+      "label": "Título beneficio 2",
+      "default": "Calidad premium"
+    },
+    {
+      "type": "text",
+      "id": "bottom_text_2",
+      "label": "Texto beneficio 2",
+      "default": "Solo lo mejor para ti"
+    },
+    {
+      "type": "text",
+      "id": "bottom_title_3",
+      "label": "Título beneficio 3",
+      "default": "Enfocados en ti"
+    },
+    {
+      "type": "text",
+      "id": "bottom_text_3",
+      "label": "Texto beneficio 3",
+      "default": "Resultados reales"
+    },
+    {
+      "type": "text",
+      "id": "bottom_title_4",
+      "label": "Título beneficio 4",
+      "default": "Respaldo y confianza"
+    },
+    {
+      "type": "text",
+      "id": "bottom_text_4",
+      "label": "Texto beneficio 4",
+      "default": "Miles de clientes satisfechos"
+    },
+    {
+      "type": "header",
+      "content": "Tamaños desktop"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_size",
+      "label": "Texto superior",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Título",
+      "min": 40,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 86
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "label": "Subtítulo",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 19
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "label": "Botón",
+      "min": 12,
+      "max": 26,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "bottom_title_size",
+      "label": "Título beneficios",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "bottom_text_size",
+      "label": "Texto beneficios",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "bottom_icon_size",
+      "label": "Iconos beneficios",
+      "min": 14,
+      "max": 34,
+      "step": 1,
+      "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "header",
+      "content": "Tamaños móvil"
+    },
+    {
+      "type": "range",
+      "id": "mobile_eyebrow_size",
+      "label": "Texto superior móvil",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_size",
+      "label": "Título móvil",
+      "min": 28,
+      "max": 70,
+      "step": 2,
+      "unit": "px",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "mobile_subtitle_size",
+      "label": "Subtítulo móvil",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_size",
+      "label": "Botón móvil",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "mobile_bottom_title_size",
+      "label": "Título beneficios móvil",
+      "min": 9,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "mobile_bottom_text_size",
+      "label": "Texto beneficios móvil",
+      "min": 9,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "mobile_bottom_icon_size",
+      "label": "Iconos beneficios móvil",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "header",
+      "content": "Colores"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color título",
+      "default": "#07351f"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Color subtítulo",
+      "default": "#2f2f2f"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Color texto superior",
+      "default": "#4c8f46"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Fondo botón",
+      "default": "#07351f"
+    },
+    {
+      "type": "color",
+      "id": "button_hover",
+      "label": "Fondo botón hover",
+      "default": "#4c8f46"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Texto botón",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "bottom_title_color",
+      "label": "Color títulos barra",
+      "default": "#10233f"
+    },
+    {
+      "type": "color",
+      "id": "bottom_text_color",
+      "label": "Color textos barra",
+      "default": "#4b5563"
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "Radio botón",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 6
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Novaren Premium"
+    }
+  ]
+}
+{% endschema %}

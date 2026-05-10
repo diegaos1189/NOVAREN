@@ -1,0 +1,347 @@
+<section class="transformacion-wellness">
+  <div class="transformacion-wellness__container">
+
+    <div class="transformacion-wellness__header">
+      <span class="eyebrow">
+        {{ section.settings.eyebrow }}
+      </span>
+
+      <h2>
+        {{ section.settings.title }}
+      </h2>
+
+      <p>
+        {{ section.settings.subtitle }}
+      </p>
+    </div>
+
+    <div class="transformacion-grid">
+
+      <div class="transform-card before">
+        <div class="badge">
+            {{ section.settings.before_title }}
+        </div>
+
+        <div class="transform-items">
+
+          <div class="transform-item negative">
+            <div class="icon">✖</div>
+            <span>{{ section.settings.before_1 }}</span>
+          </div>
+
+          <div class="transform-item negative">
+            <div class="icon">✖</div>
+            <span>{{ section.settings.before_2 }}</span>
+          </div>
+
+          <div class="transform-item negative">
+            <div class="icon">✖</div>
+            <span>{{ section.settings.before_3 }}</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="transformacion-image">
+
+        {% if section.settings.image != blank %}
+          <img
+            src="{{ section.settings.image | image_url: width: 1200 }}"
+            alt="{{ section.settings.title | escape }}"
+            loading="lazy"
+          >
+        {% else %}
+          <div class="placeholder">
+            Agrega una imagen lifestyle
+          </div>
+        {% endif %}
+
+      </div>
+
+      <div class="transform-card after">
+
+        <div class="badge success">
+            {{ section.settings.after_title }}
+        </div>
+
+        <div class="transform-items">
+
+          <div class="transform-item positive">
+            <div class="icon">✓</div>
+            <span>{{ section.settings.after_1 }}</span>
+          </div>
+
+          <div class="transform-item positive">
+            <div class="icon">✓</div>
+            <span>{{ section.settings.after_2 }}</span>
+          </div>
+
+          <div class="transform-item positive">
+            <div class="icon">✓</div>
+            <span>{{ section.settings.after_3 }}</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+.transformacion-wellness {
+  padding: 90px 20px;
+  background: {{ section.settings.background }};
+  overflow: hidden;
+}
+
+.transformacion-wellness__container {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.transformacion-wellness__header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 70px;
+}
+
+.transformacion-wellness__header .eyebrow {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #d1fae5;
+  color: #047857;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.transformacion-wellness__header h2 {
+  font-size: 54px;
+  line-height: 1.1;
+  margin: 0 0 20px;
+  color: #10233f;
+  font-weight: 800;
+}
+
+.transformacion-wellness__header p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #4b5563;
+  margin: 0;
+}
+
+.transformacion-grid {
+  display: grid;
+  grid-template-columns: 1fr 520px 1fr;
+  gap: 35px;
+  align-items: center;
+}
+
+.transform-card {
+  background: white;
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+}
+
+.badge {
+  display: inline-flex;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.badge.success {
+  background: #d1fae5;
+  color: #047857;
+}
+
+.transform-items {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.transform-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.transform-item.negative {
+  background: #fff5f5;
+  color: #991b1b;
+}
+
+.transform-item.positive {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.transform-item .icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.transform-item.negative .icon {
+  background: #fecaca;
+}
+
+.transform-item.positive .icon {
+  background: #a7f3d0;
+}
+
+.transformacion-image img {
+  width: 100%;
+  display: block;
+  border-radius: 30px;
+}
+
+.placeholder {
+  min-height: 620px;
+  border-radius: 30px;
+  background: #eef2f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+}
+
+@media screen and (max-width: 990px) {
+
+  .transformacion-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .transformacion-image {
+    order: -1;
+  }
+
+  .transformacion-wellness__header h2 {
+    font-size: 38px;
+  }
+
+  .transformacion-wellness__header p {
+    font-size: 17px;
+  }
+
+  .transform-card {
+    padding: 28px;
+  }
+
+  .transform-item {
+    font-size: 16px;
+  }
+
+  .placeholder {
+    min-height: 420px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Transformación wellness",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Color fondo",
+      "default": "#f8fafc"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Texto superior",
+      "default": "Transforma tu bienestar"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Siente La Diferencia En Tu Cuerpo"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtítulo",
+      "default": "Pequeños cambios en tu rutina pueden ayudarte a sentirte más ligero, cómodo y con mayor bienestar cada día."
+    },
+    {
+  "type": "text",
+  "id": "before_title",
+  "label": "Título columna izquierda",
+  "default": "Cuando no te sientes en equilibrio"
+},
+{
+  "type": "text",
+  "id": "after_title",
+  "label": "Título columna derecha",
+  "default": "Cómo quieres sentirte"
+},
+    {     
+      "type": "text",
+      "id": "before_1",
+      "label": "Antes 1",
+      "default": "Cansancio constante"
+    },
+    {
+      "type": "text",
+      "id": "before_2",
+      "label": "Antes 2",
+      "default": "Abdomen inflamado"
+    },
+    {
+      "type": "text",
+      "id": "before_3",
+      "label": "Antes 3",
+      "default": "Malestar digestivo"
+    },
+    {
+      "type": "text",
+      "id": "after_1",
+      "label": "Después 1",
+      "default": "Sensación de ligereza"
+    },
+    {
+      "type": "text",
+      "id": "after_2",
+      "label": "Después 2",
+      "default": "Más energía diaria"
+    },
+    {
+      "type": "text",
+      "id": "after_3",
+      "label": "Después 3",
+      "default": "Bienestar digestivo"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Imagen lifestyle"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Transformación wellness"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,252 @@
+<section class="wellness-digestivo">
+  <div class="wellness-digestivo__container {% if section.settings.image_position == 'left' %}image-left{% endif %}">
+    
+    <div class="wellness-digestivo__content">
+      <h2>{{ section.settings.title }}</h2>
+      <p class="subtitle">{{ section.settings.subtitle }}</p>
+
+      <div class="problem-list">
+        <div class="problem">✅ {{ section.settings.problem_1 }}</div>
+        <div class="problem">✅ {{ section.settings.problem_2 }}</div>
+        <div class="problem">✅ {{ section.settings.problem_3 }}</div>
+        <div class="problem">✅ {{ section.settings.problem_4 }}</div>
+        <div class="problem">✅ {{ section.settings.problem_5 }}</div>
+      </div>
+
+      <p class="tagline">{{ section.settings.tagline }}</p>
+
+      {% if section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_link }}" class="button">
+          {{ section.settings.button_text }}
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="wellness-digestivo__image">
+      {% if section.settings.image != blank %}
+        <img 
+          src="{{ section.settings.image | image_url: width: 1200 }}" 
+          alt="{{ section.settings.title | escape }}"
+          loading="lazy"
+        >
+      {% else %}
+        <div class="placeholder">Agrega una imagen</div>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .wellness-digestivo {
+    background: {{ section.settings.background }};
+    padding: 70px 20px;
+  }
+
+  .wellness-digestivo__container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .wellness-digestivo__container.image-left .wellness-digestivo__image {
+    order: -1;
+  }
+
+  .wellness-digestivo h2 {
+    font-size: 46px;
+    line-height: 1.1;
+    margin: 0 0 20px;
+    color: #10233f;
+    font-weight: 800;
+  }
+
+  .wellness-digestivo .subtitle {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #4b5563;
+    margin-bottom: 30px;
+  }
+
+  .problem-list {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .problem {
+    background: #ffffff;
+    padding: 18px 22px;
+    border-radius: 18px;
+    font-size: 18px;
+    color: #1f2937;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  }
+
+  .tagline {
+    font-size: 20px;
+    font-style: italic;
+    color: #0f766e;
+    margin-bottom: 22px;
+  }
+
+  .button {
+    display: inline-block;
+    background: #052b5f;
+    color: white;
+    padding: 16px 32px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .wellness-digestivo__image img {
+    width: 100%;
+    display: block;
+    border-radius: 24px;
+  }
+
+  .placeholder {
+    background: #eef2f7;
+    min-height: 500px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+  }
+
+  @media screen and (max-width: 749px) {
+
+  .wellness-digestivo__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wellness-digestivo__image {
+    order: 1;
+  }
+
+  .wellness-digestivo__content {
+    order: 2;
+  }
+
+  .wellness-digestivo__container.image-left .wellness-digestivo__image {
+    order: 0;
+  }
+
+  .wellness-digestivo h2 {
+    font-size: 32px;
+  }
+
+  .wellness-digestivo .subtitle {
+    font-size: 17px;
+  }
+
+  .problem {
+    font-size: 16px;
+  }
+
+</style>
+
+{% schema %}
+{
+  "name": "Wellness digestivo",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Fondo",
+      "default": "#f6f8fb"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "¿Te identificas con alguno de estos problemas?"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtítulo",
+      "default": "El estrés, los malos hábitos y la alimentación pueden hacer que tu cuerpo se sienta pesado y sin equilibrio."
+    },
+    {
+      "type": "text",
+      "id": "problem_1",
+      "label": "Problema 1",
+      "default": "Inflamación abdominal constante"
+    },
+    {
+      "type": "text",
+      "id": "problem_2",
+      "label": "Problema 2",
+      "default": "Sensación de pesadez después de comer"
+    },
+    {
+      "type": "text",
+      "id": "problem_3",
+      "label": "Problema 3",
+      "default": "Gases e incomodidad digestiva"
+    },
+    {
+      "type": "text",
+      "id": "problem_4",
+      "label": "Problema 4",
+      "default": "Cansancio y falta de energía"
+    },
+    {
+      "type": "text",
+      "id": "problem_5",
+      "label": "Problema 5",
+      "default": "Digestión lenta y malestar frecuente"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Frase final",
+      "default": "Tu bienestar comienza desde adentro."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Texto del botón",
+      "default": "Quiero sentirme mejor"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Enlace del botón"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Imagen"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Posición de imagen",
+      "options": [
+        {
+          "value": "right",
+          "label": "Derecha"
+        },
+        {
+          "value": "left",
+          "label": "Izquierda"
+        }
+      ],
+      "default": "right"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Wellness digestivo"
+    }
+  ]
+}
+{% endschema %}
