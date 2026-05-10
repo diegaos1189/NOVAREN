@@ -1,1 +1,310 @@
-{"sections":{"hero_novaren_premium_96hwnL":{"type":"hero-novaren-premium","name":"Hero Novaren Premium","settings":{"desktop_image":"shopify://shop_images/baner_principal.png","mobile_image":"shopify://shop_images/BANERMOVILNOVAREN.png","eyebrow":"Bienestar que se siente","title":"Cuida tu cuerpo. Potencia tu vida.","subtitle":"Suplementos, skincare y cuidado personal seleccionados para ayudarte a sentirte mejor cada día.","button_text":"Comprar ahora","button_link":"","desktop_height":820,"mobile_height":500,"text_width":740,"desktop_image_position":"center","mobile_image_position":"center","mobile_vertical_position":"flex-end","mobile_text_alignment":"center","overlay_opacity":0,"bottom_title_1":"Bienestar integral","bottom_text_1":"Cuerpo, mente y piel","bottom_title_2":"Calidad premium","bottom_text_2":"Solo lo mejor para ti","bottom_title_3":"Enfocados en ti","bottom_text_3":"Resultados reales","bottom_title_4":"Respaldo y confianza","bottom_text_4":"Miles de clientes satisfechos","eyebrow_size":15,"title_size":86,"subtitle_size":19,"button_size":15,"bottom_title_size":13,"bottom_text_size":13,"bottom_icon_size":22,"mobile_eyebrow_size":12,"mobile_title_size":42,"mobile_subtitle_size":16,"mobile_button_size":13,"mobile_bottom_title_size":11,"mobile_bottom_text_size":11,"mobile_bottom_icon_size":18,"title_color":"#07351f","subtitle_color":"#2f2f2f","eyebrow_color":"#4c8f46","button_bg":"#07351f","button_hover":"#4c8f46","button_color":"#ffffff","bottom_title_color":"#10233f","bottom_text_color":"#4b5563","button_radius":6}},"featured_collection":{"type":"featured-collection","settings":{"collection":"frontpage","title":"PRODUCTOS","background":"#f8fafc","container_width":1400,"columns_desktop":4,"columns_mobile":"2","products_to_show":8,"grid_gap":30,"mobile_gap":20,"card_radius":28,"mobile_card_radius":24,"card_padding":24,"mobile_card_padding":20,"title_size":46,"mobile_title_size":32,"product_title_size":20,"mobile_product_title_size":16,"price_size":26,"mobile_price_size":20,"compare_price_size":18,"title_color":"#10233f","product_title_color":"#10233f","price_color":"#0f766e","show_button":true,"button_text":"Ver producto","button_bg":"#10233f","button_hover":"#10b981","button_text_color":"#ffffff","button_size":16,"mobile_button_size":15,"padding_top":48,"padding_bottom":60,"padding_side":20,"mobile_side_padding":10}},"1766420446d652ec64":{"type":"apps","settings":{"include_margins":true}},"anuncio_bar_HDLbLB":{"type":"anuncio-bar","blocks":{"announcement_BqrFHy":{"type":"announcement","settings":{"icon":"","text":"Cada página cuenta una historia que espera ser descubierta.","link":"","link_text":"Comprar ahora"}},"announcement_fNgEyA":{"type":"announcement","settings":{"icon":"🎉","text":"¡Envío gratis en compras superiores a $149.900!","link":"","link_text":"Comprar ahora"}},"announcement_PcVhii":{"type":"announcement","settings":{"icon":"","text":"Desde clásicos hasta novedades, cada libro está cuidadosamente escogido para enriquecer tu vida.","link":"","link_text":"Ver novedades"}}},"block_order":["announcement_BqrFHy","announcement_fNgEyA","announcement_PcVhii"],"name":"Barra Anuncios","settings":{"color_scheme":"accent-1","direction":"left","speed":40,"font_size":16,"font_weight":"500","pause_on_hover":true,"padding_top":20,"padding_bottom":20}},"cinematic_banner_RHKLxY":{"type":"cinematic-banner","disabled":true,"name":"Cinematic Hero V3","settings":{"heading":"","text":"","button_label":"","button_link":"","banner_width":1400,"banner_height":450,"banner_radius":28}},"collection_carousel_C7UWjR":{"type":"collection-carousel","disabled":true,"name":"Carrusel de libros","settings":{"title":"Editorial Armaenia","description":"","title_size":48,"description_size":18,"collection":"editorial-armaenia","products_to_show":12,"items_per_view":6,"show_controls":true,"show_view_all":true,"view_all_text":"Ver Todos los Productos","enable_autoplay":true,"autoplay_speed":2500,"accent_color":"#000000","text_color":"#1a1a1a","background_color":"#fafafa","padding_top":60,"padding_bottom":60}},"rich_text_cggdd4":{"type":"rich-text","blocks":{"heading_Kb7yKK":{"type":"heading","settings":{"heading":"Compra suplementos naturales y productos de bienestar en Colombia","heading_size":"h2"}},"text_QpyGBx":{"type":"text","settings":{"text":"\u003cp\u003eNovaren es una tienda online en Colombia enfocada en suplementos naturales, bienestar digestivo, skincare y cuidado personal. Nuestro catálogo reúne productos seleccionados para apoyar rutinas saludables, equilibrio diario y una mejor sensación de bienestar.\u003c/p\u003e\u003cp\u003eEncuentra opciones para digestión, energía, cuidado corporal y hábitos de autocuidado, con una experiencia de compra clara, segura y pensada para acompañarte en cada etapa.\u003c/p\u003e\u003cp\u003eSi buscas suplementos y productos de bienestar en Colombia, en Novaren puedes comprar online con atención personalizada y envíos a diferentes ciudades del país.\u003c/p\u003e"}}},"block_order":["heading_Kb7yKK","text_QpyGBx"],"name":"t:sections.rich-text.presets.name","settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"","full_width":true,"padding_top":40,"padding_bottom":52}},"1774638944a3a64c38":{"type":"_blocks","blocks":{"ai_gen_block_04619e4_dYpGjw":{"type":"ai_gen_block_04619e4","settings":{"feature_1_enabled":true,"feature_1_icon":"📦","feature_1_text":"Envíos rápidos a toda Colombia","feature_2_enabled":true,"feature_2_icon":"📚","feature_2_text":"Curaduría especializada","feature_3_enabled":true,"feature_3_icon":"🔒","feature_3_text":"Compra segura","feature_4_enabled":true,"feature_4_icon":"📖","feature_4_text":"Más de 35 años de experiencia","columns_desktop":"4","columns_mobile":"2","alignment":"center","gap":20,"item_gap":8,"desktop_width_percent":100,"background_color":"#f3f3f3","text_color":"#121212","icon_size":32,"text_size":14,"text_weight":"500","padding_vertical":30,"padding_horizontal":20,"border_radius":0},"blocks":{}}},"block_order":["ai_gen_block_04619e4_dYpGjw"],"settings":{}},"cf041c51-04b0-4692-a755-688469da084e":{"type":"featured-blog","settings":{"heading":"Consejos de bienestar","heading_size":"h2","blog":"noticias-sobre-libros","post_limit":3,"columns_desktop":3,"color_scheme":"","show_image":true,"show_date":true,"show_author":false,"show_view_all":true,"padding_top":36,"padding_bottom":36}},"1773159858be925cff":{"type":"apps","settings":{"include_margins":true}}},"order":["hero_novaren_premium_96hwnL","featured_collection","1766420446d652ec64","anuncio_bar_HDLbLB","cinematic_banner_RHKLxY","collection_carousel_C7UWjR","rich_text_cggdd4","1774638944a3a64c38","cf041c51-04b0-4692-a755-688469da084e","1773159858be925cff"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero_novaren_premium_96hwnL": {
+      "type": "hero-novaren-premium",
+      "name": "Hero Novaren Premium",
+      "settings": {
+        "desktop_image": "shopify://shop_images/baner_principal.png",
+        "mobile_image": "shopify://shop_images/bannermovil.png",
+        "eyebrow": "Bienestar que se siente",
+        "title": "Cuida tu cuerpo. Potencia tu vida.",
+        "subtitle": "Suplementos, skincare y cuidado personal seleccionados para ayudarte a sentirte mejor cada día.",
+        "button_text": "",
+        "button_link": "",
+        "desktop_height": 820,
+        "mobile_height": 500,
+        "text_width": 740,
+        "desktop_image_position": "center",
+        "mobile_image_position": "center bottom",
+        "mobile_vertical_position": "flex-start",
+        "mobile_text_alignment": "center",
+        "overlay_opacity": 0,
+        "mobile_overlay_opacity": 0,
+        "bottom_title_1": "Bienestar integral",
+        "bottom_text_1": "Cuerpo, mente y piel",
+        "bottom_title_2": "Calidad premium",
+        "bottom_text_2": "Solo lo mejor para ti",
+        "bottom_title_3": "Enfocados en ti",
+        "bottom_text_3": "Resultados reales",
+        "bottom_title_4": "Respaldo y confianza",
+        "bottom_text_4": "Miles de clientes satisfechos",
+        "eyebrow_size": 15,
+        "title_size": 86,
+        "subtitle_size": 19,
+        "button_size": 15,
+        "bottom_title_size": 13,
+        "bottom_text_size": 13,
+        "bottom_icon_size": 22,
+        "mobile_eyebrow_size": 12,
+        "mobile_title_size": 42,
+        "mobile_subtitle_size": 16,
+        "mobile_button_size": 13,
+        "mobile_bottom_title_size": 11,
+        "mobile_bottom_text_size": 11,
+        "mobile_bottom_icon_size": 18,
+        "title_color": "#07351f",
+        "subtitle_color": "#2f2f2f",
+        "eyebrow_color": "#4c8f46",
+        "button_bg": "#07351f",
+        "button_hover": "#4c8f46",
+        "button_color": "#ffffff",
+        "bottom_title_color": "#10233f",
+        "bottom_text_color": "#4b5563",
+        "mobile_title_color": "#07351f",
+        "mobile_subtitle_color": "#2f2f2f",
+        "mobile_eyebrow_color": "#4c8f46",
+        "mobile_button_color": "#ffffff",
+        "mobile_bottom_title_color": "#10233f",
+        "mobile_bottom_text_color": "#4b5563",
+        "button_radius": 6
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "frontpage",
+        "title": "PRODUCTOS",
+        "background": "#f8fafc",
+        "container_width": 1400,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "products_to_show": 8,
+        "grid_gap": 30,
+        "mobile_gap": 20,
+        "card_radius": 28,
+        "mobile_card_radius": 24,
+        "card_padding": 24,
+        "mobile_card_padding": 20,
+        "title_size": 46,
+        "mobile_title_size": 32,
+        "product_title_size": 20,
+        "mobile_product_title_size": 16,
+        "price_size": 26,
+        "mobile_price_size": 20,
+        "compare_price_size": 18,
+        "title_color": "#10233f",
+        "product_title_color": "#10233f",
+        "price_color": "#0f766e",
+        "show_button": true,
+        "button_text": "Ver producto",
+        "button_bg": "#10233f",
+        "button_hover": "#10b981",
+        "button_text_color": "#ffffff",
+        "button_size": 16,
+        "mobile_button_size": 15,
+        "padding_top": 48,
+        "padding_bottom": 60,
+        "padding_side": 20,
+        "mobile_side_padding": 10
+      }
+    },
+    "1766420446d652ec64": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "anuncio_bar_HDLbLB": {
+      "type": "anuncio-bar",
+      "blocks": {
+        "announcement_BqrFHy": {
+          "type": "announcement",
+          "settings": {
+            "icon": "",
+            "text": "Cada página cuenta una historia que espera ser descubierta.",
+            "link": "",
+            "link_text": "Comprar ahora"
+          }
+        },
+        "announcement_fNgEyA": {
+          "type": "announcement",
+          "settings": {
+            "icon": "🎉",
+            "text": "¡Envío gratis en compras superiores a $149.900!",
+            "link": "",
+            "link_text": "Comprar ahora"
+          }
+        },
+        "announcement_PcVhii": {
+          "type": "announcement",
+          "settings": {
+            "icon": "",
+            "text": "Desde clásicos hasta novedades, cada libro está cuidadosamente escogido para enriquecer tu vida.",
+            "link": "",
+            "link_text": "Ver novedades"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_BqrFHy",
+        "announcement_fNgEyA",
+        "announcement_PcVhii"
+      ],
+      "name": "Barra Anuncios",
+      "settings": {
+        "color_scheme": "accent-1",
+        "direction": "left",
+        "speed": 40,
+        "font_size": 16,
+        "font_weight": "500",
+        "pause_on_hover": true,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "cinematic_banner_RHKLxY": {
+      "type": "cinematic-banner",
+      "disabled": true,
+      "name": "Cinematic Hero V3",
+      "settings": {
+        "heading": "",
+        "text": "",
+        "button_label": "",
+        "button_link": "",
+        "banner_width": 1400,
+        "banner_height": 450,
+        "banner_radius": 28
+      }
+    },
+    "collection_carousel_C7UWjR": {
+      "type": "collection-carousel",
+      "disabled": true,
+      "name": "Carrusel de libros",
+      "settings": {
+        "title": "Editorial Armaenia",
+        "description": "",
+        "title_size": 48,
+        "description_size": 18,
+        "collection": "editorial-armaenia",
+        "products_to_show": 12,
+        "items_per_view": 6,
+        "show_controls": true,
+        "show_view_all": true,
+        "view_all_text": "Ver Todos los Productos",
+        "enable_autoplay": true,
+        "autoplay_speed": 2500,
+        "accent_color": "#000000",
+        "text_color": "#1a1a1a",
+        "background_color": "#fafafa",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "rich_text_cggdd4": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Kb7yKK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Compra suplementos naturales y productos de bienestar en Colombia",
+            "heading_size": "h2"
+          }
+        },
+        "text_QpyGBx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Novaren es una tienda online en Colombia enfocada en suplementos naturales, bienestar digestivo, skincare y cuidado personal. Nuestro catálogo reúne productos seleccionados para apoyar rutinas saludables, equilibrio diario y una mejor sensación de bienestar.</p><p>Encuentra opciones para digestión, energía, cuidado corporal y hábitos de autocuidado, con una experiencia de compra clara, segura y pensada para acompañarte en cada etapa.</p><p>Si buscas suplementos y productos de bienestar en Colombia, en Novaren puedes comprar online con atención personalizada y envíos a diferentes ciudades del país.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Kb7yKK",
+        "text_QpyGBx"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "1774638944a3a64c38": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_04619e4_dYpGjw": {
+          "type": "ai_gen_block_04619e4",
+          "settings": {
+            "feature_1_enabled": true,
+            "feature_1_icon": "📦",
+            "feature_1_text": "Envíos rápidos a toda Colombia",
+            "feature_2_enabled": true,
+            "feature_2_icon": "📚",
+            "feature_2_text": "Curaduría especializada",
+            "feature_3_enabled": true,
+            "feature_3_icon": "🔒",
+            "feature_3_text": "Compra segura",
+            "feature_4_enabled": true,
+            "feature_4_icon": "📖",
+            "feature_4_text": "Más de 35 años de experiencia",
+            "columns_desktop": "4",
+            "columns_mobile": "2",
+            "alignment": "center",
+            "gap": 20,
+            "item_gap": 8,
+            "desktop_width_percent": 100,
+            "background_color": "#f3f3f3",
+            "text_color": "#121212",
+            "icon_size": 32,
+            "text_size": 14,
+            "text_weight": "500",
+            "padding_vertical": 30,
+            "padding_horizontal": 20,
+            "border_radius": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_04619e4_dYpGjw"
+      ],
+      "settings": {}
+    },
+    "cf041c51-04b0-4692-a755-688469da084e": {
+      "type": "featured-blog",
+      "settings": {
+        "heading": "Consejos de bienestar",
+        "heading_size": "h2",
+        "blog": "noticias-sobre-libros",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "show_view_all": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1773159858be925cff": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "hero_novaren_premium_96hwnL",
+    "featured_collection",
+    "1766420446d652ec64",
+    "anuncio_bar_HDLbLB",
+    "cinematic_banner_RHKLxY",
+    "collection_carousel_C7UWjR",
+    "rich_text_cggdd4",
+    "1774638944a3a64c38",
+    "cf041c51-04b0-4692-a755-688469da084e",
+    "1773159858be925cff"
+  ]
+}
