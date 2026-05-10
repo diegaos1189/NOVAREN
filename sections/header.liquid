@@ -294,9 +294,9 @@
       </a>
     </div>
   </header>
- {% if request.page_type == 'index' %}
+ {% if request.page_type == 'index' and section.settings.home_h1 != blank %}
 <h1 class="visually-hidden">
-Distribuidor de libros en Colombia | Filosofía, literatura y editoriales españolas y argentinas
+{{ section.settings.home_h1 | escape }}
 </h1>
 {% endif %}
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
@@ -544,6 +544,13 @@ Distribuidor de libros en Colombia | Filosofía, literatura y editoriales españ
       "id": "show_line_separator",
       "default": true,
       "label": "t:sections.header.settings.show_line_separator.label"
+    },
+    {
+      "type": "text",
+      "id": "home_h1",
+      "default": "Distribuidor de libros en Colombia | Filosofía, literatura y editoriales españolas y argentinas",
+      "label": "H1 oculto de la página de inicio",
+      "info": "Este texto se muestra como H1 oculto solo en la página de inicio."
     },
     {
       "type": "header",
