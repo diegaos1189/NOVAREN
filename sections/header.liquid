@@ -295,9 +295,9 @@
     </div>
   </header>
  {% if request.page_type == 'index' and section.settings.home_h1 != blank %}
-<h1 class="visually-hidden">
+<p class="visually-hidden">
 {{ section.settings.home_h1 | escape }}
-</h1>
+</p>
 {% endif %}
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
 
@@ -548,9 +548,9 @@
     {
       "type": "text",
       "id": "home_h1",
-      "default": "Distribuidor de libros en Colombia | Filosofía, literatura y editoriales españolas y argentinas",
-      "label": "H1 oculto de la página de inicio",
-      "info": "Este texto se muestra como H1 oculto solo en la página de inicio."
+      "default": "Novaren | Suplementos y bienestar premium para sentirte mejor cada día",
+      "label": "Texto SEO oculto de la página de inicio",
+      "info": "Este texto se muestra oculto solo en la página de inicio. No se imprime como H1 para evitar encabezados duplicados."
     },
     {
       "type": "header",
