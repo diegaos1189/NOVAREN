@@ -1,1 +1,159 @@
-{"sections":{"main":{"type":"main-product","blocks":{"vendor":{"type":"text","settings":{"text":"{{ product.vendor }}","text_style":"uppercase"}},"title":{"type":"title","settings":{}},"price":{"type":"price","settings":{}},"variant_picker":{"type":"variant_picker","settings":{"picker_type":"button","swatch_shape":"circle"}},"quantity_selector":{"type":"quantity_selector","settings":{}},"buy_buttons":{"type":"buy_buttons","settings":{"show_dynamic_checkout":true,"show_gift_card_recipient":true}},"description":{"type":"description","settings":{}}},"block_order":["vendor","title","price","variant_picker","quantity_selector","buy_buttons","description"],"settings":{"enable_sticky_info":true,"color_scheme":"","media_size":"medium","constrain_to_viewport":true,"media_fit":"contain","gallery_layout":"stacked","media_position":"left","image_zoom":"none","mobile_thumbnails":"hide","hide_variants":true,"enable_video_looping":false,"padding_top":20,"padding_bottom":12}},"related-products":{"type":"related-products","settings":{"heading":"Libros que te pueden interesar","heading_size":"h1","products_to_show":6,"columns_desktop":6,"color_scheme":"inverse","image_ratio":"portrait","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":true,"columns_mobile":"2","padding_top":36,"padding_bottom":28}},"1774156486f483269c":{"type":"apps","settings":{"include_margins":true}}},"order":["main","related-products","1774156486f483269c"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 20,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "Libros que te pueden interesar",
+        "heading_size": "h1",
+        "products_to_show": 6,
+        "columns_desktop": 6,
+        "color_scheme": "inverse",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "1774156486f483269c": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "testimonials": {
+      "type": "novaren-testimonials",
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "initials": "CM",
+            "rating": 5,
+            "title": "Más tranquilidad",
+            "quote": "La información fue clara y el proceso de compra se sintió seguro. Me gustó poder resolver dudas antes de comprar.",
+            "name": "Carlos M.",
+            "meta": "Medellín"
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "initials": "JR",
+            "rating": 5,
+            "title": "Compra sencilla",
+            "quote": "Encontré el producto rápido, el pago fue práctico y recibí orientación sobre el pedido. Buena experiencia.",
+            "name": "Javier R.",
+            "meta": "Bogotá"
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "initials": "AL",
+            "rating": 5,
+            "title": "Atención cercana",
+            "quote": "Me respondieron con claridad y sin presión. Eso me dio más confianza para comprar en Novaren.",
+            "name": "Andrés L.",
+            "meta": "Cali"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3"
+      ],
+      "settings": {
+        "eyebrow": "Confianza real",
+        "heading": "Testimonios de clientes",
+        "subheading": "Experiencias editables para mostrar opiniones reales de clientes de Novaren con un tono claro, prudente y confiable.",
+        "rating_text": "Excelente",
+        "rating_value": "4.8 / 5"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "testimonials",
+    "related-products",
+    "1774156486f483269c"
+  ]
+}

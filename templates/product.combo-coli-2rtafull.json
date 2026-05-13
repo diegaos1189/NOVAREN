@@ -146,10 +146,61 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "testimonials": {
+      "type": "novaren-testimonials",
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "initials": "CM",
+            "rating": 5,
+            "title": "Más tranquilidad",
+            "quote": "La información fue clara y el proceso de compra se sintió seguro. Me gustó poder resolver dudas antes de comprar.",
+            "name": "Carlos M.",
+            "meta": "Medellín"
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "initials": "JR",
+            "rating": 5,
+            "title": "Compra sencilla",
+            "quote": "Encontré el producto rápido, el pago fue práctico y recibí orientación sobre el pedido. Buena experiencia.",
+            "name": "Javier R.",
+            "meta": "Bogotá"
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "initials": "AL",
+            "rating": 5,
+            "title": "Atención cercana",
+            "quote": "Me respondieron con claridad y sin presión. Eso me dio más confianza para comprar en Novaren.",
+            "name": "Andrés L.",
+            "meta": "Cali"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3"
+      ],
+      "settings": {
+        "eyebrow": "Confianza real",
+        "heading": "Testimonios de clientes",
+        "subheading": "Experiencias editables para mostrar opiniones reales de clientes de Novaren con un tono claro, prudente y confiable.",
+        "rating_text": "Excelente",
+        "rating_value": "4.8 / 5"
+      }
     }
   },
   "order": [
     "main",
+    "testimonials",
     "image_banner_nN7kXg",
     "image_banner_PWEWK6",
     "image_banner_PeeaV3",
