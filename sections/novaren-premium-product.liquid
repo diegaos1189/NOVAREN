@@ -1,3 +1,7 @@
+{% liquid
+  assign product_form_id = 'ProductForm-' | append: section.id
+%}
+
 <section class="nvp-product section-{{ section.id }}">
   <div class="nvp-shell nvp-product__grid">
     <div class="nvp-product__gallery" data-nvp-gallery="{{ section.id }}">
@@ -133,7 +137,7 @@
         </div>
       {% endif %}
 
-      {% form 'product', product, class: 'nvp-form' %}
+      {% form 'product', product, class: 'nvp-form', id: product_form_id %}
         {% if product.has_only_default_variant %}
           <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
         {% else %}
@@ -189,6 +193,27 @@
       {% endif %}
     {% endfor %}
   </div>
+
+  {% if section.settings.show_mobile_sticky_cta %}
+    <div class="nvp-mobile-cta" aria-label="Compra rápida">
+      <div>
+        <span>{{ section.settings.mobile_sticky_kicker }}</span>
+        <strong>{{ product.selected_or_first_available_variant.price | money }}</strong>
+      </div>
+      <button
+        type="submit"
+        name="add"
+        form="{{ product_form_id }}"
+        {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}
+      >
+        {% if product.selected_or_first_available_variant.available %}
+          {{ section.settings.mobile_sticky_label }}
+        {% else %}
+          {{ section.settings.sold_out_label }}
+        {% endif %}
+      </button>
+    </div>
+  {% endif %}
 </section>
 
 <style>
@@ -588,6 +613,10 @@
     line-height: {{ section.settings.detail_text_line_height }}%;
   }
 
+  .section-{{ section.id }} .nvp-mobile-cta {
+    display: none;
+  }
+
   @media (max-width: 989px) {
     .section-{{ section.id }} .nvp-product__grid,
     .section-{{ section.id }} .nvp-details {
@@ -614,6 +643,10 @@
   }
 
   @media (max-width: 640px) {
+    .section-{{ section.id }} {
+      padding-bottom: calc({{ section.settings.padding_bottom }}px + 86px);
+    }
+
     .section-{{ section.id }} .nvp-shell {
       width: calc(100% - 24px);
       max-width: 330px;
@@ -646,6 +679,61 @@
     .section-{{ section.id }} .nvp-metrics div + div {
       border-left: 0;
       border-top: 1px solid var(--line);
+    }
+
+    .section-{{ section.id }} .nvp-mobile-cta {
+      position: fixed;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      z-index: 40;
+      display: grid;
+      grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(255,255,255,.6);
+      border-radius: 12px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 18px 52px rgba(16,35,28,.22);
+      padding: 10px;
+      backdrop-filter: blur(16px);
+    }
+
+    .section-{{ section.id }} .nvp-mobile-cta span,
+    .section-{{ section.id }} .nvp-mobile-cta strong {
+      display: block;
+      min-width: 0;
+    }
+
+    .section-{{ section.id }} .nvp-mobile-cta span {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .section-{{ section.id }} .nvp-mobile-cta strong {
+      margin-top: 2px;
+      color: var(--green);
+      font-size: 18px;
+      line-height: 1.1;
+    }
+
+    .section-{{ section.id }} .nvp-mobile-cta button {
+      min-height: 48px;
+      border: 0;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--green), #0d3f2c);
+      color: #fff;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .section-{{ section.id }} .nvp-mobile-cta button:disabled {
+      opacity: .55;
     }
   }
 </style>
@@ -726,6 +814,9 @@
     { "type": "text", "id": "button_label", "label": "Texto botón compra", "default": "Agregar al carrito" },
     { "type": "text", "id": "sold_out_label", "label": "Texto agotado", "default": "Agotado" },
     { "type": "textarea", "id": "cta_note", "label": "Nota bajo el botón", "default": "Compra protegida. Revisaremos tu pedido y te acompañaremos en el proceso." },
+    { "type": "checkbox", "id": "show_mobile_sticky_cta", "label": "Mostrar botón fijo en móvil", "default": true },
+    { "type": "text", "id": "mobile_sticky_kicker", "label": "Texto pequeño del botón fijo", "default": "Compra rápida" },
+    { "type": "text", "id": "mobile_sticky_label", "label": "Texto botón fijo móvil", "default": "Comprar ahora" },
     { "type": "header", "content": "Caja premium de conversión" },
     { "type": "checkbox", "id": "show_conversion_panel", "label": "Mostrar caja premium de confianza", "default": true },
     { "type": "text", "id": "trust_kicker", "label": "Texto superior de confianza", "default": "Nuevo en Novaren | Disponible" },
