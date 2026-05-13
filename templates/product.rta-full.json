@@ -34,6 +34,12 @@
             "swatch_shape": "circle"
           }
         },
+        "custom_liquid_wAexec": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"prem-platinum\">\n  <div class=\"prem-platinum__header\">\n    <div class=\"prem-platinum__seal\">\n      <svg width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n        <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#00a650\"/>\n        <polyline points=\"12,21 18,28 30,14\" fill=\"none\" stroke=\"white\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n      </svg>\n    </div>\n    <div class=\"prem-platinum__info\">\n      <strong>Tienda Líder Platinum</strong>\n      <span>¡Uno de los mejores del sitio!</span>\n    </div>\n  </div>\n  <div class=\"prem-platinum__bar-track\">\n    <div class=\"prem-platinum__bar-fill\"></div>\n  </div>\n  <div class=\"prem-platinum__stats\">\n    <div class=\"prem-platinum__stat\">\n      <strong class=\"prem-platinum__num\">37.320</strong>\n      <span>Ventas en los últimos 60 días</span>\n    </div>\n    <div class=\"prem-platinum__stat\">\n      <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#666\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2\" y=\"3\" width=\"20\" height=\"18\" rx=\"2\"/><line x1=\"8\" y1=\"10\" x2=\"16\" y2=\"10\"/><line x1=\"8\" y1=\"14\" x2=\"13\" y2=\"14\"/></svg>\n      <span>Brinda un buen servicio</span>\n    </div>\n    <div class=\"prem-platinum__stat\">\n      <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#666\" stroke-width=\"1.5\" stroke-linecap=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><polyline points=\"12,6 12,12 16,14\"/></svg>\n      <span>Entrega los productos a tiempo</span>\n    </div>\n  </div>\n</div>"
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {}
@@ -55,6 +61,7 @@
         "title",
         "price",
         "variant_picker",
+        "custom_liquid_wAexec",
         "quantity_selector",
         "buy_buttons",
         "description"
@@ -73,6 +80,82 @@
         "enable_video_looping": false,
         "padding_top": 20,
         "padding_bottom": 12
+      }
+    },
+    "testimonials": {
+      "type": "novaren-testimonials",
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "image_alt": "",
+            "initials": "CM",
+            "rating": 5,
+            "title": "Más tranquilidad",
+            "quote": "La información fue clara y el proceso de compra se sintió seguro. Me gustó poder resolver dudas antes de comprar.",
+            "name": "Carlos M.",
+            "meta": "Medellín"
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "image_alt": "",
+            "initials": "JR",
+            "rating": 5,
+            "title": "Compra sencilla",
+            "quote": "Encontré el producto rápido, el pago fue práctico y recibí orientación sobre el pedido. Buena experiencia.",
+            "name": "Javier R.",
+            "meta": "Bogotá"
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "image_alt": "",
+            "initials": "AL",
+            "rating": 5,
+            "title": "Atención cercana",
+            "quote": "Me respondieron con claridad y sin presión. Eso me dio más confianza para comprar en Novaren.",
+            "name": "Andrés L.",
+            "meta": "Cali"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3"
+      ],
+      "settings": {
+        "eyebrow": "Confianza real",
+        "heading": "Testimonios de clientes",
+        "subheading": "Experiencias editables para mostrar opiniones reales de clientes de Novaren con un tono claro, prudente y confiable.",
+        "rating_text": "Excelente",
+        "rating_value": "4.8 / 5",
+        "eyebrow_font_size": 12,
+        "heading_font_size": 36,
+        "heading_font_size_mobile": 28,
+        "heading_line_height": 112,
+        "subheading_font_size": 17,
+        "rating_font_size": 16,
+        "card_title_font_size": 18,
+        "quote_font_size": 16,
+        "quote_line_height": 160,
+        "person_font_size": 14,
+        "columns_desktop": 3,
+        "card_gap": 24,
+        "card_padding": 28,
+        "image_size": 72,
+        "card_text_align": "center",
+        "card_content_position": "center",
+        "background_color": "#ffffff",
+        "card_background": "#f5f3ef",
+        "text_color": "#18241f",
+        "muted_color": "#66746d",
+        "accent_color": "#155b3d",
+        "padding_top": 72,
+        "padding_bottom": 88
       }
     },
     "wellness_8GXjq4": {
@@ -148,56 +231,6 @@
       "type": "apps",
       "settings": {
         "include_margins": true
-      }
-    },
-    "testimonials": {
-      "type": "novaren-testimonials",
-      "blocks": {
-        "testimonial_1": {
-          "type": "testimonial",
-          "settings": {
-            "initials": "CM",
-            "rating": 5,
-            "title": "Más tranquilidad",
-            "quote": "La información fue clara y el proceso de compra se sintió seguro. Me gustó poder resolver dudas antes de comprar.",
-            "name": "Carlos M.",
-            "meta": "Medellín"
-          }
-        },
-        "testimonial_2": {
-          "type": "testimonial",
-          "settings": {
-            "initials": "JR",
-            "rating": 5,
-            "title": "Compra sencilla",
-            "quote": "Encontré el producto rápido, el pago fue práctico y recibí orientación sobre el pedido. Buena experiencia.",
-            "name": "Javier R.",
-            "meta": "Bogotá"
-          }
-        },
-        "testimonial_3": {
-          "type": "testimonial",
-          "settings": {
-            "initials": "AL",
-            "rating": 5,
-            "title": "Atención cercana",
-            "quote": "Me respondieron con claridad y sin presión. Eso me dio más confianza para comprar en Novaren.",
-            "name": "Andrés L.",
-            "meta": "Cali"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_1",
-        "testimonial_2",
-        "testimonial_3"
-      ],
-      "settings": {
-        "eyebrow": "Confianza real",
-        "heading": "Testimonios de clientes",
-        "subheading": "Experiencias editables para mostrar opiniones reales de clientes de Novaren con un tono claro, prudente y confiable.",
-        "rating_text": "Excelente",
-        "rating_value": "4.8 / 5"
       }
     }
   },
