@@ -1281,15 +1281,91 @@ a.product__text {
   margin-bottom: var(--icon-size);
 }
 
-/* SKU block */
-
-.product__sku.visibility-hidden::after {
-  content: '#';
+.product__reference-details {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(var(--color-foreground), 0.08);
 }
 
-/* Product-thumbnail snippet */
+.product__summary h2 {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  margin-bottom: 0.75rem;
+  line-height: 1.1;
+}
 
-.product-media-container {
+.product__summary p {
+  margin-bottom: 1rem;
+  color: rgba(var(--color-foreground), 0.8);
+  max-width: 44rem;
+}
+
+.product__feature-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+
+@media screen and (min-width: 750px) {
+  .product__feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.product__badges-grid {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.product__badges-grid span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1rem;
+  background: rgba(var(--color-foreground), 0.06);
+  border: 1px solid rgba(var(--color-foreground), 0.1);
+  border-radius: 999px;
+  font-size: 0.95rem;
+  color: rgba(var(--color-foreground), 0.9);
+}
+
+.product__shipping-note {
+  margin-top: 1.75rem;
+  padding: 1.5rem;
+  background: rgba(var(--color-foreground), 0.04);
+  border: 1px solid rgba(var(--color-foreground), 0.1);
+  border-radius: 1rem;
+}
+
+.product__shipping-note p {
+  margin: 0.75rem 0;
+  color: rgba(var(--color-foreground), 0.85);
+}
+
+.product__feature-card {
+  background: rgba(var(--color-foreground), 0.05);
+  border: 1px solid rgba(var(--color-foreground), 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.product__feature-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.product__feature-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.product__feature-card li {
+  margin-bottom: 0.85rem;
+  line-height: 1.7;
+}
+
   --aspect-ratio: var(--preview-ratio);
   --ratio-percent: calc(1 / var(--aspect-ratio) * 100%);
   position: relative;
