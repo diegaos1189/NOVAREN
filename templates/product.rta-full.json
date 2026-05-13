@@ -37,7 +37,13 @@
         "custom_liquid_wAexec": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"prem-platinum\">\n  <div class=\"prem-platinum__header\">\n    <div class=\"prem-platinum__seal\">\n      <svg width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n        <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#00a650\"/>\n        <polyline points=\"12,21 18,28 30,14\" fill=\"none\" stroke=\"white\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n      </svg>\n    </div>\n    <div class=\"prem-platinum__info\">\n      <strong>Tienda Líder Platinum</strong>\n      <span>¡Uno de los mejores del sitio!</span>\n    </div>\n  </div>\n  <div class=\"prem-platinum__bar-track\">\n    <div class=\"prem-platinum__bar-fill\"></div>\n  </div>\n  <div class=\"prem-platinum__stats\">\n    <div class=\"prem-platinum__stat\">\n      <strong class=\"prem-platinum__num\">37.320</strong>\n      <span>Ventas en los últimos 60 días</span>\n    </div>\n    <div class=\"prem-platinum__stat\">\n      <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#666\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2\" y=\"3\" width=\"20\" height=\"18\" rx=\"2\"/><line x1=\"8\" y1=\"10\" x2=\"16\" y2=\"10\"/><line x1=\"8\" y1=\"14\" x2=\"13\" y2=\"14\"/></svg>\n      <span>Brinda un buen servicio</span>\n    </div>\n    <div class=\"prem-platinum__stat\">\n      <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#666\" stroke-width=\"1.5\" stroke-linecap=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><polyline points=\"12,6 12,12 16,14\"/></svg>\n      <span>Entrega los productos a tiempo</span>\n    </div>\n  </div>\n</div>"
+            "custom_liquid": "<div class=\"prem-platinum\">\n  <div class=\"prem-platinum__header\">\n    <div class=\"prem-platinum__seal\">\n      <svg width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n        <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#00a650\"/>\n        <polyline points=\"12,21 18,28 30,14\" fill=\"none\" stroke=\"white\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n      </svg>\n    </div>\n    <div class=\"prem-platinum__info\">\n      <strong>Tienda Líder Platinum</strong>\n      <span>¡Uno de los mejores del sitio!</span>\n    </div>\n  </div>\n  <div class=\"prem-platinum__bar-track\">\n    <div class=\"prem-platinum__bar-fill\"></div>\n  </div>\n  <div class=\"prem-platinum__stats\">\n    <div class=\"prem-platinum__stat\">\n      <strong class=\"prem-platinum__num\">7.289</strong>\n      <span>Ventas en los últimos 60 días</span>\n    </div>\n    <div class=\"prem-platinum__stat\">\n      <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#666\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2\" y=\"3\" width=\"20\" height=\"18\" rx=\"2\"/><line x1=\"8\" y1=\"10\" x2=\"16\" y2=\"10\"/><line x1=\"8\" y1=\"14\" x2=\"13\" y2=\"14\"/></svg>\n      <span>Brinda un buen servicio</span>\n    </div>\n    <div class=\"prem-platinum__stat\">\n      <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#666\" stroke-width=\"1.5\" stroke-linecap=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><polyline points=\"12,6 12,12 16,14\"/></svg>\n      <span>Entrega los productos a tiempo</span>\n    </div>\n  </div>\n</div>"
+          }
+        },
+        "custom_liquid_Vtibai": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": ""
           }
         },
         "quantity_selector": {
@@ -62,6 +68,7 @@
         "price",
         "variant_picker",
         "custom_liquid_wAexec",
+        "custom_liquid_Vtibai",
         "quantity_selector",
         "buy_buttons",
         "description"
