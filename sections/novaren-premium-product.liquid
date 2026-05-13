@@ -83,19 +83,19 @@
           {% if section.settings.benefit_1 != blank %}
             <div>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v8H3z"/><path d="M14 10h4l3 3v2h-7z"/><path d="M7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm10 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg>
-              <p>{{ section.settings.benefit_1 }}</p>
+              <div class="nvp-benefit-text">{{ section.settings.benefit_1 }}</div>
             </div>
           {% endif %}
           {% if section.settings.benefit_2 != blank %}
             <div>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.4 2.8 8.4 7 10 4.2-1.6 7-5.6 7-10V6z"/><path d="m8.8 12.2 2.1 2.1 4.5-4.6"/></svg>
-              <p>{{ section.settings.benefit_2 }}</p>
+              <div class="nvp-benefit-text">{{ section.settings.benefit_2 }}</div>
             </div>
           {% endif %}
           {% if section.settings.benefit_3 != blank %}
             <div>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="M4 9h16"/><path d="M8 14h4"/></svg>
-              <p>{{ section.settings.benefit_3 }}</p>
+              <div class="nvp-benefit-text">{{ section.settings.benefit_3 }}</div>
             </div>
           {% endif %}
         </div>
@@ -375,11 +375,19 @@
     margin-top: 1px;
   }
 
-  .section-{{ section.id }} .nvp-benefits p {
-    margin: 0;
+  .section-{{ section.id }} .nvp-benefit-text {
     color: var(--ink);
     font-size: {{ section.settings.benefit_font_size }}px;
     line-height: 1.42;
+  }
+
+  .section-{{ section.id }} .nvp-benefit-text p {
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .section-{{ section.id }} .nvp-benefit-text strong {
+    font-weight: 900;
   }
 
   .section-{{ section.id }} .nvp-form {
