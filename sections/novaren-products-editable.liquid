@@ -1,0 +1,301 @@
+﻿{% liquid
+  assign selected_collection = section.settings.collection
+%}
+
+<section class="nvpicks section-{{ section.id }}" id="{{ section.settings.anchor_id }}">
+  <div class="nvpicks-shell">
+    <header class="nvpicks-head">
+      <p>{{ section.settings.eyebrow }}</p>
+      <h2>{{ section.settings.heading }}</h2>
+      <div>{{ section.settings.text }}</div>
+    </header>
+
+    {% if selected_collection != blank and selected_collection.products_count > 0 %}
+      <div class="nvpicks-grid">
+        {% for product in selected_collection.products limit: section.settings.limit %}
+          <article class="nvpicks-card">
+            <a class="nvpicks-card__media" href="{{ product.url }}" aria-label="{{ product.title | escape }}">
+              {% if product.compare_at_price > product.price %}
+                <span class="nvpicks-sale">
+                  -{{ product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price }}%
+                </span>
+              {% elsif section.settings.default_badge != blank %}
+                <span class="nvpicks-sale is-soft">{{ section.settings.default_badge }}</span>
+              {% endif %}
+              {% if product.featured_media != blank %}
+                {{
+                  product.featured_media
+                  | image_url: width: 900
+                  | image_tag:
+                    widths: '320, 480, 640, 900',
+                    sizes: '(min-width: 990px) 30vw, 90vw',
+                    loading: 'lazy',
+                    class: 'nvpicks-card__image',
+                    alt: product.featured_media.alt | default: product.title
+                }}
+              {% endif %}
+            </a>
+            <div class="nvpicks-card__body">
+              <p>{{ product.type | default: section.settings.product_kicker }}</p>
+              <h3><a href="{{ product.url }}">{{ product.title }}</a></h3>
+              {% if section.settings.show_rating %}
+                <div class="nvpicks-rating" aria-label="{{ section.settings.rating_text }}">
+                  <span>★★★★★</span>
+                  <small>{{ section.settings.rating_text }}</small>
+                </div>
+              {% endif %}
+              <div class="nvpicks-card__foot">
+                <div>
+                  {% if product.compare_at_price > product.price %}
+                    <s>{{ product.compare_at_price | money }}</s>
+                  {% endif %}
+                  <span>{{ product.price | money }}</span>
+                </div>
+                <a href="{{ product.url }}">{{ section.settings.product_link_label }}</a>
+              </div>
+              {% if section.settings.card_note != blank %}
+                <div class="nvpicks-note">{{ section.settings.card_note }}</div>
+              {% endif %}
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .section-{{ section.id }} {
+    --ink: #10231c;
+    --muted: #647067;
+    --green: #155b3d;
+    --line: rgba(16,35,28,.12);
+    background: {{ section.settings.background }};
+    color: var(--ink);
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    overflow-x: hidden;
+  }
+
+  .section-{{ section.id }} .nvpicks-shell {
+    width: calc(100% - 32px);
+    max-width: 1180px;
+    margin-inline: auto;
+  }
+
+  .section-{{ section.id }} .nvpicks-head {
+    max-width: 740px;
+    margin-bottom: 34px;
+  }
+
+  .section-{{ section.id }} .nvpicks-head p,
+  .section-{{ section.id }} .nvpicks-card__body p {
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 850;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  .section-{{ section.id }} .nvpicks-head p {
+    margin: 0 0 12px;
+  }
+
+  .section-{{ section.id }} .nvpicks-head h2 {
+    margin: 0;
+    color: var(--ink);
+    font-size: clamp(34px, 5vw, 58px);
+    line-height: 1.02;
+    letter-spacing: 0;
+  }
+
+  .section-{{ section.id }} .nvpicks-head div {
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .section-{{ section.id }} .nvpicks-grid {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns_desktop }}, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .section-{{ section.id }} .nvpicks-card {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255,255,255,.82);
+    box-shadow: 0 20px 60px rgba(16,35,28,.08);
+    transition: transform .24s ease, box-shadow .24s ease;
+  }
+
+  .section-{{ section.id }} .nvpicks-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 28px 76px rgba(16,35,28,.14);
+  }
+
+  .section-{{ section.id }} .nvpicks-card__media {
+    position: relative;
+    display: block;
+    aspect-ratio: 1 / 1;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .section-{{ section.id }} .nvpicks-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    padding: 18px;
+    transition: transform .35s ease;
+  }
+
+  .section-{{ section.id }} .nvpicks-sale {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    border-radius: 999px;
+    background: var(--green);
+    color: #fff;
+    padding: 7px 10px;
+    font-size: 12px;
+    font-weight: 900;
+  }
+
+  .section-{{ section.id }} .nvpicks-sale.is-soft {
+    background: rgba(21,91,61,.1);
+    color: var(--green);
+  }
+
+  .section-{{ section.id }} .nvpicks-card:hover .nvpicks-card__image {
+    transform: scale(1.04);
+  }
+
+  .section-{{ section.id }} .nvpicks-card__body {
+    padding: 20px;
+  }
+
+  .section-{{ section.id }} .nvpicks-card__body p {
+    margin: 0 0 10px;
+  }
+
+  .section-{{ section.id }} .nvpicks-card h3 {
+    margin: 0;
+    color: var(--ink);
+    font-size: 19px;
+    line-height: 1.25;
+  }
+
+  .section-{{ section.id }} .nvpicks-card a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .section-{{ section.id }} .nvpicks-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    color: var(--green);
+  }
+
+  .section-{{ section.id }} .nvpicks-rating span {
+    letter-spacing: 1px;
+    font-size: 12px;
+  }
+
+  .section-{{ section.id }} .nvpicks-rating small {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 750;
+  }
+
+  .section-{{ section.id }} .nvpicks-card__foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .section-{{ section.id }} .nvpicks-card__foot span,
+  .section-{{ section.id }} .nvpicks-card__foot a {
+    color: var(--green);
+    font-weight: 900;
+  }
+
+  .section-{{ section.id }} .nvpicks-card__foot s {
+    display: block;
+    color: #9aa39e;
+    font-size: 13px;
+  }
+
+  .section-{{ section.id }} .nvpicks-card__foot span {
+    font-size: 20px;
+  }
+
+  .section-{{ section.id }} .nvpicks-card__foot a {
+    border-radius: 8px;
+    background: var(--green);
+    color: #fff;
+    padding: 10px 12px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .section-{{ section.id }} .nvpicks-note {
+    margin-top: 14px;
+    border-top: 1px solid var(--line);
+    padding-top: 12px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  @media (max-width: 989px) {
+    .section-{{ section.id }} .nvpicks-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .section-{{ section.id }} .nvpicks-shell {
+      width: calc(100% - 24px);
+    }
+
+    .section-{{ section.id }} .nvpicks-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "NV productos",
+  "settings": [
+    { "type": "text", "id": "anchor_id", "label": "ID de ancla", "default": "productos" },
+    { "type": "collection", "id": "collection", "label": "ColecciÃ³n" },
+    { "type": "text", "id": "eyebrow", "label": "Etiqueta", "default": "Tienda Novaren" },
+    { "type": "text", "id": "heading", "label": "TÃ­tulo", "default": "Productos para acompaÃ±ar tu bienestar" },
+    { "type": "textarea", "id": "text", "label": "Texto", "default": "Explora opciones enfocadas en bienestar digestivo, sensaciÃ³n de ligereza y autocuidado diario." },
+    { "type": "range", "id": "limit", "label": "Cantidad de productos", "min": 1, "max": 12, "step": 1, "default": 6 },
+    { "type": "range", "id": "columns_desktop", "label": "Columnas en escritorio", "min": 2, "max": 4, "step": 1, "default": 3 },
+    { "type": "text", "id": "product_kicker", "label": "Etiqueta producto por defecto", "default": "Bienestar" },
+    { "type": "text", "id": "product_link_label", "label": "Texto enlace producto", "default": "Ver producto" },
+    { "type": "text", "id": "default_badge", "label": "Etiqueta cuando no hay descuento", "default": "Novaren" },
+    { "type": "checkbox", "id": "show_rating", "label": "Mostrar calificación visual", "default": true },
+    { "type": "text", "id": "rating_text", "label": "Texto de calificación", "default": "4.8 / 5" },
+    { "type": "text", "id": "card_note", "label": "Nota bajo cada producto", "default": "Compra segura y atención oficial Novaren." },
+    { "type": "color", "id": "background", "label": "Fondo", "default": "#fbfaf5" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior", "min": 24, "max": 140, "step": 4, "default": 92 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior", "min": 24, "max": 140, "step": 4, "default": 92 }
+  ],
+  "presets": [
+    { "name": "NV productos" }
+  ]
+}
+{% endschema %}
+

@@ -1,0 +1,168 @@
+<section class="nvproof section-{{ section.id }}">
+  <div class="nvproof-shell">
+    <div class="nvproof-main">
+      <p>{{ section.settings.eyebrow }}</p>
+      <h2>{{ section.settings.heading }}</h2>
+      <div>{{ section.settings.text }}</div>
+      {% if section.settings.button_label != blank %}
+        <a href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+      {% endif %}
+    </div>
+
+    <div class="nvproof-grid">
+      {% for block in section.blocks %}
+        <article {{ block.shopify_attributes }}>
+          <span>{{ block.settings.kicker }}</span>
+          <strong>{{ block.settings.title }}</strong>
+          <p>{{ block.settings.text }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-{{ section.id }} {
+    --ink: #10231c;
+    --muted: #66746d;
+    --green: {{ section.settings.accent_color }};
+    --line: rgba(16,35,28,.12);
+    background: {{ section.settings.background }};
+    color: var(--ink);
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+  }
+
+  .section-{{ section.id }} .nvproof-shell {
+    width: calc(100% - 32px);
+    max-width: 1180px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+    gap: clamp(28px, 5vw, 68px);
+    align-items: center;
+  }
+
+  .section-{{ section.id }} .nvproof-main p {
+    margin: 0 0 12px;
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 850;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  .section-{{ section.id }} .nvproof-main h2 {
+    margin: 0;
+    color: var(--ink);
+    font-size: {{ section.settings.heading_size }}px;
+    line-height: 1.05;
+  }
+
+  .section-{{ section.id }} .nvproof-main div {
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.68;
+  }
+
+  .section-{{ section.id }} .nvproof-main a {
+    display: inline-flex;
+    margin-top: 24px;
+    border-radius: 8px;
+    background: var(--green);
+    color: #fff;
+    padding: 13px 18px;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  .section-{{ section.id }} .nvproof-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .section-{{ section.id }} .nvproof-grid article {
+    min-height: 180px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255,255,255,.9);
+    padding: 22px;
+    box-shadow: 0 18px 54px rgba(16,35,28,.08);
+  }
+
+  .section-{{ section.id }} .nvproof-grid span {
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  .section-{{ section.id }} .nvproof-grid strong {
+    display: block;
+    margin-top: 14px;
+    color: var(--ink);
+    font-size: 20px;
+    line-height: 1.18;
+  }
+
+  .section-{{ section.id }} .nvproof-grid p {
+    margin: 10px 0 0;
+    color: var(--muted);
+    line-height: 1.58;
+  }
+
+  @media (max-width: 900px) {
+    .section-{{ section.id }} .nvproof-shell,
+    .section-{{ section.id }} .nvproof-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .section-{{ section.id }} .nvproof-shell {
+      width: calc(100% - 24px);
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "NV prueba social",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Etiqueta", "default": "Compra con respaldo" },
+    { "type": "text", "id": "heading", "label": "Título", "default": "Una tienda pensada para comprar bienestar con confianza" },
+    { "type": "textarea", "id": "text", "label": "Texto", "default": "Novaren reúne productos de bienestar, suplementos y autocuidado con información clara, canales oficiales y una experiencia diseñada para convertir visitantes en compradores seguros." },
+    { "type": "text", "id": "button_label", "label": "Botón", "default": "Conocer productos" },
+    { "type": "url", "id": "button_link", "label": "Enlace" },
+    { "type": "range", "id": "heading_size", "label": "Tamaño título", "min": 30, "max": 58, "step": 1, "unit": "px", "default": 44 },
+    { "type": "color", "id": "background", "label": "Fondo", "default": "#fbfaf5" },
+    { "type": "color", "id": "accent_color", "label": "Color acento", "default": "#155b3d" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior", "min": 32, "max": 120, "step": 4, "unit": "px", "default": 84 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior", "min": 32, "max": 120, "step": 4, "unit": "px", "default": 88 }
+  ],
+  "blocks": [
+    {
+      "type": "proof",
+      "name": "Bloque",
+      "settings": [
+        { "type": "text", "id": "kicker", "label": "Etiqueta", "default": "01" },
+        { "type": "text", "id": "title", "label": "Título", "default": "Pago seguro" },
+        { "type": "textarea", "id": "text", "label": "Texto", "default": "Procesos claros, datos protegidos y comunicación oficial." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "NV prueba social",
+      "blocks": [
+        { "type": "proof", "settings": { "kicker": "01", "title": "Pago contra entrega", "text": "Disponible cuando aplique para la ciudad y operador logístico." } },
+        { "type": "proof", "settings": { "kicker": "02", "title": "Envíos en Colombia", "text": "Cobertura nacional sujeta a disponibilidad y confirmación." } },
+        { "type": "proof", "settings": { "kicker": "03", "title": "Contenido útil", "text": "Blog y guías para comprar con mejor criterio." } },
+        { "type": "proof", "settings": { "kicker": "04", "title": "Marca en crecimiento", "text": "De dropshipping seleccionado hacia productos propios Novaren." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

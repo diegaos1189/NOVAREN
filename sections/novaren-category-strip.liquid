@@ -1,0 +1,152 @@
+<section class="nvcats section-{{ section.id }}">
+  <div class="nvcats-shell">
+    {% if section.settings.heading != blank %}
+      <h2>{{ section.settings.heading }}</h2>
+    {% endif %}
+    <div class="nvcats-row" role="list">
+      {% for block in section.blocks %}
+        <a class="nvcats-pill" href="{{ block.settings.link }}" role="listitem" {{ block.shopify_attributes }}>
+          <span>{{ block.settings.icon }}</span>
+          <strong>{{ block.settings.title }}</strong>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-{{ section.id }} {
+    --ink: #10231c;
+    --muted: #66746d;
+    --green: {{ section.settings.accent_color }};
+    --line: rgba(16, 35, 28, .12);
+    background: {{ section.settings.background }};
+    color: var(--ink);
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    overflow: hidden;
+  }
+
+  .section-{{ section.id }} .nvcats-shell {
+    width: calc(100% - 32px);
+    max-width: 1180px;
+    margin-inline: auto;
+  }
+
+  .section-{{ section.id }} h2 {
+    margin: 0 0 18px;
+    color: var(--ink);
+    font-size: {{ section.settings.heading_size }}px;
+    line-height: 1.12;
+  }
+
+  .section-{{ section.id }} .nvcats-row {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns_desktop }}, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .section-{{ section.id }} .nvcats-pill {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255,255,255,.9);
+    color: var(--ink);
+    padding: 14px 16px;
+    text-decoration: none;
+    box-shadow: 0 14px 42px rgba(16,35,28,.07);
+    transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  }
+
+  .section-{{ section.id }} .nvcats-pill:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--green) 38%, var(--line));
+    box-shadow: 0 20px 56px rgba(16,35,28,.12);
+  }
+
+  .section-{{ section.id }} .nvcats-pill span {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--green) 12%, #ffffff);
+    color: var(--green);
+    font-size: 18px;
+    font-weight: 900;
+    flex: 0 0 auto;
+  }
+
+  .section-{{ section.id }} .nvcats-pill strong {
+    min-width: 0;
+    color: var(--ink);
+    font-size: {{ section.settings.item_size }}px;
+    line-height: 1.18;
+  }
+
+  @media (max-width: 989px) {
+    .section-{{ section.id }} .nvcats-row {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .section-{{ section.id }} .nvcats-shell {
+      width: calc(100% - 24px);
+    }
+
+    .section-{{ section.id }} .nvcats-row {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 8px;
+    }
+
+    .section-{{ section.id }} .nvcats-pill {
+      min-width: 190px;
+      scroll-snap-align: start;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "NV categorías",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Título", "default": "Compra por objetivo" },
+    { "type": "range", "id": "heading_size", "label": "Tamaño del título", "min": 20, "max": 38, "step": 1, "unit": "px", "default": 28 },
+    { "type": "range", "id": "item_size", "label": "Tamaño de categorías", "min": 13, "max": 20, "step": 1, "unit": "px", "default": 16 },
+    { "type": "range", "id": "columns_desktop", "label": "Columnas escritorio", "min": 4, "max": 6, "step": 1, "default": 6 },
+    { "type": "color", "id": "background", "label": "Fondo", "default": "#fbfaf5" },
+    { "type": "color", "id": "accent_color", "label": "Color acento", "default": "#155b3d" },
+    { "type": "range", "id": "padding_top", "label": "Espacio superior", "min": 16, "max": 80, "step": 4, "unit": "px", "default": 28 },
+    { "type": "range", "id": "padding_bottom", "label": "Espacio inferior", "min": 16, "max": 80, "step": 4, "unit": "px", "default": 36 }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Categoría",
+      "settings": [
+        { "type": "text", "id": "icon", "label": "Ícono o inicial", "default": "+" },
+        { "type": "text", "id": "title", "label": "Título", "default": "Bienestar digestivo" },
+        { "type": "url", "id": "link", "label": "Enlace" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "NV categorías",
+      "blocks": [
+        { "type": "category", "settings": { "icon": "D", "title": "Digestión" } },
+        { "type": "category", "settings": { "icon": "E", "title": "Energía" } },
+        { "type": "category", "settings": { "icon": "C", "title": "Combos" } },
+        { "type": "category", "settings": { "icon": "A", "title": "Autocuidado" } },
+        { "type": "category", "settings": { "icon": "N", "title": "Novedades" } },
+        { "type": "category", "settings": { "icon": "B", "title": "Blog" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
