@@ -245,7 +245,7 @@
                 </p>
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
-                  <h1>{{ product.title | escape }}</h1>
+                  <h1 {% if block.settings.title_size != blank %}style="font-size: {{ block.settings.title_size }}px !important;"{% endif %}>{{ product.title | escape }}</h1>
                 </div>
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
@@ -335,7 +335,7 @@
                 </p>
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
-                  <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
+                  <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }} {% if block.settings.desc_size != blank %}style="font-size: {{ block.settings.desc_size }}px !important;"{% endif %}>
                     {{ product.description }}
                   </div>
                 {%- endif -%}
@@ -907,7 +907,18 @@
     {
       "type": "title",
       "name": "t:sections.main-product.blocks.title.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "range",
+          "id": "title_size",
+          "label": "Tamaño del título (px)",
+          "min": 16,
+          "max": 72,
+          "step": 1,
+          "default": 40
+        }
+      ]
     },
     {
       "type": "price",
@@ -1057,7 +1068,18 @@
     {
       "type": "description",
       "name": "t:sections.main-product.blocks.description.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "range",
+          "id": "desc_size",
+          "label": "Tamaño de la descripción (px)",
+          "min": 12,
+          "max": 32,
+          "step": 1,
+          "default": 16
+        }
+      ]
     },
     {
       "type": "share",
