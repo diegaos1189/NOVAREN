@@ -53,6 +53,9 @@
     </div>
 
     <div class="nvp-product__info">
+      {% if section.settings.stock_label != blank %}
+        <div class="nvp-stock">{{ section.settings.stock_label }}</div>
+      {% endif %}
       <p class="nvp-eyebrow">{{ section.settings.eyebrow | default: product.type }}</p>
       <h1>
         {% if section.settings.custom_title != blank %}
@@ -63,6 +66,13 @@
       </h1>
       <div class="nvp-price">{{ product.selected_or_first_available_variant.price | money }}</div>
 
+      {% if section.settings.show_rating_summary %}
+        <div class="nvp-rating-summary" aria-label="{{ section.settings.rating_summary_text }}">
+          <span>★★★★★</span>
+          <strong>{{ section.settings.rating_summary_text }}</strong>
+        </div>
+      {% endif %}
+
       <div class="nvp-summary">
         {% if section.settings.custom_summary != blank %}
           {{ section.settings.custom_summary }}
@@ -71,6 +81,13 @@
         {% else %}
           {{ section.settings.fallback_summary }}
         {% endif %}
+      </div>
+
+      <div class="nvp-bullets">
+        {% if section.settings.bullet_1 != blank %}<p><span>✓</span>{{ section.settings.bullet_1 }}</p>{% endif %}
+        {% if section.settings.bullet_2 != blank %}<p><span>✓</span>{{ section.settings.bullet_2 }}</p>{% endif %}
+        {% if section.settings.bullet_3 != blank %}<p><span>✓</span>{{ section.settings.bullet_3 }}</p>{% endif %}
+        {% if section.settings.bullet_4 != blank %}<p><span>✓</span>{{ section.settings.bullet_4 }}</p>{% endif %}
       </div>
 
       {% if section.settings.show_conversion_panel %}
@@ -171,6 +188,35 @@
           <p class="nvp-cta-note">{{ section.settings.cta_note }}</p>
         {% endif %}
       {% endform %}
+
+      {% if section.settings.show_info_accordions %}
+        <div class="nvp-accordions">
+          {% if section.settings.accordion_1_title != blank %}
+            <details open>
+              <summary>{{ section.settings.accordion_1_title }}</summary>
+              <div>{{ section.settings.accordion_1_text }}</div>
+            </details>
+          {% endif %}
+          {% if section.settings.accordion_2_title != blank %}
+            <details>
+              <summary>{{ section.settings.accordion_2_title }}</summary>
+              <div>{{ section.settings.accordion_2_text }}</div>
+            </details>
+          {% endif %}
+          {% if section.settings.accordion_3_title != blank %}
+            <details>
+              <summary>{{ section.settings.accordion_3_title }}</summary>
+              <div>{{ section.settings.accordion_3_text }}</div>
+            </details>
+          {% endif %}
+          {% if section.settings.accordion_4_title != blank %}
+            <details>
+              <summary>{{ section.settings.accordion_4_title }}</summary>
+              <div>{{ section.settings.accordion_4_text }}</div>
+            </details>
+          {% endif %}
+        </div>
+      {% endif %}
 
       <div class="nvp-promises">
         {% for block in section.blocks %}
@@ -320,6 +366,19 @@
     backdrop-filter: blur(14px);
   }
 
+  .section-{{ section.id }} .nvp-stock {
+    width: fit-content;
+    margin-bottom: 12px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--green) 10%, #ffffff);
+    color: var(--green);
+    padding: 7px 11px;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
   .section-{{ section.id }} .nvp-eyebrow {
     margin: 0 0 12px;
     color: var(--green);
@@ -345,6 +404,25 @@
     font-weight: 900;
   }
 
+  .section-{{ section.id }} .nvp-rating-summary {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+    color: var(--green);
+    font-size: 13px;
+  }
+
+  .section-{{ section.id }} .nvp-rating-summary span {
+    letter-spacing: 1px;
+  }
+
+  .section-{{ section.id }} .nvp-rating-summary strong {
+    color: var(--muted);
+    font-weight: 850;
+  }
+
   .section-{{ section.id }} .nvp-summary {
     margin-top: 16px;
     color: var(--muted);
@@ -358,6 +436,36 @@
 
   .section-{{ section.id }} .nvp-summary p:last-child {
     margin-bottom: 0;
+  }
+
+  .section-{{ section.id }} .nvp-bullets {
+    display: grid;
+    gap: 9px;
+    margin-top: 18px;
+  }
+
+  .section-{{ section.id }} .nvp-bullets p {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 9px;
+    align-items: start;
+    margin: 0;
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .section-{{ section.id }} .nvp-bullets span {
+    width: 20px;
+    height: 20px;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    background: var(--green);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 1;
   }
 
   .section-{{ section.id }} .nvp-conversion {
@@ -564,6 +672,41 @@
     font-size: 13px;
     line-height: 1.4;
     text-align: center;
+  }
+
+  .section-{{ section.id }} .nvp-accordions {
+    margin-top: 18px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .section-{{ section.id }} .nvp-accordions details + details {
+    border-top: 1px solid var(--line);
+  }
+
+  .section-{{ section.id }} .nvp-accordions summary {
+    cursor: pointer;
+    padding: 15px 16px;
+    color: var(--ink);
+    font-size: 15px;
+    font-weight: 900;
+  }
+
+  .section-{{ section.id }} .nvp-accordions div {
+    padding: 0 16px 16px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.58;
+  }
+
+  .section-{{ section.id }} .nvp-accordions p {
+    margin: 0 0 10px;
+  }
+
+  .section-{{ section.id }} .nvp-accordions p:last-child {
+    margin-bottom: 0;
   }
 
   .section-{{ section.id }} .nvp-promises {
@@ -773,10 +916,18 @@
   "name": "Novaren producto premium",
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Etiqueta superior", "default": "Bienestar" },
+    { "type": "text", "id": "stock_label", "label": "Etiqueta de stock/oferta", "default": "Disponible en Colombia" },
     { "type": "text", "id": "custom_title", "label": "Título personalizado", "info": "Déjalo vacío para usar el título real del producto." },
     { "type": "richtext", "id": "custom_summary", "label": "Párrafo personalizado", "info": "Déjalo vacío para usar la descripción del producto." },
     { "type": "textarea", "id": "fallback_summary", "label": "Resumen si no hay descripción", "default": "Producto seleccionado por Novaren para acompañar rutinas saludables, autocuidado y bienestar diario." },
     { "type": "range", "id": "summary_words", "label": "Palabras del resumen", "min": 18, "max": 80, "step": 2, "default": 42 },
+    { "type": "checkbox", "id": "show_rating_summary", "label": "Mostrar calificación debajo del precio", "default": true },
+    { "type": "text", "id": "rating_summary_text", "label": "Texto de calificación", "default": "4.8 / 5 basado en experiencias de clientes" },
+    { "type": "header", "content": "Bullets de beneficios" },
+    { "type": "text", "id": "bullet_1", "label": "Bullet 1", "default": "Complemento para hábitos saludables y bienestar diario." },
+    { "type": "text", "id": "bullet_2", "label": "Bullet 2", "default": "Compra clara, canales oficiales y seguimiento del pedido." },
+    { "type": "text", "id": "bullet_3", "label": "Bullet 3", "default": "Información prudente, sin promesas médicas exageradas." },
+    { "type": "text", "id": "bullet_4", "label": "Bullet 4", "default": "Pago contra entrega disponible cuando aplique." },
     { "type": "header", "content": "Imagen principal" },
     {
       "type": "select",
@@ -837,6 +988,16 @@
     { "type": "range", "id": "metric_value_font_size", "label": "Valor de métricas", "min": 15, "max": 26, "step": 1, "unit": "px", "default": 19 },
     { "type": "range", "id": "metric_label_font_size", "label": "Texto de métricas", "min": 10, "max": 15, "step": 1, "unit": "px", "default": 12 },
     { "type": "range", "id": "benefit_font_size", "label": "Texto de beneficios", "min": 13, "max": 18, "step": 1, "unit": "px", "default": 15 },
+    { "type": "header", "content": "Acordeones bajo compra" },
+    { "type": "checkbox", "id": "show_info_accordions", "label": "Mostrar acordeones informativos", "default": true },
+    { "type": "text", "id": "accordion_1_title", "label": "Acordeón 1 título", "default": "Descripción del producto" },
+    { "type": "richtext", "id": "accordion_1_text", "label": "Acordeón 1 texto", "default": "<p>Producto seleccionado por Novaren para acompañar rutinas de bienestar. Revisa siempre la información del empaque, presentación y recomendaciones del proveedor.</p>" },
+    { "type": "text", "id": "accordion_2_title", "label": "Acordeón 2 título", "default": "Cómo integrarlo a tu rutina" },
+    { "type": "richtext", "id": "accordion_2_text", "label": "Acordeón 2 texto", "default": "<p>Úsalo como complemento de hábitos saludables: hidratación, alimentación equilibrada, movimiento suave y descanso. Si tienes una condición de salud, consulta con un profesional.</p>" },
+    { "type": "text", "id": "accordion_3_title", "label": "Acordeón 3 título", "default": "Envío y pago" },
+    { "type": "richtext", "id": "accordion_3_text", "label": "Acordeón 3 texto", "default": "<p>Envíos dentro de Colombia sujetos a cobertura. El pago contra entrega puede estar disponible según ciudad, producto y operador logístico.</p>" },
+    { "type": "text", "id": "accordion_4_title", "label": "Acordeón 4 título", "default": "Garantía y soporte" },
+    { "type": "richtext", "id": "accordion_4_text", "label": "Acordeón 4 texto", "default": "<p>Si tu pedido llega con una novedad, comunícate con Novaren por los canales oficiales para revisar el caso de acuerdo con nuestras políticas.</p>" },
     { "type": "color", "id": "accent_color", "label": "Color acento", "default": "#155b3d" },
     { "type": "color", "id": "background_top", "label": "Fondo superior", "default": "#fbfaf5" },
     { "type": "color", "id": "background_bottom", "label": "Fondo inferior", "default": "#ffffff" },
