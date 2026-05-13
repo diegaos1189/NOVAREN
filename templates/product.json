@@ -6,8 +6,8 @@
         "vendor": {
           "type": "text",
           "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
+            "text": "Nuevo | +37.320 Vendidos",
+            "text_style": "body"
           }
         },
         "title": {
@@ -18,23 +18,16 @@
           "type": "price",
           "settings": {}
         },
-        "platinum_badge": {
-          "type": "text",
+        "platinum_leader": {
+          "type": "custom_liquid",
           "settings": {
-            "text": "Tienda Líder Platinum",
-            "text_style": "uppercase"
+            "custom_liquid": "<div class=\"prem-platinum\">\n  <div class=\"prem-platinum__header\">\n    <div class=\"prem-platinum__seal\">\n      <svg width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n        <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#00a650\"/>\n        <polyline points=\"12,21 18,28 30,14\" fill=\"none\" stroke=\"white\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n      </svg>\n    </div>\n    <div class=\"prem-platinum__info\">\n      <strong>Tienda Líder Platinum</strong>\n      <span>¡Uno de los mejores del sitio!</span>\n    </div>\n  </div>\n  <div class=\"prem-platinum__bar-track\">\n    <div class=\"prem-platinum__bar-fill\"></div>\n  </div>\n  <div class=\"prem-platinum__stats\">\n    <div class=\"prem-platinum__stat\">\n      <strong class=\"prem-platinum__num\">37.320</strong>\n      <span>Ventas en los últimos 60 días</span>\n    </div>\n    <div class=\"prem-platinum__stat\">\n      <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#666\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2\" y=\"3\" width=\"20\" height=\"18\" rx=\"2\"/><line x1=\"8\" y1=\"10\" x2=\"16\" y2=\"10\"/><line x1=\"8\" y1=\"14\" x2=\"13\" y2=\"14\"/></svg>\n      <span>Brinda un buen servicio</span>\n    </div>\n    <div class=\"prem-platinum__stat\">\n      <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#666\" stroke-width=\"1.5\" stroke-linecap=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><polyline points=\"12,6 12,12 16,14\"/></svg>\n      <span>Entrega los productos a tiempo</span>\n    </div>\n  </div>\n</div>"
           }
         },
-        "trust_badges": {
-          "type": "icon-with-text",
+        "shipping_box": {
+          "type": "custom_liquid",
           "settings": {
-            "layout": "horizontal",
-            "icon_1": "truck",
-            "heading_1": "Envío gratis a todo Colombia",
-            "icon_2": "return",
-            "heading_2": "Paga al recibir",
-            "icon_3": "heart",
-            "heading_3": "Compra segura y garantía"
+            "custom_liquid": "<div class=\"prem-shipping\">\n  <div class=\"prem-shipping__top\">\n    <span class=\"prem-shipping__bike\">🚴</span>\n    <strong>Envío Gratis <span class=\"prem-shipping__full\">⚡ FULL</span></strong>\n    <span class=\"prem-shipping__sep\"> • </span>\n    <span class=\"prem-shipping__avail\">Disponible</span>\n  </div>\n  <div class=\"prem-shipping__sub\">\n    <div>Pago Contraentrega Seguro de Envío</div>\n    <div class=\"prem-shipping__date\">Se entrega en 3-7 días hábiles</div>\n  </div>\n  <div class=\"prem-shipping__row\">\n    <span class=\"prem-shipping__row-icon\">🛡</span>\n    <span><strong>Compra Garantizada.</strong> Satisfacción Garantizada o le devolvemos el dinero</span>\n  </div>\n  <div class=\"prem-shipping__row\">\n    <span class=\"prem-shipping__row-icon\">🔔</span>\n    <span><strong>Más Vendido</strong> Entre los productos de esta categoría</span>\n  </div>\n</div>"
           }
         },
         "variant_picker": {
@@ -47,6 +40,12 @@
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {}
+        },
+        "btn_override": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>\n.product-form__submit {\n  background: linear-gradient(180deg, #ff6b35 0%, #e63500 100%) !important;\n  border-color: #e63500 !important;\n  color: #fff !important;\n  min-height: 6.4rem !important;\n  border-radius: 0.8rem !important;\n  transition: opacity 0.2s ease !important;\n}\n.product-form__submit:hover:not([aria-disabled='true']) {\n  opacity: 0.88 !important;\n  filter: brightness(1.05) !important;\n}\n.product-form__submit > span:first-of-type {\n  font-size: 0;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0.2rem;\n}\n.product-form__submit > span:first-of-type::before {\n  content: '¡Pedir Contraentrega';\n  font-size: 1.8rem;\n  font-weight: 700;\n  letter-spacing: 0.03rem;\n  display: block;\n  color: #fff;\n}\n.product-form__submit > span:first-of-type::after {\n  content: 'Con Envío Gratis!';\n  font-size: 1.35rem;\n  font-weight: 400;\n  display: block;\n  color: rgba(255,255,255,0.9);\n}\n.product-form__submit[aria-disabled='true'] > span:first-of-type::before {\n  content: 'Procesando...';\n}\n.product-form__submit[aria-disabled='true'] > span:first-of-type::after {\n  content: '';\n}\n</style>"
+          }
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -70,10 +69,11 @@
         "vendor",
         "title",
         "price",
-        "platinum_badge",
-        "trust_badges",
+        "platinum_leader",
+        "shipping_box",
         "variant_picker",
         "quantity_selector",
+        "btn_override",
         "buy_buttons",
         "description",
         "product_highlights"
