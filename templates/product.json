@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -57,12 +66,6 @@
         "description": {
           "type": "description",
           "settings": {}
-        },
-        "product_highlights": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div class=\"product__reference-details\">\n\n  <div class=\"product__sales-counter\">\n    <span class=\"product__sales-fire\">🔥</span>\n    <span><strong>+37.320 personas</strong> ya organizaron su hogar con este producto</span>\n  </div>\n\n  <div class=\"product__hook\">\n    <h2>😣 ¿El desorden en tu baño y patio te desespera?</h2>\n    <p>Escobas tiradas en el piso, traperas que se caen, mopas sin lugar fijo… <strong>ese caos termina hoy.</strong></p>\n    <p>Con el <strong>CUELGA TODO</strong> mantienes todo organizado, accesible y en su lugar — sin taladro, sin complicaciones, sin excusas.</p>\n  </div>\n\n  <div class=\"product__divider\"></div>\n\n  <div class=\"product__feature-grid\">\n    <div class=\"product__feature-card\">\n      <div class=\"product__feature-card-header\">\n        <span class=\"product__feature-icon\">⭐</span>\n        <h3>Características</h3>\n      </div>\n      <ul>\n        <li>Resina de alta calidad — resistente al uso diario y a la humedad.</li>\n        <li>Diseño creativo y funcional que embellece tu espacio.</li>\n        <li>Soporta traperas, escobas, mopas y accesorios del hogar.</li>\n        <li>Instalación en segundos, sin herramientas ni taladro.</li>\n      </ul>\n    </div>\n    <div class=\"product__feature-card\">\n      <div class=\"product__feature-card-header\">\n        <span class=\"product__feature-icon\">✅</span>\n        <h3>Beneficios</h3>\n      </div>\n      <ul>\n        <li>Elimina el desorden y maximiza tu espacio disponible.</li>\n        <li>Tus objetos siempre organizados y al alcance de la mano.</li>\n        <li>Durabilidad garantizada para uso continuo.</li>\n        <li>Ideal para baño, patio, cocina y área de servicio.</li>\n      </ul>\n    </div>\n  </div>\n\n  <div class=\"product__install-section\">\n    <div class=\"product__feature-card-header\">\n      <span class=\"product__feature-icon\">🔧</span>\n      <h3>Instalación en 4 pasos</h3>\n    </div>\n    <ol class=\"product__install-steps\">\n      <li><span class=\"product__step-num\">1</span><span>Limpia y seca bien la superficie donde vas a instalar.</span></li>\n      <li><span class=\"product__step-num\">2</span><span>Marca la posición y retira el protector del adhesivo.</span></li>\n      <li><span class=\"product__step-num\">3</span><span>Presiona firmemente contra la pared durante 30 segundos.</span></li>\n      <li><span class=\"product__step-num\">4</span><span>Espera 24 horas antes de colgar objetos — ¡listo!</span></li>\n    </ol>\n  </div>\n\n  <div class=\"product__divider\"></div>\n\n  <div class=\"product__urgency\">\n    <span class=\"product__urgency-icon\">⚠️</span>\n    <div>\n      <strong>¡Alta demanda!</strong> Quedan pocas unidades disponibles. No esperes hasta que se agote.\n    </div>\n  </div>\n\n  <div class=\"product__garantias\">\n    <div class=\"product__garantia-item\">\n      <span class=\"product__garantia-icon\">🚚</span>\n      <div>\n        <strong>Envío gratis</strong>\n        <small>Bogotá y Medellín: 1-3 días · Resto de Colombia: 2-5 días</small>\n      </div>\n    </div>\n    <div class=\"product__garantia-item\">\n      <span class=\"product__garantia-icon\">💳</span>\n      <div>\n        <strong>Pago contra entrega</strong>\n        <small>Pagas cuando recibas tu pedido en casa</small>\n      </div>\n    </div>\n    <div class=\"product__garantia-item\">\n      <span class=\"product__garantia-icon\">🔒</span>\n      <div>\n        <strong>Compra 100% segura</strong>\n        <small>Garantía de satisfacción o te devolvemos tu dinero</small>\n      </div>\n    </div>\n  </div>\n\n</div>"
-          }
         }
       },
       "block_order": [
@@ -75,8 +78,7 @@
         "quantity_selector",
         "btn_override",
         "buy_buttons",
-        "description",
-        "product_highlights"
+        "description"
       ],
       "settings": {
         "enable_sticky_info": true,
