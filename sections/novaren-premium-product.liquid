@@ -73,15 +73,17 @@
         </div>
       {% endif %}
 
-      <div class="nvp-summary">
-        {% if section.settings.custom_summary != blank %}
-          {{ section.settings.custom_summary }}
-        {% elsif product.description != blank %}
-          {{ product.description | strip_html | truncatewords: section.settings.summary_words }}
-        {% else %}
-          {{ section.settings.fallback_summary }}
-        {% endif %}
-      </div>
+      {% if section.settings.show_top_summary %}
+        <div class="nvp-summary">
+          {% if section.settings.custom_summary != blank %}
+            {{ section.settings.custom_summary }}
+          {% elsif product.description != blank %}
+            {{ product.description | strip_html | truncatewords: section.settings.summary_words }}
+          {% else %}
+            {{ section.settings.fallback_summary }}
+          {% endif %}
+        </div>
+      {% endif %}
 
       <div class="nvp-bullets">
         {% if section.settings.bullet_1 != blank %}<p><span>✓</span>{{ section.settings.bullet_1 }}</p>{% endif %}
@@ -227,6 +229,20 @@
       </div>
     </div>
   </div>
+
+  {% if section.settings.show_full_description_below and product.description != blank %}
+    <div class="nvp-shell nvp-description">
+      {% if section.settings.description_eyebrow != blank %}
+        <p class="nvp-eyebrow">{{ section.settings.description_eyebrow }}</p>
+      {% endif %}
+      {% if section.settings.description_heading != blank %}
+        <h2>{{ section.settings.description_heading }}</h2>
+      {% endif %}
+      <div class="nvp-description__body">
+        {{ product.description }}
+      </div>
+    </div>
+  {% endif %}
 
   <div class="nvp-shell nvp-details">
     {% for block in section.blocks %}
@@ -733,6 +749,79 @@
     margin-top: clamp(46px, 7vw, 86px);
   }
 
+  .section-{{ section.id }} .nvp-description {
+    margin-top: clamp(38px, 6vw, 72px);
+  }
+
+  .section-{{ section.id }} .nvp-description h2 {
+    max-width: 820px;
+    margin: 0;
+    color: var(--ink);
+    font-size: {{ section.settings.description_heading_font_size }}px;
+    line-height: 1.08;
+  }
+
+  .section-{{ section.id }} .nvp-description__body {
+    margin-top: 22px;
+    color: var(--ink);
+    font-size: {{ section.settings.description_text_font_size }}px;
+    line-height: 1.7;
+  }
+
+  .section-{{ section.id }} .nvp-description__body > *:first-child {
+    margin-top: 0;
+  }
+
+  .section-{{ section.id }} .nvp-description__body h1,
+  .section-{{ section.id }} .nvp-description__body h2,
+  .section-{{ section.id }} .nvp-description__body h3 {
+    color: var(--ink);
+    line-height: 1.12;
+    letter-spacing: 0;
+  }
+
+  .section-{{ section.id }} .nvp-description__body h1 {
+    font-size: clamp(30px, 5vw, 48px);
+  }
+
+  .section-{{ section.id }} .nvp-description__body h2 {
+    font-size: clamp(26px, 4vw, 38px);
+  }
+
+  .section-{{ section.id }} .nvp-description__body h3 {
+    font-size: clamp(22px, 3vw, 30px);
+  }
+
+  .section-{{ section.id }} .nvp-description__body p {
+    margin: 0 0 18px;
+  }
+
+  .section-{{ section.id }} .nvp-description__body img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 22px auto;
+    border-radius: 8px;
+  }
+
+  .section-{{ section.id }} .nvp-description__body ul,
+  .section-{{ section.id }} .nvp-description__body ol {
+    padding-left: 22px;
+  }
+
+  .section-{{ section.id }} .nvp-description__body table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+  }
+
+  .section-{{ section.id }} .nvp-description__body th,
+  .section-{{ section.id }} .nvp-description__body td {
+    border: 1px solid var(--line);
+    padding: 12px;
+    text-align: left;
+  }
+
   .section-{{ section.id }} .nvp-details article {
     border: 1px solid var(--line);
     border-radius: 8px;
@@ -920,6 +1009,7 @@
     { "type": "text", "id": "custom_title", "label": "Título personalizado", "info": "Déjalo vacío para usar el título real del producto." },
     { "type": "richtext", "id": "custom_summary", "label": "Párrafo personalizado", "info": "Déjalo vacío para usar la descripción del producto." },
     { "type": "textarea", "id": "fallback_summary", "label": "Resumen si no hay descripción", "default": "Producto seleccionado por Novaren para acompañar rutinas saludables, autocuidado y bienestar diario." },
+    { "type": "checkbox", "id": "show_top_summary", "label": "Mostrar resumen arriba", "default": false },
     { "type": "range", "id": "summary_words", "label": "Palabras del resumen", "min": 18, "max": 80, "step": 2, "default": 42 },
     { "type": "checkbox", "id": "show_rating_summary", "label": "Mostrar calificación debajo del precio", "default": true },
     { "type": "text", "id": "rating_summary_text", "label": "Texto de calificación", "default": "4.8 / 5 basado en experiencias de clientes" },
@@ -958,6 +1048,12 @@
     { "type": "range", "id": "detail_title_line_height", "label": "Interlineado de títulos inferiores", "min": 95, "max": 130, "step": 1, "unit": "%", "default": 108 },
     { "type": "range", "id": "detail_text_font_size", "label": "Párrafos de bloques inferiores", "min": 14, "max": 22, "step": 1, "unit": "px", "default": 16 },
     { "type": "range", "id": "detail_text_line_height", "label": "Interlineado de bloques inferiores", "min": 130, "max": 190, "step": 5, "unit": "%", "default": 165 },
+    { "type": "header", "content": "Descripción completa abajo" },
+    { "type": "checkbox", "id": "show_full_description_below", "label": "Mostrar descripción completa debajo de imágenes", "default": true },
+    { "type": "text", "id": "description_eyebrow", "label": "Etiqueta descripción", "default": "Detalles del producto" },
+    { "type": "text", "id": "description_heading", "label": "Título descripción", "default": "Información completa, imágenes y beneficios" },
+    { "type": "range", "id": "description_heading_font_size", "label": "Tamaño título descripción", "min": 24, "max": 48, "step": 1, "unit": "px", "default": 36 },
+    { "type": "range", "id": "description_text_font_size", "label": "Tamaño texto descripción", "min": 14, "max": 20, "step": 1, "unit": "px", "default": 16 },
     { "type": "header", "content": "Formulario y compra" },
     { "type": "text", "id": "variant_label", "label": "Etiqueta variantes", "default": "Presentación" },
     { "type": "checkbox", "id": "show_quantity", "label": "Mostrar cantidad", "default": true },
