@@ -21,7 +21,9 @@
         },
         "title": {
           "type": "title",
-          "settings": {}
+          "settings": {
+            "title_size": 30
+          }
         },
         "price": {
           "type": "price",
@@ -59,7 +61,9 @@
         },
         "description": {
           "type": "description",
-          "settings": {}
+          "settings": {
+            "desc_size": 18
+          }
         }
       },
       "block_order": [
