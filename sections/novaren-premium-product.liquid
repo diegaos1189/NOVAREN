@@ -166,6 +166,14 @@
     line-height: {{ section.settings.summary_line_height }}%;
   }
 
+  .section-{{ section.id }} .nvp-summary p {
+    margin: 0 0 12px;
+  }
+
+  .section-{{ section.id }} .nvp-summary p:last-child {
+    margin-bottom: 0;
+  }
+
   .section-{{ section.id }} .nvp-form {
     display: grid;
     gap: 12px;
@@ -297,9 +305,9 @@
     { "type": "range", "id": "summary_words", "label": "Palabras del resumen", "min": 18, "max": 80, "step": 2, "default": 42 },
     { "type": "header", "content": "Tamaños de texto" },
     { "type": "range", "id": "eyebrow_font_size", "label": "Etiqueta superior", "min": 10, "max": 18, "step": 1, "unit": "px", "default": 12 },
-    { "type": "range", "id": "title_font_size_desktop", "label": "Título en escritorio", "min": 34, "max": 76, "step": 1, "unit": "px", "default": 62 },
-    { "type": "range", "id": "title_font_size_mobile", "label": "Título en móvil", "min": 26, "max": 48, "step": 1, "unit": "px", "default": 34 },
-    { "type": "range", "id": "title_line_height", "label": "Interlineado del título", "min": 90, "max": 125, "step": 1, "unit": "%", "default": 100 },
+    { "type": "range", "id": "title_font_size_desktop", "label": "Título en escritorio", "min": 34, "max": 76, "step": 1, "unit": "px", "default": 54 },
+    { "type": "range", "id": "title_font_size_mobile", "label": "Título en móvil", "min": 26, "max": 48, "step": 1, "unit": "px", "default": 32 },
+    { "type": "range", "id": "title_line_height", "label": "Interlineado del título", "min": 90, "max": 125, "step": 1, "unit": "%", "default": 104 },
     { "type": "range", "id": "price_font_size", "label": "Precio", "min": 20, "max": 42, "step": 1, "unit": "px", "default": 34 },
     { "type": "range", "id": "summary_font_size_desktop", "label": "Párrafo en escritorio", "min": 14, "max": 24, "step": 1, "unit": "px", "default": 17 },
     { "type": "range", "id": "summary_font_size_mobile", "label": "Párrafo en móvil", "min": 13, "max": 21, "step": 1, "unit": "px", "default": 16 },
@@ -307,7 +315,7 @@
     { "type": "range", "id": "button_font_size", "label": "Botón de compra", "min": 14, "max": 22, "step": 1, "unit": "px", "default": 16 },
     { "type": "range", "id": "promise_font_size", "label": "Promesas de confianza", "min": 11, "max": 18, "step": 1, "unit": "px", "default": 13 },
     { "type": "range", "id": "form_label_font_size", "label": "Etiquetas del formulario", "min": 11, "max": 17, "step": 1, "unit": "px", "default": 13 },
-    { "type": "range", "id": "detail_title_font_size", "label": "Títulos de bloques inferiores", "min": 22, "max": 42, "step": 1, "unit": "px", "default": 34 },
+    { "type": "range", "id": "detail_title_font_size", "label": "Títulos de bloques inferiores", "min": 22, "max": 42, "step": 1, "unit": "px", "default": 30 },
     { "type": "range", "id": "detail_title_line_height", "label": "Interlineado de títulos inferiores", "min": 95, "max": 130, "step": 1, "unit": "%", "default": 108 },
     { "type": "range", "id": "detail_text_font_size", "label": "Párrafos de bloques inferiores", "min": 14, "max": 22, "step": 1, "unit": "px", "default": 16 },
     { "type": "range", "id": "detail_text_line_height", "label": "Interlineado de bloques inferiores", "min": 130, "max": 190, "step": 5, "unit": "%", "default": 165 },
