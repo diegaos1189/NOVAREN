@@ -43,7 +43,7 @@
         "custom_liquid_Vtibai": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": ""
+            "custom_liquid": "<div class=\"prem-shipping\">\n  <div class=\"prem-shipping__top\">\n    <span class=\"prem-shipping__bike\">🚴</span>\n    <strong>Envío Gratis <span class=\"prem-shipping__full\">⚡ FULL</span></strong>\n    <span class=\"prem-shipping__sep\"> • </span>\n    <span class=\"prem-shipping__avail\">Disponible</span>\n  </div>\n  <div class=\"prem-shipping__sub\">\n    <div>Pago Contraentrega Seguro de Envío</div>\n    <div class=\"prem-shipping__date\">Se entrega en 3-7 días hábiles</div>\n  </div>\n  <div class=\"prem-shipping__row\">\n    <span class=\"prem-shipping__row-icon\">🛡</span>\n    <span><strong>Compra Garantizada.</strong> Satisfacción Garantizada o le devolvemos el dinero</span>\n  </div>\n  <div class=\"prem-shipping__row\">\n    <span class=\"prem-shipping__row-icon\">🔔</span>\n    <span><strong>Más Vendido</strong> Entre los productos de esta categoría</span>\n  </div>\n</div>"
           }
         },
         "quantity_selector": {
