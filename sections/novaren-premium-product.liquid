@@ -4,7 +4,8 @@
 
 <section class="nvp-product section-{{ section.id }}">
   <div class="nvp-shell nvp-product__grid">
-    <div class="nvp-product__gallery" data-nvp-gallery="{{ section.id }}">
+    <div class="nvp-product__media-column">
+      <div class="nvp-product__gallery" data-nvp-gallery="{{ section.id }}">
       {% if product.media.size > 1 and section.settings.show_thumbnails %}
         <div class="nvp-thumbs" aria-label="Imágenes del producto">
           {% for media in product.media limit: section.settings.media_stack_limit %}
@@ -50,6 +51,36 @@
           }}
         {% endif %}
       </div>
+      </div>
+
+      {% if section.settings.show_info_accordions %}
+        <div class="nvp-accordions nvp-accordions--media{% if section.settings.hide_accordions_on_mobile %} nvp-mobile-hide{% endif %}">
+          {% if section.settings.accordion_1_title != blank %}
+            <details open>
+              <summary>{{ section.settings.accordion_1_title }}</summary>
+              <div>{{ section.settings.accordion_1_text }}</div>
+            </details>
+          {% endif %}
+          {% if section.settings.accordion_2_title != blank %}
+            <details>
+              <summary>{{ section.settings.accordion_2_title }}</summary>
+              <div>{{ section.settings.accordion_2_text }}</div>
+            </details>
+          {% endif %}
+          {% if section.settings.accordion_3_title != blank %}
+            <details>
+              <summary>{{ section.settings.accordion_3_title }}</summary>
+              <div>{{ section.settings.accordion_3_text }}</div>
+            </details>
+          {% endif %}
+          {% if section.settings.accordion_4_title != blank %}
+            <details>
+              <summary>{{ section.settings.accordion_4_title }}</summary>
+              <div>{{ section.settings.accordion_4_text }}</div>
+            </details>
+          {% endif %}
+        </div>
+      {% endif %}
     </div>
 
     <div class="nvp-product__info">
@@ -191,35 +222,6 @@
         {% endif %}
       {% endform %}
 
-      {% if section.settings.show_info_accordions %}
-        <div class="nvp-accordions{% if section.settings.hide_accordions_on_mobile %} nvp-mobile-hide{% endif %}">
-          {% if section.settings.accordion_1_title != blank %}
-            <details open>
-              <summary>{{ section.settings.accordion_1_title }}</summary>
-              <div>{{ section.settings.accordion_1_text }}</div>
-            </details>
-          {% endif %}
-          {% if section.settings.accordion_2_title != blank %}
-            <details>
-              <summary>{{ section.settings.accordion_2_title }}</summary>
-              <div>{{ section.settings.accordion_2_text }}</div>
-            </details>
-          {% endif %}
-          {% if section.settings.accordion_3_title != blank %}
-            <details>
-              <summary>{{ section.settings.accordion_3_title }}</summary>
-              <div>{{ section.settings.accordion_3_text }}</div>
-            </details>
-          {% endif %}
-          {% if section.settings.accordion_4_title != blank %}
-            <details>
-              <summary>{{ section.settings.accordion_4_title }}</summary>
-              <div>{{ section.settings.accordion_4_text }}</div>
-            </details>
-          {% endif %}
-        </div>
-      {% endif %}
-
       <div class="nvp-promises{% if section.settings.hide_promises_on_mobile %} nvp-mobile-hide{% endif %}">
         {% for block in section.blocks %}
           {% if block.type == 'promise' %}
@@ -303,6 +305,12 @@
     grid-template-columns: minmax(0, 1.04fr) minmax(360px, .86fr);
     gap: clamp(22px, 4vw, 44px);
     align-items: start;
+  }
+
+  .section-{{ section.id }} .nvp-product__media-column {
+    display: grid;
+    gap: 18px;
+    align-self: start;
   }
 
   .section-{{ section.id }} .nvp-product__gallery {
@@ -698,6 +706,12 @@
     overflow: hidden;
   }
 
+  .section-{{ section.id }} .nvp-accordions--media {
+    margin-top: 0;
+    background: rgba(255,255,255,.92);
+    box-shadow: 0 18px 50px rgba(16, 35, 28, .07);
+  }
+
   .section-{{ section.id }} .nvp-accordions details + details {
     border-top: 1px solid var(--line);
   }
@@ -715,6 +729,10 @@
     color: var(--muted);
     font-size: 14px;
     line-height: 1.58;
+  }
+
+  .section-{{ section.id }} .nvp-accordions--media div {
+    max-width: 62ch;
   }
 
   .section-{{ section.id }} .nvp-accordions p {
@@ -853,6 +871,10 @@
     .section-{{ section.id }} .nvp-product__grid,
     .section-{{ section.id }} .nvp-details {
       grid-template-columns: minmax(0, 1fr);
+    }
+
+    .section-{{ section.id }} .nvp-product__media-column {
+      gap: 16px;
     }
 
     .section-{{ section.id }} .nvp-product__info {
