@@ -111,6 +111,27 @@
   margin-top: 3rem;
 }
 
+.section-{{ section.id }} .product__media-description {
+  margin-top: 2rem;
+  border: 1px solid rgba(17, 29, 99, 0.08);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 12px 34px rgba(17, 29, 99, 0.05);
+  padding: 2.4rem;
+}
+
+.section-{{ section.id }} .product__media-description .product__description {
+  margin-top: 0;
+}
+
+.section-{{ section.id }} .product__media-description .product__description > *:first-child {
+  margin-top: 0;
+}
+
+.section-{{ section.id }} .product__media-description .product__description > *:last-child {
+  margin-bottom: 0;
+}
+
 /* =========================
    BOTONES PREMIUM
 ========================= */
@@ -223,6 +244,18 @@
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper">
         {% render 'product-media-gallery', variant_images: variant_images %}
+        {%- if product.description != blank -%}
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'description' -%}
+              <div class="product__media-description quick-add-hidden" {{ block.shopify_attributes }}>
+                <div class="product__description rte" {% if block.settings.desc_size != blank %}style="font-size: {{ block.settings.desc_size }}px !important;"{% endif %}>
+                  {{ product.description }}
+                </div>
+              </div>
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
       </div>
       <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <section
@@ -333,11 +366,7 @@
                   {%- endif -%}
                 </p>
               {%- when 'description' -%}
-                {%- if product.description != blank -%}
-                  <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }} {% if block.settings.desc_size != blank %}style="font-size: {{ block.settings.desc_size }}px !important;"{% endif %}>
-                    {{ product.description }}
-                  </div>
-                {%- endif -%}
+                {%- comment -%} Rendered below the media gallery to use the left-column space. {%- endcomment -%}
               {%- when 'sku' -%}
                 <p
                   class="product__sku{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
