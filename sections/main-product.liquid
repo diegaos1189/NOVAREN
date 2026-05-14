@@ -1,6 +1,6 @@
 <product-info
   id="MainProduct-{{ section.id }}"
-  class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
+  class="section-{{ section.id }} section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
   data-section="{{ section.id }}"
   data-product-id="{{ product.id }}"
   data-update-url="true"
@@ -49,6 +49,10 @@
   padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
 }
 
+.section-{{ section.id }} {
+  background: #f5f5f7;
+}
+
 /* =========================
    ÍCARO PRO EDITORIAL LAYOUT
 ========================= */
@@ -56,19 +60,19 @@
 @media screen and (min-width: 990px) {
 
   .section-{{ section.id }} .product {
-    grid-template-columns: 58% 42%;
+    grid-template-columns: minmax(0, 1.25fr) minmax(390px, .95fr);
     align-items: start;
+    gap: 2rem;
   }
 
   .section-{{ section.id }} .product__media-wrapper {
     position: sticky;
-    top: 120px;
+    top: 112px;
     height: fit-content;
-    padding-right: 2rem;
   }
 
   .section-{{ section.id }} .product__info-container {
-    max-width: 460px;
+    max-width: 100%;
   }
 
 }
@@ -78,21 +82,13 @@
 ========================= */
 
 .section-{{ section.id }} .product__title h1 {
-  font-family: "Georgia", serif;
-  font-weight: 500;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.2rem;
-}
-
-/* =========================
-   PRECIO ESTILO EDITORIAL
-========================= */
-
-.section-{{ section.id }} .price {
-  font-size: 1.3rem;
-  margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
+  font-family: inherit;
+  font-weight: 900;
+  line-height: 1.18;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  margin: 0;
+  color: #111d63;
 }
 
 /* =========================
@@ -100,35 +96,8 @@
 ========================= */
 
 .section-{{ section.id }} .product__description {
-  line-height: 1.75;
-  font-size: 0.98rem;
-  margin-top: 2rem;
-}
-
-/* =========================
-   FICHA CURATORIAL
-========================= */
-
-.section-{{ section.id }} .product__description strong {
-  display: block;
-  margin-top: 1.5rem;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  opacity: 0.7;
-}
-
-/* =========================
-   CITAS DESTACADAS
-========================= */
-
-.section-{{ section.id }} blockquote {
-  border-left: 2px solid currentColor;
-  padding-left: 1.2rem;
-  margin: 2rem 0;
-  font-style: italic;
-  font-size: 1.05rem;
-  opacity: 0.85;
+  line-height: 1.65;
+  margin-top: 3rem;
 }
 
 /* =========================
@@ -136,11 +105,9 @@
 ========================= */
 
 .section-{{ section.id }} .product-form__buttons .button {
-  padding: 14px 24px;
-  font-size: 0.95rem;
+  min-height: 5.8rem;
   border-radius: 4px;
-  letter-spacing: 0.04em;
-  font-weight: 500;
+  font-weight: 800;
 }
 
 /* =========================
@@ -148,7 +115,7 @@
 ========================= */
 
 .section-{{ section.id }} .product__info-container > * {
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.45rem;
 }
 
 /* =========================
@@ -157,10 +124,10 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .section-{{ section.id }} .product__info-container {
-    animation: fadeEditorial 0.6s ease;
+    animation: productCardIn 0.45s ease;
   }
 
-  @keyframes fadeEditorial {
+  @keyframes productCardIn {
     from {
       opacity: 0;
       transform: translateY(12px);
@@ -224,6 +191,24 @@
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper">
         {% render 'product-media-gallery', variant_images: variant_images %}
+        <div class="nv-product-trust" aria-label="Beneficios de compra">
+          <div class="nv-product-trust__item">
+            <span class="nv-product-trust__icon">OK</span>
+            <strong>Compra 100% segura</strong>
+          </div>
+          <div class="nv-product-trust__item">
+            <span class="nv-product-trust__icon">30</span>
+            <strong>Garantia 30 dias</strong>
+          </div>
+          <div class="nv-product-trust__item">
+            <span class="nv-product-trust__icon">$</span>
+            <strong>Paga al recibir</strong>
+          </div>
+          <div class="nv-product-trust__item">
+            <span class="nv-product-trust__icon">CO</span>
+            <strong>Cobertura Colombia</strong>
+          </div>
+        </div>
       </div>
       <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <section
@@ -248,13 +233,29 @@
                   <h1 {% if block.settings.title_size != blank %}style="font-size: {{ block.settings.title_size }}px !important;"{% endif %}>{{ product.title | escape }}</h1>
                 </div>
               {%- when 'price' -%}
-                <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                  {%- render 'price',
-                    product: product,
-                    use_variant: true,
-                    show_badges: true,
-                    price_class: 'price--large'
-                  -%}
+                <div id="price-{{ section.id }}" class="nv-product-price" role="status" {{ block.shopify_attributes }}>
+                  <span class="nv-product-price__label">Precio:</span>
+                  <div class="nv-product-price__value">
+                    {%- render 'price',
+                      product: product,
+                      use_variant: true,
+                      show_badges: false,
+                      price_class: 'price--large'
+                    -%}
+                    {%- liquid
+                      assign active_variant = product.selected_or_first_available_variant
+                      assign compare_price = active_variant.compare_at_price
+                      assign current_price = active_variant.price
+                    -%}
+                    {%- if compare_price > current_price -%}
+                      {%- assign discount_percent = compare_price | minus: current_price | times: 100 | divided_by: compare_price -%}
+                      {%- assign discount_money = compare_price | minus: current_price | money -%}
+                      <div class="nv-product-price__badges">
+                        <span class="nv-product-price__percent">-{{ discount_percent }}%</span>
+                        <span class="nv-product-price__saving">{{ discount_money }} de descuento</span>
+                      </div>
+                    {%- endif -%}
+                  </div>
                 </div>
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
