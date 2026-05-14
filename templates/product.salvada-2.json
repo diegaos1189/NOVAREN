@@ -1,0 +1,133 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "Nuevo | +570 Productos Vendidos",
+            "text_style": "body"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "title_size": 30
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "platinum_leader": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"prem-platinum\">\n  <div class=\"prem-platinum__header\">\n    <div class=\"prem-platinum__seal\">\n      <svg width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n        <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#00a650\"/>\n        <polyline points=\"12,21 18,28 30,14\" fill=\"none\" stroke=\"white\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n      </svg>\n    </div>\n    <div class=\"prem-platinum__info\">\n      <strong>Tienda Lider Platinum</strong>\n      <span>Uno de los mejores del sitio</span>\n    </div>\n  </div>\n  <div class=\"prem-platinum__bar-track\">\n    <div class=\"prem-platinum__bar-fill\"></div>\n  </div>\n  <div class=\"prem-platinum__stats\">\n    <div class=\"prem-platinum__stat\">\n      <strong class=\"prem-platinum__num\">37.320</strong>\n      <span>Ventas en los ultimos 60 dias</span>\n    </div>\n    <div class=\"prem-platinum__stat\">\n      <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#666\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2\" y=\"3\" width=\"20\" height=\"18\" rx=\"2\"/><line x1=\"8\" y1=\"10\" x2=\"16\" y2=\"10\"/><line x1=\"8\" y1=\"14\" x2=\"13\" y2=\"14\"/></svg>\n      <span>Brinda un buen servicio</span>\n    </div>\n    <div class=\"prem-platinum__stat\">\n      <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#666\" stroke-width=\"1.5\" stroke-linecap=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><polyline points=\"12,6 12,12 16,14\"/></svg>\n      <span>Entrega los productos a tiempo</span>\n    </div>\n  </div>\n</div>"
+          }
+        },
+        "shipping_box": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"prem-shipping\">\n  <div class=\"prem-shipping__top\">\n    <span class=\"prem-shipping__bike\">FULL</span>\n    <strong>Envio Gratis <span class=\"prem-shipping__full\">FULL</span></strong>\n    <span class=\"prem-shipping__sep\"> | </span>\n    <span class=\"prem-shipping__avail\">Disponible</span>\n  </div>\n  <div class=\"prem-shipping__sub\">\n    <div>Pago Contraentrega Seguro de Envio</div>\n    <div class=\"prem-shipping__date\">Se entrega en 3-7 dias habiles</div>\n  </div>\n  <div class=\"prem-shipping__row\">\n    <span class=\"prem-shipping__row-icon\">OK</span>\n    <span><strong>Compra Garantizada.</strong> Satisfaccion Garantizada o le devolvemos el dinero</span>\n  </div>\n  <div class=\"prem-shipping__row\">\n    <span class=\"prem-shipping__row-icon\">#1</span>\n    <span><strong>Mas Vendido</strong> Entre los productos de esta categoria</span>\n  </div>\n</div>"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "btn_override": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>\n.product-form__submit {\n  background: linear-gradient(180deg, #ff6b35 0%, #e63500 100%) !important;\n  border-color: #e63500 !important;\n  color: #fff !important;\n  min-height: 6.4rem !important;\n  border-radius: 0.8rem !important;\n  transition: opacity 0.2s ease !important;\n}\n.product-form__submit:hover:not([aria-disabled='true']) {\n  opacity: 0.88 !important;\n  filter: brightness(1.05) !important;\n}\n.product-form__submit > span:first-of-type {\n  font-size: 0;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0.2rem;\n}\n.product-form__submit > span:first-of-type::before {\n  content: 'Pedir Contraentrega';\n  font-size: 1.8rem;\n  font-weight: 700;\n  letter-spacing: 0.03rem;\n  display: block;\n  color: #fff;\n}\n.product-form__submit > span:first-of-type::after {\n  content: 'Con Envio Gratis!';\n  font-size: 1.35rem;\n  font-weight: 400;\n  display: block;\n  color: rgba(255,255,255,0.9);\n}\n.product-form__submit[aria-disabled='true'] > span:first-of-type::before {\n  content: 'Procesando...';\n}\n.product-form__submit[aria-disabled='true'] > span:first-of-type::after {\n  content: '';\n}\n</style>"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "desc_size": 16
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "platinum_leader",
+        "shipping_box",
+        "variant_picker",
+        "quantity_selector",
+        "btn_override",
+        "buy_buttons",
+        "description"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 20,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "Productos recomendados",
+        "heading_size": "h1",
+        "products_to_show": 6,
+        "columns_desktop": 6,
+        "color_scheme": "inverse",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "1774156486f483269c": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "1774156486f483269c"
+  ]
+}
