@@ -293,6 +293,23 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "nv_blog_8dwndU": {
+      "type": "NV-blog",
+      "name": "NV blog",
+      "settings": {
+        "blog": "news",
+        "eyebrow": "Gui­a Novaren",
+        "heading": "Consejos para una vida mas saludable",
+        "text": "Contenido pensado para aprender, comparar y crear habitos de bienestar con informacion clara.",
+        "limit": 3,
+        "columns_desktop": 3,
+        "article_kicker": "HÃ¡bitos saludables",
+        "article_link_label": "Leer artÃ­culo",
+        "background": "#fbfaf5",
+        "padding_top": 88,
+        "padding_bottom": 88
+      }
     }
   },
   "order": [
@@ -305,6 +322,7 @@
     "rich_text_cggdd4",
     "1774638944a3a64c38",
     "cf041c51-04b0-4692-a755-688469da084e",
-    "1773159858be925cff"
+    "1773159858be925cff",
+    "nv_blog_8dwndU"
   ]
 }
