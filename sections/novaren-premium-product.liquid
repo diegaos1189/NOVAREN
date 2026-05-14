@@ -208,6 +208,8 @@
         {% if section.settings.show_quantity %}
           <label for="Quantity-{{ section.id }}">{{ section.settings.quantity_label }}</label>
           <input id="Quantity-{{ section.id }}" type="number" name="quantity" value="1" min="1">
+        {% else %}
+          <input type="hidden" name="quantity" value="1">
         {% endif %}
 
         <button type="submit" name="add" {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}>

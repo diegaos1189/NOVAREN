@@ -65,7 +65,7 @@
         "hide_promises_on_mobile": true,
         "hide_detail_blocks_on_mobile": true,
         "variant_label": "Presentación",
-        "show_quantity": true,
+        "show_quantity": false,
         "quantity_label": "Cantidad",
         "button_label": "Pagar Contra Reembolso",
         "sold_out_label": "Agotado",
