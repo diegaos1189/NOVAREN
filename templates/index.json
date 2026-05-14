@@ -89,7 +89,7 @@
         "product_title_size": 20,
         "mobile_product_title_size": 13,
         "price_size": 20,
-        "mobile_price_size": 20,
+        "mobile_price_size": 16,
         "compare_price_size": 18,
         "title_color": "#10233f",
         "product_title_color": "#10233f",
@@ -119,8 +119,8 @@
         "announcement_BqrFHy": {
           "type": "announcement",
           "settings": {
-            "icon": "",
-            "text": "Cada página cuenta una historia que espera ser descubierta.",
+            "icon": "✨",
+            "text": "Bienestar digestivo todos los días",
             "link": "",
             "link_text": "Comprar ahora"
           }
@@ -128,7 +128,7 @@
         "announcement_fNgEyA": {
           "type": "announcement",
           "settings": {
-            "icon": "🎉",
+            "icon": "🚚",
             "text": "¡Envío gratis en compras superiores a $149.900!",
             "link": "",
             "link_text": "Comprar ahora"
@@ -137,8 +137,8 @@
         "announcement_PcVhii": {
           "type": "announcement",
           "settings": {
-            "icon": "",
-            "text": "Desde clásicos hasta novedades, cada libro está cuidadosamente escogido para enriquecer tu vida.",
+            "icon": "📦",
+            "text": "Compra segura con Novaren",
             "link": "",
             "link_text": "Ver novedades"
           }
