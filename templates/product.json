@@ -52,10 +52,16 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "btn_override": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>\n.product-form__submit {\n  background: linear-gradient(180deg, #ff6b35 0%, #e63500 100%) !important;\n  border-color: #e63500 !important;\n  color: #fff !important;\n  min-height: 6.4rem !important;\n  border-radius: 0.8rem !important;\n  transition: opacity 0.2s ease !important;\n}\n.product-form__submit:hover:not([aria-disabled='true']) {\n  opacity: 0.88 !important;\n  filter: brightness(1.05) !important;\n}\n.product-form__submit > span:first-of-type {\n  font-size: 0;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0.2rem;\n}\n.product-form__submit > span:first-of-type::before {\n  content: 'Pedir Contraentrega';\n  font-size: 1.8rem;\n  font-weight: 700;\n  letter-spacing: 0.03rem;\n  display: block;\n  color: #fff;\n}\n.product-form__submit > span:first-of-type::after {\n  content: 'Con Envio Gratis!';\n  font-size: 1.35rem;\n  font-weight: 400;\n  display: block;\n  color: rgba(255,255,255,0.9);\n}\n.product-form__submit[aria-disabled='true'] > span:first-of-type::before {\n  content: 'Procesando...';\n}\n.product-form__submit[aria-disabled='true'] > span:first-of-type::after {\n  content: '';\n}\n</style>"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": false,
+            "show_dynamic_checkout": true,
             "show_gift_card_recipient": true
           }
         },
@@ -74,6 +80,7 @@
         "shipping_box",
         "variant_picker",
         "quantity_selector",
+        "btn_override",
         "buy_buttons",
         "description"
       ],
@@ -83,11 +90,11 @@
         "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "gallery_layout": "thumbnail",
+        "gallery_layout": "stacked",
         "media_position": "left",
         "image_zoom": "none",
-        "mobile_thumbnails": "show",
-        "hide_variants": false,
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 20,
         "padding_bottom": 12

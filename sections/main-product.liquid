@@ -60,15 +60,26 @@
 @media screen and (min-width: 990px) {
 
   .section-{{ section.id }} .product {
+    display: grid;
     grid-template-columns: minmax(0, 1.25fr) minmax(390px, .95fr);
     align-items: start;
     gap: 2rem;
+  }
+
+  .section-{{ section.id }} .product > .grid__item {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
   }
 
   .section-{{ section.id }} .product__media-wrapper {
     position: sticky;
     top: 112px;
     height: fit-content;
+  }
+
+  .section-{{ section.id }} .product__info-wrapper {
+    padding-left: 0;
   }
 
   .section-{{ section.id }} .product__info-container {
@@ -150,6 +161,27 @@
   }
 }
 
+@media screen and (max-width: 989px) {
+  .section-{{ section.id }} .product {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .section-{{ section.id }} .product > .grid__item {
+    width: 100%;
+    max-width: none;
+  }
+
+  .section-{{ section.id }} .product__media-wrapper {
+    position: static;
+  }
+
+  .section-{{ section.id }} .product__info-wrapper {
+    padding-left: 0;
+  }
+}
+
 {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -191,24 +223,6 @@
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper">
         {% render 'product-media-gallery', variant_images: variant_images %}
-        <div class="nv-product-trust" aria-label="Beneficios de compra">
-          <div class="nv-product-trust__item">
-            <span class="nv-product-trust__icon">OK</span>
-            <strong>Compra 100% segura</strong>
-          </div>
-          <div class="nv-product-trust__item">
-            <span class="nv-product-trust__icon">30</span>
-            <strong>Garantia 30 dias</strong>
-          </div>
-          <div class="nv-product-trust__item">
-            <span class="nv-product-trust__icon">$</span>
-            <strong>Paga al recibir</strong>
-          </div>
-          <div class="nv-product-trust__item">
-            <span class="nv-product-trust__icon">CO</span>
-            <strong>Cobertura Colombia</strong>
-          </div>
-        </div>
       </div>
       <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <section
@@ -233,29 +247,13 @@
                   <h1 {% if block.settings.title_size != blank %}style="font-size: {{ block.settings.title_size }}px !important;"{% endif %}>{{ product.title | escape }}</h1>
                 </div>
               {%- when 'price' -%}
-                <div id="price-{{ section.id }}" class="nv-product-price" role="status" {{ block.shopify_attributes }}>
-                  <span class="nv-product-price__label">Precio:</span>
-                  <div class="nv-product-price__value">
-                    {%- render 'price',
-                      product: product,
-                      use_variant: true,
-                      show_badges: false,
-                      price_class: 'price--large'
-                    -%}
-                    {%- liquid
-                      assign active_variant = product.selected_or_first_available_variant
-                      assign compare_price = active_variant.compare_at_price
-                      assign current_price = active_variant.price
-                    -%}
-                    {%- if compare_price > current_price -%}
-                      {%- assign discount_percent = compare_price | minus: current_price | times: 100 | divided_by: compare_price -%}
-                      {%- assign discount_money = compare_price | minus: current_price | money -%}
-                      <div class="nv-product-price__badges">
-                        <span class="nv-product-price__percent">-{{ discount_percent }}%</span>
-                        <span class="nv-product-price__saving">{{ discount_money }} de descuento</span>
-                      </div>
-                    {%- endif -%}
-                  </div>
+                <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                  {%- render 'price',
+                    product: product,
+                    use_variant: true,
+                    show_badges: true,
+                    price_class: 'price--large'
+                  -%}
                 </div>
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
