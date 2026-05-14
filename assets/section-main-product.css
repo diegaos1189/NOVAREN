@@ -1486,17 +1486,18 @@ a.product__text {
 
 /* Platinum leader card */
 .prem-platinum {
-  border: 1px solid rgba(0, 166, 80, 0.3);
-  border-radius: 1rem;
-  padding: 1.4rem 1.5rem 1.2rem;
-  background: rgba(0, 166, 80, 0.03);
+  border: 1px solid rgba(17, 29, 99, 0.08);
+  border-radius: 8px;
+  padding: 1.8rem 2rem 1.7rem;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(17, 29, 99, 0.04);
 }
 
 .prem-platinum__header {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: 1.2rem;
+  margin-bottom: 1.45rem;
 }
 
 .prem-platinum__seal {
@@ -1504,28 +1505,45 @@ a.product__text {
   line-height: 0;
 }
 
+.prem-platinum__seal svg {
+  width: 4.7rem;
+  height: 4.7rem;
+}
+
+.prem-platinum__seal svg circle {
+  fill: none;
+  stroke: #33b95b;
+  stroke-width: 2.4;
+}
+
+.prem-platinum__seal svg polyline {
+  stroke: #33b95b;
+}
+
 .prem-platinum__info {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.1rem;
 }
 
 .prem-platinum__info strong {
-  font-size: 1.5rem;
-  color: #00a650;
+  font-size: 1.65rem;
+  color: #258f48;
   line-height: 1.2;
+  font-weight: 900;
 }
 
 .prem-platinum__info span {
-  font-size: 1.2rem;
-  color: rgba(var(--color-foreground), 0.6);
+  font-size: 1.35rem;
+  color: #6c7286;
+  line-height: 1.25;
 }
 
 .prem-platinum__bar-track {
-  height: 0.6rem;
-  background: linear-gradient(90deg, #ffd700 0%, #ff6b35 35%, #00c060 100%);
+  height: 0.55rem;
+  background: linear-gradient(90deg, #ffcfc9 0%, #fff3c6 34%, #d9f5d9 65%, #2f9e62 100%);
   border-radius: 999px;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.4rem;
   overflow: hidden;
 }
 
@@ -1538,7 +1556,7 @@ a.product__text {
 .prem-platinum__stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.5rem;
+  gap: 0;
   text-align: center;
 }
 
@@ -1546,92 +1564,119 @@ a.product__text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.3rem;
-  font-size: 1.1rem;
-  color: rgba(var(--color-foreground), 0.65);
-  line-height: 1.3;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 5.5rem;
+  padding: 0 1.2rem;
+  font-size: 1.05rem;
+  color: #6c7286;
+  line-height: 1.25;
+}
+
+.prem-platinum__stat + .prem-platinum__stat {
+  border-left: 1px solid rgba(17, 29, 99, 0.1);
+}
+
+.prem-platinum__stat svg {
+  width: 2.45rem;
+  height: 2.45rem;
+  stroke: #58607f;
 }
 
 .prem-platinum__num {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: rgba(var(--color-foreground), 0.9);
+  font-size: 2rem;
+  font-weight: 900;
+  color: #747b9a;
   line-height: 1;
 }
 
 /* Shipping info box */
 .prem-shipping {
-  border: 1px solid rgba(var(--color-foreground), 0.12);
-  border-radius: 1rem;
+  border: 0;
+  border-radius: 8px;
   overflow: hidden;
-  background: rgba(var(--color-foreground), 0.025);
+  background: #f0f1f5;
+  padding: 1.45rem 1.8rem 1.55rem;
 }
 
 .prem-shipping__top {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 1.3rem;
-  border-bottom: 1px solid rgba(var(--color-foreground), 0.08);
+  gap: 0.55rem;
+  padding: 0;
   flex-wrap: wrap;
+  line-height: 1.25;
+  margin-bottom: 0.7rem;
 }
 
 .prem-shipping__bike {
-  font-size: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 999px;
+  border: 1px solid #00a650;
+  color: #00a650;
+  font-size: 0.75rem;
+  font-weight: 900;
   flex-shrink: 0;
 }
 
 .prem-shipping__top strong {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   color: #00a650;
+  font-weight: 900;
 }
 
 .prem-shipping__full {
   display: inline-flex;
   align-items: center;
-  background: #1a1a2e;
-  color: #fff;
-  border-radius: 0.4rem;
-  padding: 0.1rem 0.4rem;
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.03rem;
+  background: transparent;
+  color: #00a650;
+  border-radius: 0;
+  padding: 0;
+  font-size: 1.05rem;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: 0;
 }
 
 .prem-shipping__sep {
-  color: rgba(var(--color-foreground), 0.35);
-  font-size: 1.3rem;
+  color: #00a650;
+  font-size: 1.25rem;
 }
 
 .prem-shipping__avail {
   font-size: 1.3rem;
-  color: #00a650;
-  font-weight: 600;
+  color: #006eff;
+  font-weight: 700;
 }
 
 .prem-shipping__sub {
-  padding: 0.85rem 1.3rem;
-  border-bottom: 1px solid rgba(var(--color-foreground), 0.08);
-  font-size: 1.25rem;
-  color: rgba(var(--color-foreground), 0.8);
+  padding: 0 0 1rem 2.9rem;
+  border-bottom: 0;
+  font-size: 1.32rem;
+  color: #17276d;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.3rem;
+  line-height: 1.35;
 }
 
 .prem-shipping__date {
-  color: #1a6fbf;
+  color: #17276d;
   font-weight: 500;
 }
 
 .prem-shipping__row {
   display: flex;
   align-items: flex-start;
-  gap: 0.7rem;
-  padding: 0.75rem 1.3rem;
-  border-bottom: 1px solid rgba(var(--color-foreground), 0.06);
+  gap: 0.95rem;
+  padding: 0.55rem 0 0;
+  border-bottom: 0;
   font-size: 1.25rem;
-  color: rgba(var(--color-foreground), 0.8);
+  color: #6b7080;
   line-height: 1.45;
 }
 
@@ -1640,9 +1685,51 @@ a.product__text {
 }
 
 .prem-shipping__row-icon {
-  font-size: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.95rem;
+  min-width: 1.95rem;
+  height: 1.95rem;
+  border-radius: 999px;
+  border: 1px solid #7b8194;
+  color: #5d6478;
+  font-size: 0.78rem;
+  font-weight: 900;
   flex-shrink: 0;
-  margin-top: 0.05rem;
+  margin-top: 0.1rem;
+}
+
+.prem-shipping__row strong {
+  color: #17276d;
+  font-weight: 800;
+}
+
+@media screen and (max-width: 749px) {
+  .prem-platinum,
+  .prem-shipping {
+    padding: 1.4rem;
+  }
+
+  .prem-platinum__stats {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .prem-platinum__stat {
+    align-items: flex-start;
+    min-height: auto;
+    padding: 1rem 0;
+  }
+
+  .prem-platinum__stat + .prem-platinum__stat {
+    border-left: 0;
+    border-top: 1px solid rgba(17, 29, 99, 0.1);
+  }
+
+  .prem-shipping__sub {
+    padding-left: 0;
+  }
 }
 
 /* ============================= */
