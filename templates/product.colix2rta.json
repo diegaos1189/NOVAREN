@@ -146,6 +146,7 @@
         "img_01_hero": {
           "type": "image_block",
           "settings": {
+            "image": "shopify://shop_images/5e71b273-f8ac-4746-8d05-d9a0d7d32ebe.png",
             "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-01-hero.png?v=1778719736",
             "alt": "RtaFull Detox Natural 500ml de Novaren para bienestar digestivo y sensaciÃ³n de ligereza",
             "caption": "",
@@ -166,11 +167,22 @@
         "img_02_confianza": {
           "type": "image_block",
           "settings": {
+            "image": "shopify://shop_images/ingredientes_RtaFull.png",
             "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-02-confianza.png?v=1778719736",
             "alt": "Promesas de compra segura, pago contra entrega, envÃ­o en Colombia y soporte Novaren",
             "caption": "",
             "width": "full",
             "spacing_bottom": 18
+          }
+        },
+        "txt_ingredientes": {
+          "type": "content_block",
+          "settings": {
+            "eyebrow": "Ingredientes naturales",
+            "heading": "Una rutina más ligera empieza con hábitos simples",
+            "text": "<p>La sensación de pesadez puede estar relacionada con alimentación abundante, baja hidratación, poco movimiento o rutinas aceleradas. RtaFull puede acompañar una rutina diaria donde también importan el agua, la fibra, el descanso y comer con calma.</p>",
+            "style": "plain",
+            "spacing_bottom": 22
           }
         },
         "trust_01": {
@@ -187,96 +199,6 @@
             "spacing_bottom": 22
           }
         },
-        "img_03_pagos": {
-          "type": "image_block",
-          "settings": {
-            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-03-pagos-confianza.png?v=1778719736",
-            "alt": "Opciones de pago seguro en lÃ­nea para comprar RtaFull en Novaren",
-            "caption": "",
-            "width": "full",
-            "spacing_bottom": 24
-          }
-        },
-        "txt_confianza": {
-          "type": "content_block",
-          "settings": {
-            "eyebrow": "Compra con confianza",
-            "heading": "¿Por qué elegir RtaFull en Novaren?",
-            "text": "<ul><li>Compra segura y atención clara antes de finalizar tu pedido.</li><li>Pago contra entrega disponible según ciudad y operador logístico.</li><li>Envíos nacionales en Colombia y seguimiento del proceso.</li><li>Producto enfocado en acompañar hábitos saludables, no en reemplazarlos.</li></ul>",
-            "style": "soft",
-            "spacing_bottom": 22
-          }
-        },
-        "04_rtafull_04_pesadez_rutina_png": {
-          "type": "image_block",
-          "settings": {
-            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-04-pesadez-rutina.png?v=1778719736",
-            "alt": "Rutina para acompañar la sensación de pesadez y el bienestar digestivo con RtaFull",
-            "caption": "",
-            "width": "full",
-            "spacing_bottom": 18
-          }
-        },
-        "txt_ingredientes": {
-          "type": "content_block",
-          "settings": {
-            "eyebrow": "Ingredientes naturales",
-            "heading": "Una rutina más ligera empieza con hábitos simples",
-            "text": "<p>La sensación de pesadez puede estar relacionada con alimentación abundante, baja hidratación, poco movimiento o rutinas aceleradas. RtaFull puede acompañar una rutina diaria donde también importan el agua, la fibra, el descanso y comer con calma.</p>",
-            "style": "plain",
-            "spacing_bottom": 22
-          }
-        },
-        "05_rtafull_05_ingredientes_png": {
-          "type": "image_block",
-          "settings": {
-            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-05-ingredientes.png?v=1778719736",
-            "alt": "Ingredientes naturales de RtaFull: flor de jamaica, alcachofa, menta y perejil",
-            "caption": "",
-            "width": "full",
-            "spacing_bottom": 18
-          }
-        },
-        "06_rtafull_06_como_usarlo_png": {
-          "type": "image_block",
-          "settings": {
-            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-06-como-usarlo.png?v=1778719736",
-            "alt": "CÃ³mo integrar RtaFull Detox Natural 500ml en hÃ¡bitos saludables diarios",
-            "caption": "",
-            "width": "full",
-            "spacing_bottom": 18
-          }
-        },
-        "07_rtafull_07_beneficios_png": {
-          "type": "image_block",
-          "settings": {
-            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-07-beneficios.png?v=1778719736",
-            "alt": "Beneficios de RtaFull para una rutina de bienestar digestivo responsable",
-            "caption": "",
-            "width": "full",
-            "spacing_bottom": 18
-          }
-        },
-        "08_rtafull_08_envio_pago_png": {
-          "type": "image_block",
-          "settings": {
-            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-08-envio-pago.png?v=1778719736",
-            "alt": "InformaciÃ³n de envÃ­o nacional, pago contra entrega y compra protegida en Novaren",
-            "caption": "",
-            "width": "full",
-            "spacing_bottom": 18
-          }
-        },
-        "09_rtafull_09_faq_responsable_png": {
-          "type": "image_block",
-          "settings": {
-            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-09-faq-responsable.png?v=1778719736",
-            "alt": "Preguntas frecuentes de uso responsable de RtaFull Detox Natural",
-            "caption": "",
-            "width": "full",
-            "spacing_bottom": 18
-          }
-        },
         "txt_uso_responsable": {
           "type": "content_block",
           "settings": {
@@ -286,34 +208,15 @@
             "style": "bordered",
             "spacing_bottom": 22
           }
-        },
-        "10_rtafull_10_cierre_compra_png": {
-          "type": "image_block",
-          "settings": {
-            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-10-cierre-compra.png?v=1778719736",
-            "alt": "Cierre de compra de RtaFull Detox Natural 500ml con respaldo Novaren",
-            "caption": "",
-            "width": "full",
-            "spacing_bottom": 0
-          }
         }
       },
       "block_order": [
         "img_01_hero",
         "txt_intro",
         "img_02_confianza",
-        "trust_01",
-        "img_03_pagos",
-        "txt_confianza",
-        "04_rtafull_04_pesadez_rutina_png",
         "txt_ingredientes",
-        "05_rtafull_05_ingredientes_png",
-        "06_rtafull_06_como_usarlo_png",
-        "07_rtafull_07_beneficios_png",
-        "08_rtafull_08_envio_pago_png",
-        "09_rtafull_09_faq_responsable_png",
-        "txt_uso_responsable",
-        "10_rtafull_10_cierre_compra_png"
+        "trust_01",
+        "txt_uso_responsable"
       ],
       "settings": {
         "anchor_id": "rtafull-landing",
