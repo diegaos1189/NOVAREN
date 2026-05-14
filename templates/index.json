@@ -271,27 +271,27 @@
       ],
       "settings": {}
     },
-    "cf041c51-04b0-4692-a755-688469da084e": {
-      "type": "featured-blog",
-      "settings": {
-        "heading": "Consejos de bienestar",
-        "heading_size": "h2",
-        "blog": "news",
-        "post_limit": 3,
-        "columns_desktop": 3,
-        "color_scheme": "",
-        "show_image": true,
-        "show_date": true,
-        "show_author": false,
-        "show_view_all": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "1773159858be925cff": {
       "type": "apps",
       "settings": {
         "include_margins": true
+      }
+    },
+    "nv_blog_8dwndU": {
+      "type": "NV-blog",
+      "name": "NV blog",
+      "settings": {
+        "blog": "news",
+        "eyebrow": "Guía Novaren",
+        "heading": "Consejos para una vida mas saludable",
+        "text": "Contenido pensado para aprender, comparar y crear hábitos de bienestar con información clara.",
+        "limit": 3,
+        "columns_desktop": 3,
+        "article_kicker": "Hábitos saludables",
+        "article_link_label": "Leer arti­culo",
+        "background": "#fbfaf5",
+        "padding_top": 88,
+        "padding_bottom": 88
       }
     }
   },
@@ -304,7 +304,7 @@
     "collection_carousel_C7UWjR",
     "rich_text_cggdd4",
     "1774638944a3a64c38",
-    "cf041c51-04b0-4692-a755-688469da084e",
-    "1773159858be925cff"
+    "1773159858be925cff",
+    "nv_blog_8dwndU"
   ]
 }
