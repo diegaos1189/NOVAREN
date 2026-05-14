@@ -1,0 +1,393 @@
+{% liquid
+  assign section_anchor = section.settings.anchor_id | default: 'rtafull-landing'
+%}
+
+<section id="{{ section_anchor | escape }}" class="nrl section-{{ section.id }}">
+  <div class="nrl__inner">
+    {% if section.settings.eyebrow != blank or section.settings.heading != blank or section.settings.text != blank %}
+      <header class="nrl__header">
+        {% if section.settings.eyebrow != blank %}
+          <p class="nrl__eyebrow">{{ section.settings.eyebrow }}</p>
+        {% endif %}
+        {% if section.settings.heading != blank %}
+          <h2>{{ section.settings.heading }}</h2>
+        {% endif %}
+        {% if section.settings.text != blank %}
+          <div class="nrl__intro">{{ section.settings.text }}</div>
+        {% endif %}
+      </header>
+    {% endif %}
+
+    <div class="nrl__blocks">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'image_block' %}
+            {% liquid
+              assign fallback_url = block.settings.fallback_url | strip
+              assign alt_text = block.settings.alt | default: block.settings.caption | default: product.title
+            %}
+            <figure class="nrl__image-block nrl__image-block--{{ block.settings.width }}" style="--nrl-block-space: {{ block.settings.spacing_bottom }}px;" {{ block.shopify_attributes }}>
+              {% if block.settings.image != blank %}
+                {{
+                  block.settings.image
+                  | image_url: width: 1600
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '360, 540, 720, 900, 1080, 1400, 1600',
+                    sizes: '(min-width: 990px) 860px, calc(100vw - 32px)',
+                    alt: alt_text,
+                    class: 'nrl__image'
+                }}
+              {% elsif fallback_url != blank %}
+                <img
+                  class="nrl__image"
+                  src="{{ fallback_url | escape }}"
+                  alt="{{ alt_text | escape }}"
+                  width="1080"
+                  height="1350"
+                  loading="lazy"
+                >
+              {% else %}
+                <div class="nrl__placeholder">
+                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+              {% endif %}
+              {% if block.settings.caption != blank %}
+                <figcaption>{{ block.settings.caption }}</figcaption>
+              {% endif %}
+            </figure>
+
+          {% when 'content_block' %}
+            <article class="nrl__content nrl__content--{{ block.settings.style }}" style="--nrl-block-space: {{ block.settings.spacing_bottom }}px;" {{ block.shopify_attributes }}>
+              {% if block.settings.eyebrow != blank %}
+                <p class="nrl__eyebrow">{{ block.settings.eyebrow }}</p>
+              {% endif %}
+              {% if block.settings.heading != blank %}
+                <h3>{{ block.settings.heading }}</h3>
+              {% endif %}
+              {% if block.settings.text != blank %}
+                <div class="nrl__richtext">{{ block.settings.text }}</div>
+              {% endif %}
+            </article>
+
+          {% when 'trust_grid' %}
+            <div class="nrl__trust" style="--nrl-block-space: {{ block.settings.spacing_bottom }}px;" {{ block.shopify_attributes }}>
+              {% for i in (1..4) %}
+                {% liquid
+                  assign title_key = 'title_' | append: i
+                  assign text_key = 'text_' | append: i
+                  assign title = block.settings[title_key]
+                  assign text = block.settings[text_key]
+                %}
+                {% if title != blank or text != blank %}
+                  <div class="nrl__trust-item">
+                    <span aria-hidden="true">✓</span>
+                    {% if title != blank %}<strong>{{ title }}</strong>{% endif %}
+                    {% if text != blank %}<p>{{ text }}</p>{% endif %}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-{{ section.id }} {
+    background: {{ section.settings.background }};
+    padding: {{ section.settings.padding_top }}px 16px {{ section.settings.padding_bottom }}px;
+  }
+
+  .section-{{ section.id }} .nrl__inner {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .section-{{ section.id }} .nrl__header {
+    margin: 0 0 {{ section.settings.header_spacing }}px;
+    text-align: {{ section.settings.text_alignment }};
+  }
+
+  .section-{{ section.id }} .nrl__eyebrow {
+    margin: 0 0 10px;
+    color: {{ section.settings.accent_color }};
+    font-size: {{ section.settings.eyebrow_size }}px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  .section-{{ section.id }} h2,
+  .section-{{ section.id }} h3,
+  .section-{{ section.id }} p {
+    letter-spacing: 0;
+  }
+
+  .section-{{ section.id }} h2 {
+    margin: 0;
+    color: {{ section.settings.heading_color }};
+    font-size: {{ section.settings.heading_size }}px;
+    line-height: 1.08;
+  }
+
+  .section-{{ section.id }} .nrl__intro {
+    max-width: 760px;
+    margin: 14px {% if section.settings.text_alignment == 'center' %}auto{% else %}0{% endif %} 0;
+    color: {{ section.settings.text_color }};
+    font-size: {{ section.settings.text_size }}px;
+    line-height: 1.65;
+  }
+
+  .section-{{ section.id }} .nrl__blocks {
+    display: grid;
+    gap: 0;
+  }
+
+  .section-{{ section.id }} .nrl__image-block,
+  .section-{{ section.id }} .nrl__content,
+  .section-{{ section.id }} .nrl__trust {
+    margin: 0 0 var(--nrl-block-space, 18px);
+  }
+
+  .section-{{ section.id }} .nrl__image-block--narrow {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-{{ section.id }} .nrl__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: {{ section.settings.image_radius }}px;
+    box-shadow: {% if section.settings.image_shadow %}0 18px 50px rgba(16, 35, 90, .10){% else %}none{% endif %};
+  }
+
+  .section-{{ section.id }} figcaption {
+    margin-top: 8px;
+    color: {{ section.settings.muted_color }};
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .section-{{ section.id }} .nrl__content {
+    border-radius: {{ section.settings.card_radius }}px;
+    padding: {{ section.settings.card_padding }}px;
+    color: {{ section.settings.text_color }};
+  }
+
+  .section-{{ section.id }} .nrl__content--plain {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .section-{{ section.id }} .nrl__content--soft {
+    background: {{ section.settings.card_background }};
+  }
+
+  .section-{{ section.id }} .nrl__content--bordered {
+    background: #fff;
+    border: 1px solid rgba(16, 35, 90, .12);
+  }
+
+  .section-{{ section.id }} .nrl__content h3 {
+    margin: 0 0 12px;
+    color: {{ section.settings.heading_color }};
+    font-size: {{ section.settings.block_heading_size }}px;
+    line-height: 1.15;
+  }
+
+  .section-{{ section.id }} .nrl__richtext {
+    font-size: {{ section.settings.text_size }}px;
+    line-height: 1.65;
+  }
+
+  .section-{{ section.id }} .nrl__richtext > *:first-child {
+    margin-top: 0;
+  }
+
+  .section-{{ section.id }} .nrl__richtext > *:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-{{ section.id }} .nrl__trust {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .section-{{ section.id }} .nrl__trust-item {
+    min-height: 142px;
+    border: 1px solid rgba(16, 35, 90, .10);
+    border-radius: {{ section.settings.card_radius }}px;
+    background: #fff;
+    padding: 18px;
+    text-align: center;
+  }
+
+  .section-{{ section.id }} .nrl__trust-item span {
+    display: inline-grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 10px;
+    border-radius: 999px;
+    background: {{ section.settings.accent_color }};
+    color: #fff;
+    font-weight: 900;
+  }
+
+  .section-{{ section.id }} .nrl__trust-item strong {
+    display: block;
+    color: {{ section.settings.heading_color }};
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .section-{{ section.id }} .nrl__trust-item p {
+    margin: 7px 0 0;
+    color: {{ section.settings.muted_color }};
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  .section-{{ section.id }} .nrl__placeholder {
+    border-radius: {{ section.settings.image_radius }}px;
+    background: #f2f5f3;
+    overflow: hidden;
+  }
+
+  @media (max-width: 749px) {
+    .section-{{ section.id }} {
+      padding: {{ section.settings.mobile_padding_top }}px 12px {{ section.settings.mobile_padding_bottom }}px;
+    }
+
+    .section-{{ section.id }} h2 {
+      font-size: {{ section.settings.mobile_heading_size }}px;
+    }
+
+    .section-{{ section.id }} .nrl__intro,
+    .section-{{ section.id }} .nrl__richtext {
+      font-size: {{ section.settings.mobile_text_size }}px;
+    }
+
+    .section-{{ section.id }} .nrl__content h3 {
+      font-size: {{ section.settings.mobile_block_heading_size }}px;
+    }
+
+    .section-{{ section.id }} .nrl__content {
+      padding: {{ section.settings.mobile_card_padding }}px;
+    }
+
+    .section-{{ section.id }} .nrl__trust {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .section-{{ section.id }} .nrl__trust-item {
+      min-height: 132px;
+      padding: 14px 10px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "RtaFull landing editable",
+  "tag": "section",
+  "class": "section-novaren-rtafull-landing",
+  "settings": [
+    { "type": "text", "id": "anchor_id", "label": "ID/ancla de sección", "default": "rtafull-landing" },
+    { "type": "text", "id": "eyebrow", "label": "Etiqueta superior", "default": "Landing de producto" },
+    { "type": "text", "id": "heading", "label": "Título principal", "default": "Información completa de RtaFull" },
+    { "type": "richtext", "id": "text", "label": "Texto introductorio", "default": "<p>Edita, reordena o reemplaza cada bloque visual desde el personalizador del tema.</p>" },
+    { "type": "select", "id": "text_alignment", "label": "Alineación", "default": "left", "options": [
+      { "value": "left", "label": "Izquierda" },
+      { "value": "center", "label": "Centro" }
+    ] },
+    { "type": "range", "id": "max_width", "label": "Ancho máximo", "min": 640, "max": 1100, "step": 20, "unit": "px", "default": 860 },
+    { "type": "color", "id": "background", "label": "Fondo", "default": "#ffffff" },
+    { "type": "color", "id": "card_background", "label": "Fondo tarjetas suaves", "default": "#f6f8f5" },
+    { "type": "color", "id": "heading_color", "label": "Color títulos", "default": "#10235a" },
+    { "type": "color", "id": "text_color", "label": "Color texto", "default": "#172420" },
+    { "type": "color", "id": "muted_color", "label": "Color texto suave", "default": "#69736f" },
+    { "type": "color", "id": "accent_color", "label": "Color acento", "default": "#1f6b4f" },
+    { "type": "range", "id": "heading_size", "label": "Tamaño título", "min": 28, "max": 56, "step": 1, "unit": "px", "default": 38 },
+    { "type": "range", "id": "mobile_heading_size", "label": "Tamaño título móvil", "min": 24, "max": 42, "step": 1, "unit": "px", "default": 30 },
+    { "type": "range", "id": "block_heading_size", "label": "Tamaño títulos de bloque", "min": 22, "max": 42, "step": 1, "unit": "px", "default": 30 },
+    { "type": "range", "id": "mobile_block_heading_size", "label": "Tamaño títulos de bloque móvil", "min": 20, "max": 34, "step": 1, "unit": "px", "default": 25 },
+    { "type": "range", "id": "text_size", "label": "Tamaño párrafos", "min": 14, "max": 22, "step": 1, "unit": "px", "default": 18 },
+    { "type": "range", "id": "mobile_text_size", "label": "Tamaño párrafos móvil", "min": 14, "max": 20, "step": 1, "unit": "px", "default": 16 },
+    { "type": "range", "id": "eyebrow_size", "label": "Tamaño etiqueta", "min": 11, "max": 18, "step": 1, "unit": "px", "default": 13 },
+    { "type": "range", "id": "image_radius", "label": "Radio imágenes", "min": 0, "max": 36, "step": 2, "unit": "px", "default": 18 },
+    { "type": "checkbox", "id": "image_shadow", "label": "Sombra suave en imágenes", "default": false },
+    { "type": "range", "id": "card_radius", "label": "Radio tarjetas", "min": 0, "max": 28, "step": 2, "unit": "px", "default": 16 },
+    { "type": "range", "id": "card_padding", "label": "Padding tarjetas", "min": 0, "max": 44, "step": 2, "unit": "px", "default": 24 },
+    { "type": "range", "id": "mobile_card_padding", "label": "Padding tarjetas móvil", "min": 0, "max": 32, "step": 2, "unit": "px", "default": 18 },
+    { "type": "range", "id": "header_spacing", "label": "Espacio después del encabezado", "min": 0, "max": 64, "step": 4, "unit": "px", "default": 24 },
+    { "type": "range", "id": "padding_top", "label": "Padding superior", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 40 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding inferior", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 72 },
+    { "type": "range", "id": "mobile_padding_top", "label": "Padding superior móvil", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 24 },
+    { "type": "range", "id": "mobile_padding_bottom", "label": "Padding inferior móvil", "min": 0, "max": 100, "step": 4, "unit": "px", "default": 56 }
+  ],
+  "blocks": [
+    {
+      "type": "image_block",
+      "name": "Imagen editable",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Imagen desde Shopify" },
+        { "type": "url", "id": "fallback_url", "label": "URL de imagen actual" },
+        { "type": "text", "id": "alt", "label": "Texto alternativo SEO", "default": "Imagen de RtaFull y Novaren" },
+        { "type": "text", "id": "caption", "label": "Pie de imagen opcional" },
+        { "type": "select", "id": "width", "label": "Ancho", "default": "full", "options": [
+          { "value": "full", "label": "Completo" },
+          { "value": "narrow", "label": "Estrecho" }
+        ] },
+        { "type": "range", "id": "spacing_bottom", "label": "Espacio inferior", "min": 0, "max": 64, "step": 2, "unit": "px", "default": 18 }
+      ]
+    },
+    {
+      "type": "content_block",
+      "name": "Texto editable",
+      "settings": [
+        { "type": "text", "id": "eyebrow", "label": "Etiqueta" },
+        { "type": "text", "id": "heading", "label": "Título", "default": "Título de bloque" },
+        { "type": "richtext", "id": "text", "label": "Texto", "default": "<p>Agrega aquí el contenido de venta, SEO o explicación del producto.</p>" },
+        { "type": "select", "id": "style", "label": "Estilo", "default": "plain", "options": [
+          { "value": "plain", "label": "Sin fondo" },
+          { "value": "soft", "label": "Fondo suave" },
+          { "value": "bordered", "label": "Borde premium" }
+        ] },
+        { "type": "range", "id": "spacing_bottom", "label": "Espacio inferior", "min": 0, "max": 64, "step": 2, "unit": "px", "default": 22 }
+      ]
+    },
+    {
+      "type": "trust_grid",
+      "name": "Cuatro beneficios",
+      "settings": [
+        { "type": "text", "id": "title_1", "label": "Beneficio 1", "default": "Compra segura" },
+        { "type": "text", "id": "text_1", "label": "Texto 1", "default": "Proceso claro y protegido." },
+        { "type": "text", "id": "title_2", "label": "Beneficio 2", "default": "Pago contra entrega" },
+        { "type": "text", "id": "text_2", "label": "Texto 2", "default": "Según disponibilidad por ciudad." },
+        { "type": "text", "id": "title_3", "label": "Beneficio 3", "default": "Envío nacional" },
+        { "type": "text", "id": "text_3", "label": "Texto 3", "default": "Cobertura en Colombia." },
+        { "type": "text", "id": "title_4", "label": "Beneficio 4", "default": "Soporte Novaren" },
+        { "type": "text", "id": "text_4", "label": "Texto 4", "default": "Atención para resolver dudas." },
+        { "type": "range", "id": "spacing_bottom", "label": "Espacio inferior", "min": 0, "max": 64, "step": 2, "unit": "px", "default": 22 }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "RtaFull landing editable",
+      "blocks": [
+        { "type": "image_block" },
+        { "type": "content_block" },
+        { "type": "trust_grid" }
+      ]
+    }
+  ]
+}
+{% endschema %}
