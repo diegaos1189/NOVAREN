@@ -146,6 +146,7 @@
         "img_01_hero": {
           "type": "image_block",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_9_may_2026_22_13_41.png",
             "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-01-hero.png?v=1778719736",
             "alt": "RtaFull Detox Natural 500ml de Novaren para bienestar digestivo y sensaciÃ³n de ligereza",
             "caption": "",
@@ -166,6 +167,7 @@
         "img_02_confianza": {
           "type": "image_block",
           "settings": {
+            "image": "shopify://shop_images/rta2.png",
             "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-02-confianza.png?v=1778719736",
             "alt": "Promesas de compra segura, pago contra entrega, envÃ­o en Colombia y soporte Novaren",
             "caption": "",
@@ -190,6 +192,7 @@
         "img_03_pagos": {
           "type": "image_block",
           "settings": {
+            "image": "shopify://shop_images/rta1.png",
             "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-03-pagos-confianza.png?v=1778719736",
             "alt": "Opciones de pago seguro en lÃ­nea para comprar RtaFull en Novaren",
             "caption": "",
@@ -230,48 +233,9 @@
         "05_rtafull_05_ingredientes_png": {
           "type": "image_block",
           "settings": {
+            "image": "shopify://shop_images/ingredientes_RtaFull.png",
             "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-05-ingredientes.png?v=1778719736",
             "alt": "Ingredientes naturales de RtaFull: flor de jamaica, alcachofa, menta y perejil",
-            "caption": "",
-            "width": "full",
-            "spacing_bottom": 18
-          }
-        },
-        "06_rtafull_06_como_usarlo_png": {
-          "type": "image_block",
-          "settings": {
-            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-06-como-usarlo.png?v=1778719736",
-            "alt": "CÃ³mo integrar RtaFull Detox Natural 500ml en hÃ¡bitos saludables diarios",
-            "caption": "",
-            "width": "full",
-            "spacing_bottom": 18
-          }
-        },
-        "07_rtafull_07_beneficios_png": {
-          "type": "image_block",
-          "settings": {
-            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-07-beneficios.png?v=1778719736",
-            "alt": "Beneficios de RtaFull para una rutina de bienestar digestivo responsable",
-            "caption": "",
-            "width": "full",
-            "spacing_bottom": 18
-          }
-        },
-        "08_rtafull_08_envio_pago_png": {
-          "type": "image_block",
-          "settings": {
-            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-08-envio-pago.png?v=1778719736",
-            "alt": "InformaciÃ³n de envÃ­o nacional, pago contra entrega y compra protegida en Novaren",
-            "caption": "",
-            "width": "full",
-            "spacing_bottom": 18
-          }
-        },
-        "09_rtafull_09_faq_responsable_png": {
-          "type": "image_block",
-          "settings": {
-            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-09-faq-responsable.png?v=1778719736",
-            "alt": "Preguntas frecuentes de uso responsable de RtaFull Detox Natural",
             "caption": "",
             "width": "full",
             "spacing_bottom": 18
@@ -286,16 +250,6 @@
             "style": "bordered",
             "spacing_bottom": 22
           }
-        },
-        "10_rtafull_10_cierre_compra_png": {
-          "type": "image_block",
-          "settings": {
-            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-10-cierre-compra.png?v=1778719736",
-            "alt": "Cierre de compra de RtaFull Detox Natural 500ml con respaldo Novaren",
-            "caption": "",
-            "width": "full",
-            "spacing_bottom": 0
-          }
         }
       },
       "block_order": [
@@ -308,12 +262,7 @@
         "04_rtafull_04_pesadez_rutina_png",
         "txt_ingredientes",
         "05_rtafull_05_ingredientes_png",
-        "06_rtafull_06_como_usarlo_png",
-        "07_rtafull_07_beneficios_png",
-        "08_rtafull_08_envio_pago_png",
-        "09_rtafull_09_faq_responsable_png",
-        "txt_uso_responsable",
-        "10_rtafull_10_cierre_compra_png"
+        "txt_uso_responsable"
       ],
       "settings": {
         "anchor_id": "rtafull-landing",
