@@ -1,0 +1,432 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "novaren-premium-product",
+      "blocks": {
+        "promise_1": {
+          "type": "promise",
+          "settings": {
+            "text": "Compra segura"
+          }
+        },
+        "promise_2": {
+          "type": "promise",
+          "settings": {
+            "text": "Pago contra entrega disponible"
+          }
+        },
+        "promise_3": {
+          "type": "promise",
+          "settings": {
+            "text": "Envíos en Colombia"
+          }
+        },
+        "promise_4": {
+          "type": "promise",
+          "settings": {
+            "text": "Atención personalizada"
+          }
+        }
+      },
+      "block_order": [
+        "promise_1",
+        "promise_2",
+        "promise_3",
+        "promise_4"
+      ],
+      "settings": {
+        "eyebrow": "Bienestar",
+        "stock_label": "Disponible en Colombia",
+        "custom_title": "",
+        "custom_summary": "",
+        "fallback_summary": "RtaFull Detox Natural 500ml acompaña rutinas de bienestar digestivo, ligereza y autocuidado diario con ingredientes naturales.",
+        "show_top_summary": false,
+        "summary_words": 60,
+        "show_rating_summary": true,
+        "rating_summary_text": "4.8 / 5 basado en experiencias de clientes",
+        "bullet_1": "Complemento para hábitos saludables y bienestar diario.",
+        "bullet_2": "Compra clara, canales oficiales y seguimiento del pedido.",
+        "bullet_3": "Información prudente, sin promesas médicas exageradas.",
+        "bullet_4": "Pago contra entrega disponible cuando aplique.",
+        "media_fit": "cover",
+        "media_padding": 0,
+        "show_thumbnails": true,
+        "media_stack_limit": 8,
+        "eyebrow_font_size": 12,
+        "title_font_size_desktop": 34,
+        "title_font_size_mobile": 26,
+        "mobile_title_transform": "none",
+        "title_line_height": 100,
+        "price_font_size": 30,
+        "summary_font_size_desktop": 17,
+        "summary_font_size_mobile": 14,
+        "summary_line_height": 165,
+        "button_font_size": 16,
+        "promise_font_size": 13,
+        "form_label_font_size": 13,
+        "detail_title_font_size": 30,
+        "detail_title_line_height": 108,
+        "detail_text_font_size": 16,
+        "detail_text_line_height": 165,
+        "show_full_description_below": false,
+        "description_eyebrow": "Detalles del producto",
+        "description_heading": "Información completa, imágenes y beneficios",
+        "description_heading_font_size": 36,
+        "description_text_font_size": 16,
+        "mobile_content_width": 390,
+        "mobile_side_padding": 16,
+        "mobile_padding_top": 24,
+        "mobile_padding_bottom": 48,
+        "mobile_gallery_padding": 0,
+        "mobile_card_radius": 10,
+        "mobile_main_button_size": 20,
+        "mobile_description_gap": 28,
+        "mobile_description_padding_top": 28,
+        "mobile_description_separator": true,
+        "mobile_hide_description_heading": true,
+        "hide_accordions_on_mobile": true,
+        "hide_promises_on_mobile": true,
+        "hide_detail_blocks_on_mobile": true,
+        "variant_label": "Presentación",
+        "show_quantity": true,
+        "quantity_label": "Cantidad",
+        "button_label": "Pagar Contra Reembolso",
+        "sold_out_label": "Agotado",
+        "cta_note": "Compra protegida. Revisaremos tu pedido y te acompañaremos en el proceso.",
+        "show_mobile_sticky_cta": true,
+        "mobile_sticky_kicker": "Compra rápida",
+        "mobile_sticky_label": "Comprar ahora",
+        "show_conversion_panel": true,
+        "trust_kicker": "Nuevo en Novaren | Disponible",
+        "trust_title": "Compra respaldada por Novaren",
+        "trust_text": "Atención clara, compra segura y seguimiento del pedido desde nuestros canales oficiales.",
+        "trust_score_percent": 90,
+        "metric_1_value": "Seguro",
+        "metric_1_label": "Pago y datos protegidos",
+        "metric_2_value": "Activo",
+        "metric_2_label": "Soporte al cliente",
+        "metric_3_value": "Colombia",
+        "metric_3_label": "Envíos nacionales",
+        "benefit_1": "<p><strong>Envío gratis desde $149.900</strong> en Colombia, según condiciones vigentes.</p>",
+        "benefit_2": "<p><strong>Compra garantizada.</strong> Si hay una novedad con tu pedido, te ayudamos a revisarla.</p>",
+        "benefit_3": "<p><strong>Pago contra entrega disponible</strong> cuando aplique para tu ciudad o método de envío.</p>",
+        "conversion_title_font_size": 19,
+        "conversion_text_font_size": 14,
+        "metric_value_font_size": 19,
+        "metric_label_font_size": 12,
+        "benefit_font_size": 15,
+        "show_info_accordions": true,
+        "accordion_1_title": "Descripción del producto",
+        "accordion_1_text": "<p>Producto seleccionado por Novaren para acompañar rutinas de bienestar. Revisa siempre la información del empaque, presentación y recomendaciones del proveedor.</p>",
+        "accordion_2_title": "Cómo integrarlo a tu rutina",
+        "accordion_2_text": "<p>Úsalo como complemento de hábitos saludables: hidratación, alimentación equilibrada, movimiento suave y descanso. Si tienes una condición de salud, consulta con un profesional.</p>",
+        "accordion_3_title": "Envío y pago",
+        "accordion_3_text": "<p>Envíos dentro de Colombia sujetos a cobertura. El pago contra entrega puede estar disponible según ciudad, producto y operador logístico.</p>",
+        "accordion_4_title": "Garantía y soporte",
+        "accordion_4_text": "<p>Si tu pedido llega con una novedad, comunícate con Novaren por los canales oficiales para revisar el caso de acuerdo con nuestras políticas.</p>",
+        "accent_color": "#155b3d",
+        "background_top": "#fbfaf5",
+        "background_bottom": "#ffffff",
+        "padding_top": 72,
+        "padding_bottom": 96
+      }
+    },
+    "testimonials": {
+      "type": "novaren-testimonials",
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "image_alt": "",
+            "initials": "CM",
+            "rating": 5,
+            "title": "Más tranquilidad",
+            "quote": "La información fue clara y el proceso de compra se sintió seguro. Me gustó poder resolver dudas antes de comprar.",
+            "name": "Carlos M.",
+            "meta": "Medellín"
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "image_alt": "",
+            "initials": "JR",
+            "rating": 5,
+            "title": "Compra sencilla",
+            "quote": "Encontré el producto rápido, el pago fue práctico y recibí orientación sobre el pedido. Buena experiencia.",
+            "name": "Javier R.",
+            "meta": "Bogotá"
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "image_alt": "",
+            "initials": "AL",
+            "rating": 5,
+            "title": "Atención cercana",
+            "quote": "Me respondieron con claridad y sin presión. Eso me dio más confianza para comprar en Novaren.",
+            "name": "Andrés L.",
+            "meta": "Cali"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3"
+      ],
+      "settings": {
+        "eyebrow": "Confianza real",
+        "heading": "Testimonios de clientes",
+        "subheading": "Experiencias editables para mostrar opiniones reales de clientes de Novaren con un tono claro, prudente y confiable.",
+        "rating_text": "Excelente",
+        "rating_value": "4.8 / 5",
+        "eyebrow_font_size": 12,
+        "heading_font_size": 36,
+        "heading_font_size_mobile": 28,
+        "heading_line_height": 112,
+        "subheading_font_size": 17,
+        "rating_font_size": 16,
+        "card_title_font_size": 18,
+        "quote_font_size": 16,
+        "quote_line_height": 160,
+        "person_font_size": 14,
+        "columns_desktop": 3,
+        "card_gap": 24,
+        "card_padding": 28,
+        "image_size": 72,
+        "card_text_align": "center",
+        "card_content_position": "center",
+        "background_color": "#ffffff",
+        "card_background": "#f5f3ef",
+        "text_color": "#18241f",
+        "muted_color": "#66746d",
+        "accent_color": "#155b3d",
+        "padding_top": 72,
+        "padding_bottom": 88
+      }
+    },
+    "rtafull_landing_editable": {
+      "type": "novaren-rtafull-landing-editable",
+      "blocks": {
+        "img_01_hero": {
+          "type": "image_block",
+          "settings": {
+            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-01-hero.png?v=1778719736",
+            "alt": "RtaFull Detox Natural 500ml de Novaren para bienestar digestivo y sensaciÃ³n de ligereza",
+            "caption": "",
+            "width": "full",
+            "spacing_bottom": 24
+          }
+        },
+        "txt_intro": {
+          "type": "content_block",
+          "settings": {
+            "eyebrow": "Bienestar digestivo",
+            "heading": "RtaFull Detox Natural 500ml para una rutina más ligera",
+            "text": "<p>RtaFull Detox Natural 500ml es una opción de Novaren pensada para acompañar rutinas de bienestar, digestión ligera y autocuidado diario. Su fórmula combina ingredientes naturales como flor de jamaica, alcachofa, menta y perejil, ideales para complementar hábitos saludables sin promesas exageradas.</p>",
+            "style": "plain",
+            "spacing_bottom": 22
+          }
+        },
+        "img_02_confianza": {
+          "type": "image_block",
+          "settings": {
+            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-02-confianza.png?v=1778719736",
+            "alt": "Promesas de compra segura, pago contra entrega, envÃ­o en Colombia y soporte Novaren",
+            "caption": "",
+            "width": "full",
+            "spacing_bottom": 18
+          }
+        },
+        "trust_01": {
+          "type": "trust_grid",
+          "settings": {
+            "title_1": "Compra segura",
+            "text_1": "Proceso claro y protegido.",
+            "title_2": "Pago contra entrega",
+            "text_2": "Disponible según ciudad.",
+            "title_3": "Envío en Colombia",
+            "text_3": "Seguimiento del pedido.",
+            "title_4": "Soporte Novaren",
+            "text_4": "Atención para resolver dudas.",
+            "spacing_bottom": 22
+          }
+        },
+        "img_03_pagos": {
+          "type": "image_block",
+          "settings": {
+            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-03-pagos-confianza.png?v=1778719736",
+            "alt": "Opciones de pago seguro en lÃ­nea para comprar RtaFull en Novaren",
+            "caption": "",
+            "width": "full",
+            "spacing_bottom": 24
+          }
+        },
+        "txt_confianza": {
+          "type": "content_block",
+          "settings": {
+            "eyebrow": "Compra con confianza",
+            "heading": "¿Por qué elegir RtaFull en Novaren?",
+            "text": "<ul><li>Compra segura y atención clara antes de finalizar tu pedido.</li><li>Pago contra entrega disponible según ciudad y operador logístico.</li><li>Envíos nacionales en Colombia y seguimiento del proceso.</li><li>Producto enfocado en acompañar hábitos saludables, no en reemplazarlos.</li></ul>",
+            "style": "soft",
+            "spacing_bottom": 22
+          }
+        },
+        "04_rtafull_04_pesadez_rutina_png": {
+          "type": "image_block",
+          "settings": {
+            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-04-pesadez-rutina.png?v=1778719736",
+            "alt": "Rutina para acompañar la sensación de pesadez y el bienestar digestivo con RtaFull",
+            "caption": "",
+            "width": "full",
+            "spacing_bottom": 18
+          }
+        },
+        "txt_ingredientes": {
+          "type": "content_block",
+          "settings": {
+            "eyebrow": "Ingredientes naturales",
+            "heading": "Una rutina más ligera empieza con hábitos simples",
+            "text": "<p>La sensación de pesadez puede estar relacionada con alimentación abundante, baja hidratación, poco movimiento o rutinas aceleradas. RtaFull puede acompañar una rutina diaria donde también importan el agua, la fibra, el descanso y comer con calma.</p>",
+            "style": "plain",
+            "spacing_bottom": 22
+          }
+        },
+        "05_rtafull_05_ingredientes_png": {
+          "type": "image_block",
+          "settings": {
+            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-05-ingredientes.png?v=1778719736",
+            "alt": "Ingredientes naturales de RtaFull: flor de jamaica, alcachofa, menta y perejil",
+            "caption": "",
+            "width": "full",
+            "spacing_bottom": 18
+          }
+        },
+        "06_rtafull_06_como_usarlo_png": {
+          "type": "image_block",
+          "settings": {
+            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-06-como-usarlo.png?v=1778719736",
+            "alt": "CÃ³mo integrar RtaFull Detox Natural 500ml en hÃ¡bitos saludables diarios",
+            "caption": "",
+            "width": "full",
+            "spacing_bottom": 18
+          }
+        },
+        "07_rtafull_07_beneficios_png": {
+          "type": "image_block",
+          "settings": {
+            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-07-beneficios.png?v=1778719736",
+            "alt": "Beneficios de RtaFull para una rutina de bienestar digestivo responsable",
+            "caption": "",
+            "width": "full",
+            "spacing_bottom": 18
+          }
+        },
+        "08_rtafull_08_envio_pago_png": {
+          "type": "image_block",
+          "settings": {
+            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-08-envio-pago.png?v=1778719736",
+            "alt": "InformaciÃ³n de envÃ­o nacional, pago contra entrega y compra protegida en Novaren",
+            "caption": "",
+            "width": "full",
+            "spacing_bottom": 18
+          }
+        },
+        "09_rtafull_09_faq_responsable_png": {
+          "type": "image_block",
+          "settings": {
+            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-09-faq-responsable.png?v=1778719736",
+            "alt": "Preguntas frecuentes de uso responsable de RtaFull Detox Natural",
+            "caption": "",
+            "width": "full",
+            "spacing_bottom": 18
+          }
+        },
+        "txt_uso_responsable": {
+          "type": "content_block",
+          "settings": {
+            "eyebrow": "Uso responsable",
+            "heading": "Información importante antes de comprar",
+            "text": "<p>Este producto no es un medicamento y no reemplaza una alimentación equilibrada ni la orientación de un profesional de salud. Si estás en embarazo, lactancia, tomas medicamentos o tienes una condición médica, consulta antes de consumirlo.</p>",
+            "style": "bordered",
+            "spacing_bottom": 22
+          }
+        },
+        "10_rtafull_10_cierre_compra_png": {
+          "type": "image_block",
+          "settings": {
+            "fallback_url": "https://cdn.shopify.com/s/files/1/0982/9538/2326/files/rtafull-10-cierre-compra.png?v=1778719736",
+            "alt": "Cierre de compra de RtaFull Detox Natural 500ml con respaldo Novaren",
+            "caption": "",
+            "width": "full",
+            "spacing_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "img_01_hero",
+        "txt_intro",
+        "img_02_confianza",
+        "trust_01",
+        "img_03_pagos",
+        "txt_confianza",
+        "04_rtafull_04_pesadez_rutina_png",
+        "txt_ingredientes",
+        "05_rtafull_05_ingredientes_png",
+        "06_rtafull_06_como_usarlo_png",
+        "07_rtafull_07_beneficios_png",
+        "08_rtafull_08_envio_pago_png",
+        "09_rtafull_09_faq_responsable_png",
+        "txt_uso_responsable",
+        "10_rtafull_10_cierre_compra_png"
+      ],
+      "settings": {
+        "anchor_id": "rtafull-landing",
+        "eyebrow": "Contenido editable",
+        "heading": "Landing de RtaFull por secciones",
+        "text": "<p>Cambia imágenes, textos, orden y estilos desde el editor visual de Shopify.</p>",
+        "text_alignment": "left",
+        "max_width": 860,
+        "background": "#ffffff",
+        "card_background": "#f6f8f5",
+        "heading_color": "#10235a",
+        "text_color": "#172420",
+        "muted_color": "#69736f",
+        "accent_color": "#1f6b4f",
+        "heading_size": 38,
+        "mobile_heading_size": 30,
+        "block_heading_size": 30,
+        "mobile_block_heading_size": 25,
+        "text_size": 18,
+        "mobile_text_size": 16,
+        "eyebrow_size": 13,
+        "image_radius": 18,
+        "image_shadow": false,
+        "card_radius": 16,
+        "card_padding": 24,
+        "mobile_card_padding": 18,
+        "header_spacing": 24,
+        "padding_top": 40,
+        "padding_bottom": 72,
+        "mobile_padding_top": 24,
+        "mobile_padding_bottom": 56
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rtafull_landing_editable",
+    "testimonials"
+  ]
+}
