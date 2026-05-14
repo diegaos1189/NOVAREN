@@ -11,38 +11,6 @@
   "sections": {
     "main": {
       "type": "novaren-premium-product",
-      "blocks": {
-        "promise_1": {
-          "type": "promise",
-          "settings": {
-            "text": "Compra segura"
-          }
-        },
-        "promise_2": {
-          "type": "promise",
-          "settings": {
-            "text": "Pago contra entrega disponible"
-          }
-        },
-        "promise_3": {
-          "type": "promise",
-          "settings": {
-            "text": "Envíos en Colombia"
-          }
-        },
-        "promise_4": {
-          "type": "promise",
-          "settings": {
-            "text": "Atención personalizada"
-          }
-        }
-      },
-      "block_order": [
-        "promise_1",
-        "promise_2",
-        "promise_3",
-        "promise_4"
-      ],
       "settings": {
         "eyebrow": "Bienestar",
         "stock_label": "Disponible en Colombia",
