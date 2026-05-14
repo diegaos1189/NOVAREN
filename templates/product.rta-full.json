@@ -97,7 +97,7 @@
         "hide_promises_on_mobile": true,
         "hide_detail_blocks_on_mobile": true,
         "variant_label": "Presentación",
-        "show_quantity": true,
+        "show_quantity": false,
         "quantity_label": "Cantidad",
         "button_label": "Pagar Contra Reembolso",
         "sold_out_label": "Agotado",
@@ -138,82 +138,6 @@
         "background_bottom": "#ffffff",
         "padding_top": 72,
         "padding_bottom": 96
-      }
-    },
-    "testimonials": {
-      "type": "novaren-testimonials",
-      "blocks": {
-        "testimonial_1": {
-          "type": "testimonial",
-          "settings": {
-            "image_alt": "",
-            "initials": "CM",
-            "rating": 5,
-            "title": "Más tranquilidad",
-            "quote": "La información fue clara y el proceso de compra se sintió seguro. Me gustó poder resolver dudas antes de comprar.",
-            "name": "Carlos M.",
-            "meta": "Medellín"
-          }
-        },
-        "testimonial_2": {
-          "type": "testimonial",
-          "settings": {
-            "image_alt": "",
-            "initials": "JR",
-            "rating": 5,
-            "title": "Compra sencilla",
-            "quote": "Encontré el producto rápido, el pago fue práctico y recibí orientación sobre el pedido. Buena experiencia.",
-            "name": "Javier R.",
-            "meta": "Bogotá"
-          }
-        },
-        "testimonial_3": {
-          "type": "testimonial",
-          "settings": {
-            "image_alt": "",
-            "initials": "AL",
-            "rating": 5,
-            "title": "Atención cercana",
-            "quote": "Me respondieron con claridad y sin presión. Eso me dio más confianza para comprar en Novaren.",
-            "name": "Andrés L.",
-            "meta": "Cali"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_1",
-        "testimonial_2",
-        "testimonial_3"
-      ],
-      "settings": {
-        "eyebrow": "Confianza real",
-        "heading": "Testimonios de clientes",
-        "subheading": "Experiencias editables para mostrar opiniones reales de clientes de Novaren con un tono claro, prudente y confiable.",
-        "rating_text": "Excelente",
-        "rating_value": "4.8 / 5",
-        "eyebrow_font_size": 12,
-        "heading_font_size": 36,
-        "heading_font_size_mobile": 28,
-        "heading_line_height": 112,
-        "subheading_font_size": 17,
-        "rating_font_size": 16,
-        "card_title_font_size": 18,
-        "quote_font_size": 16,
-        "quote_line_height": 160,
-        "person_font_size": 14,
-        "columns_desktop": 3,
-        "card_gap": 24,
-        "card_padding": 28,
-        "image_size": 72,
-        "card_text_align": "center",
-        "card_content_position": "center",
-        "background_color": "#ffffff",
-        "card_background": "#f5f3ef",
-        "text_color": "#18241f",
-        "muted_color": "#66746d",
-        "accent_color": "#155b3d",
-        "padding_top": 72,
-        "padding_bottom": 88
       }
     },
     "rtafull_landing_editable": {
@@ -421,6 +345,82 @@
         "padding_bottom": 72,
         "mobile_padding_top": 24,
         "mobile_padding_bottom": 56
+      }
+    },
+    "testimonials": {
+      "type": "novaren-testimonials",
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "image_alt": "",
+            "initials": "CM",
+            "rating": 5,
+            "title": "Más tranquilidad",
+            "quote": "La información fue clara y el proceso de compra se sintió seguro. Me gustó poder resolver dudas antes de comprar.",
+            "name": "Carlos M.",
+            "meta": "Medellín"
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "image_alt": "",
+            "initials": "JR",
+            "rating": 5,
+            "title": "Compra sencilla",
+            "quote": "Encontré el producto rápido, el pago fue práctico y recibí orientación sobre el pedido. Buena experiencia.",
+            "name": "Javier R.",
+            "meta": "Bogotá"
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "image_alt": "",
+            "initials": "AL",
+            "rating": 5,
+            "title": "Atención cercana",
+            "quote": "Me respondieron con claridad y sin presión. Eso me dio más confianza para comprar en Novaren.",
+            "name": "Andrés L.",
+            "meta": "Cali"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3"
+      ],
+      "settings": {
+        "eyebrow": "Confianza real",
+        "heading": "Testimonios de clientes",
+        "subheading": "Experiencias editables para mostrar opiniones reales de clientes de Novaren con un tono claro, prudente y confiable.",
+        "rating_text": "Excelente",
+        "rating_value": "4.8 / 5",
+        "eyebrow_font_size": 12,
+        "heading_font_size": 36,
+        "heading_font_size_mobile": 28,
+        "heading_line_height": 112,
+        "subheading_font_size": 17,
+        "rating_font_size": 16,
+        "card_title_font_size": 18,
+        "quote_font_size": 16,
+        "quote_line_height": 160,
+        "person_font_size": 14,
+        "columns_desktop": 3,
+        "card_gap": 24,
+        "card_padding": 28,
+        "image_size": 72,
+        "card_text_align": "center",
+        "card_content_position": "center",
+        "background_color": "#ffffff",
+        "card_background": "#f5f3ef",
+        "text_color": "#18241f",
+        "muted_color": "#66746d",
+        "accent_color": "#155b3d",
+        "padding_top": 72,
+        "padding_bottom": 88
       }
     }
   },
