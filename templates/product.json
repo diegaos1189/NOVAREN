@@ -62,7 +62,7 @@
         "mobile_description_separator": true,
         "mobile_hide_description_heading": true,
         "hide_accordions_on_mobile": true,
-        "hide_promises_on_mobile": true,
+        "hide_promises_on_mobile": false,
         "hide_detail_blocks_on_mobile": true,
         "variant_label": "Presentación",
         "show_quantity": false,
